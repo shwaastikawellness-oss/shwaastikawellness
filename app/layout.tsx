@@ -39,12 +39,22 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="h-full antialiased">
-      <body className="min-h-full bg-[#fbf8f1] text-[#2f2822]">
-        <ScrollToTop />
-        <Header />
-        {children}
-        <Footer />
+    <html
+      lang="en"
+      data-scroll-behavior="smooth"
+      className="h-full antialiased"
+      suppressHydrationWarning
+    >
+      <body
+        className="relative min-h-full bg-[#fbf8f1] text-[#2f2822]"
+        suppressHydrationWarning
+      >
+        <div className="relative min-h-screen">
+          <ScrollToTop />
+          <Header />
+          <div className="relative">{children}</div>
+          <Footer />
+        </div>
       </body>
     </html>
   );

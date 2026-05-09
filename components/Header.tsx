@@ -28,32 +28,42 @@ export default function Header() {
         className="mx-auto flex max-w-[92rem] items-center justify-between gap-3 px-4 py-2.5 sm:px-6 lg:px-8"
       >
         <Link href="/" className="flex shrink-0 items-center gap-2" aria-label="SHWAASTIKA WELLNESS home">
-          <span className="flex h-8 w-8 items-center justify-center rounded-full border border-[#c8d9e5] bg-white/75 text-[10px] font-semibold text-[#2f4150] shadow-sm">
-            SW
+          <span
+            aria-hidden="true"
+            className="flex h-8 w-8 items-center justify-center rounded-full border border-[#c8d9e5] bg-white/75 shadow-sm"
+          >
+            <span className="h-3 w-3 rounded-full bg-[#4f6574]" />
           </span>
-          <span className="leading-tight">
-            <span className="block text-[13px] font-semibold tracking-[0.04em] text-[#263542]">SHWAASTIKA WELLNESS</span>
-            <span className="block text-[10px] uppercase tracking-[0.16em] text-[#8b9a72]">AKR WELLNESS</span>
-            <span className="block text-[10px] italic text-[#8a7764]">By Preeti Semwal</span>
-          </span>
+          <div className="leading-tight">
+            <p className="text-[13px] font-semibold tracking-[0.04em] text-[#263542]">
+              SHWAASTIKA WELLNESS
+            </p>
+            <p className="text-[10px] uppercase tracking-[0.16em] text-[#8b9a72]">
+              AKR WELLNESS
+            </p>
+            <p className="text-[10px] italic text-[#8a7764]">
+              By Preeti Semwal
+            </p>
+          </div>
         </Link>
 
-        <div className="hidden flex-1 items-center justify-center gap-1.5 xl:flex">
+        <ul className="hidden flex-1 items-center justify-center gap-1.5 xl:flex">
           {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              scroll
-              className={`rounded-full px-2.5 py-2 text-[11px] font-semibold transition ${
-                pathname === link.href
-                  ? "bg-white text-[#24394a] shadow-sm"
-                  : "text-[#41515d] hover:bg-white/65 hover:text-[#24394a]"
-              }`}
-            >
-              {link.label}
-            </Link>
+            <li key={link.href}>
+              <Link
+                href={link.href}
+                scroll
+                className={`block rounded-full px-2.5 py-2 text-[11px] font-semibold transition ${
+                  pathname === link.href
+                    ? "bg-white text-[#24394a] shadow-sm"
+                    : "text-[#41515d] hover:bg-white/65 hover:text-[#24394a]"
+                }`}
+              >
+                {link.label}
+              </Link>
+            </li>
           ))}
-        </div>
+        </ul>
 
         <div className="hidden shrink-0 items-center gap-3 xl:flex">
           <Link
@@ -88,27 +98,30 @@ export default function Header() {
             exit={{ opacity: 0, height: 0 }}
             className="overflow-hidden border-t border-white/70 bg-[#f7f2e8] xl:hidden"
           >
-            <div className="mx-auto flex max-w-7xl flex-col gap-1.5 px-5 py-4 sm:px-8">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  scroll
-                  onClick={() => setIsOpen(false)}
-                  className={`rounded-full px-4 py-3 text-sm font-semibold ${
-                    pathname === link.href
-                      ? "bg-white text-[#24394a] shadow-sm"
-                      : "text-[#41515d] hover:bg-white/65"
-                  }`}
-                >
-                  {link.label}
-                </Link>
-              ))}
+            <div className="mx-auto max-w-7xl px-5 py-4 sm:px-8">
+              <ul className="flex flex-col gap-1.5">
+                {navLinks.map((link) => (
+                  <li key={link.href}>
+                    <Link
+                      href={link.href}
+                      scroll
+                      onClick={() => setIsOpen(false)}
+                      className={`block rounded-full px-4 py-3 text-sm font-semibold ${
+                        pathname === link.href
+                          ? "bg-white text-[#24394a] shadow-sm"
+                          : "text-[#41515d] hover:bg-white/65"
+                      }`}
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
               <Link
                 href="/book-a-session"
                 scroll
                 onClick={() => setIsOpen(false)}
-                className="mt-2 rounded-full bg-[#2f3033] px-5 py-3 text-center text-sm font-semibold text-white"
+                className="mt-2 block rounded-full bg-[#2f3033] px-5 py-3 text-center text-sm font-semibold text-white"
               >
                 Book a Consultation
               </Link>

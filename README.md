@@ -108,9 +108,9 @@ Responsive layouts
 Tailwind utility-first architecture
 Clean component separation
 Maintainable scalability
-👨‍💻 Developer
+👨‍💻 Developer Purushottam
 
-Built with passion by Shantanu Kumar
+
 
 📜 License
 

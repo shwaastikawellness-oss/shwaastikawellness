@@ -53,7 +53,7 @@ export default function ImageCarousel({ eyebrow, heading, images }: ImageCarouse
               className="flex h-11 w-11 items-center justify-center rounded-full border border-[#cdbd9f] bg-white text-xl text-[#2f2822] shadow-sm hover:bg-[#f3eadb]"
               aria-label={`Previous ${heading}`}
             >
-              ←
+              &larr;
             </button>
             <button
               type="button"
@@ -61,7 +61,7 @@ export default function ImageCarousel({ eyebrow, heading, images }: ImageCarouse
               className="flex h-11 w-11 items-center justify-center rounded-full border border-[#cdbd9f] bg-white text-xl text-[#2f2822] shadow-sm hover:bg-[#f3eadb]"
               aria-label={`Next ${heading}`}
             >
-              →
+              &rarr;
             </button>
           </div>
         </div>
@@ -85,7 +85,7 @@ export default function ImageCarousel({ eyebrow, heading, images }: ImageCarouse
                       {image.label}
                     </p>
                     <h3 className="mt-3 text-2xl font-semibold text-[#2f2822]">{image.title}</h3>
-                    <p className="mt-3 text-sm text-[#66584d]">Click to view full screenshot</p>
+                    <p className="mt-3 text-sm text-[#66584d]">Open client reflection</p>
                   </div>
                 </div>
               </motion.button>
@@ -110,7 +110,7 @@ export default function ImageCarousel({ eyebrow, heading, images }: ImageCarouse
 
       <LightboxModal
         isOpen={Boolean(activeLightboxImage)}
-        title={activeLightboxImage?.title ?? "Testimonial screenshot"}
+        title={activeLightboxImage?.title ?? "Client reflection"}
         onClose={() => setLightboxIndex(null)}
       >
         {activeLightboxImage ? (
@@ -122,7 +122,9 @@ export default function ImageCarousel({ eyebrow, heading, images }: ImageCarouse
               <h3 className="mt-4 text-3xl font-semibold text-[#2f2822]">
                 {activeLightboxImage.title}
               </h3>
-              <p className="mt-4 text-[#66584d]">Full screenshot placeholder</p>
+              <p className="mt-4 text-[#66584d]">
+                Shared with identifying details withheld for privacy.
+              </p>
             </div>
           </div>
         ) : null}

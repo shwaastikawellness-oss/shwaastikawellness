@@ -1,15 +1,14 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Reveal from "@/components/Reveal";
+import { createPageMetadata } from "../seo";
 
-export const metadata: Metadata = {
-  title: "About Preeti Semwal",
+export const metadata: Metadata = createPageMetadata({
+  title: "About Preeti Semwal | Shwaastika Wellness",
   description:
-    "Meet Preeti Semwal, the intuitive healer behind Preeti Semwal's Healing Space, offering transformative energy work rooted in balance, resilience, and ancestral wisdom.",
-  alternates: {
-    canonical: "/about",
-  },
-};
+    "Meet Preeti Semwal, founder of Shwaastika Wellness, and learn about her intuitive healing work, ancestral wisdom, resilience, and holistic approach.",
+  path: "/about",
+});
 
 const featureBlocks = [
   {
@@ -29,11 +28,11 @@ const featureBlocks = [
 const aboutImages = [
   {
     src: "/images/About/About1.JPG",
-    alt: "Preeti Semwal at SHWAASTIKA WELLNESS",
+    alt: "Preeti Semwal at Shwaastika Wellness",
   },
   {
     src: "/images/About/About2.JPG",
-    alt: "SHWAASTIKA WELLNESS healing and wellness practice",
+    alt: "Preeti Semwal's Shwaastika Wellness healing practice",
   },
   {
     src: "/images/About/About3.jpeg",
@@ -50,7 +49,7 @@ export default function AboutPage() {
           <Reveal>
             <div className="max-w-4xl">
               <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#7d8b65]">
-                SHWAASTIKA WELLNESS
+                Shwaastika Wellness
               </p>
               <h1 className="mt-4 max-w-4xl text-4xl font-semibold leading-[1.08] text-[#2f2822] sm:text-5xl lg:text-6xl">
                 About Preeti Semwal

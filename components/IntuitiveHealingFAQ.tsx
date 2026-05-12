@@ -7,12 +7,12 @@ const faqs = [
   {
     question: "How long is a session?",
     answer:
-      "Typically lasting 60–65 minutes, each session is designed to feel immersive, engaging, and thoughtfully paced from beginning to end.",
+      "Typically lasting 60-65 minutes, each session is designed to feel immersive, engaging, and thoughtfully paced from beginning to end.",
   },
   {
     question: "Is online as effective as in-person?",
     answer:
-      "Yes — many participants describe online experiences as equally deep, engaging, and impactful as sessions held in person.",
+      "Yes - many participants describe online experiences as equally deep, engaging, and impactful as sessions held in person.",
   },
   {
     question: "Is this a medical treatment?",
@@ -75,7 +75,7 @@ export default function IntuitiveHealingFAQ() {
                     Q. {faq.question}
                   </span>
                   <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-[#2f2822] text-2xl leading-none transition group-hover:bg-white sm:h-12 sm:w-12">
-                    ↘
+                    Open
                   </span>
                 </button>
               </motion.div>
@@ -110,7 +110,7 @@ export default function IntuitiveHealingFAQ() {
                 className="absolute right-6 top-6 z-20 flex h-11 w-11 items-center justify-center rounded-full bg-white/60 text-3xl font-light text-[#16120f] transition hover:bg-white"
                 aria-label="Close FAQ popup"
               >
-                ×
+                x
               </button>
 
               <div className="relative min-h-[340px] overflow-hidden rounded-[1.25rem] bg-[radial-gradient(circle_at_22%_72%,rgba(190,123,84,0.18),transparent_24%),radial-gradient(circle_at_72%_28%,rgba(255,255,255,0.72),transparent_28%),linear-gradient(135deg,#f3dfcf_0%,#fff8ef_48%,#ead7c8_100%)] p-7 sm:min-h-[400px] sm:p-9">

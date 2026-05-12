@@ -2,14 +2,14 @@
 
 import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
-import { useState } from "react";
+import { KeyboardEvent, useState } from "react";
 
 const tabs = [
   {
     label: "How a Session Works",
     imageLabel: "Session image",
     imageAlt: "Illustration explaining how an Inner Clarity Guidance session works",
-    imageSrc: "/images/inner%20clarity/How%20a%20session%20work.png",
+    imageSrc: "/images/inner%20clarity/How%20a%20session%20work.jpg",
     items: [
       "Modes: in-person, live online (video), or voice call all equally transformative",
       "We begin with simple breathwork to settle your energy and quiet mental noise",
@@ -22,7 +22,7 @@ const tabs = [
     label: "How You'll Know It's Time",
     imageLabel: "Clarity image",
     imageAlt: "Illustration describing signs that it is time for Inner Clarity Guidance",
-    imageSrc: "/images/inner%20clarity/how%20you%27ll%20know%20it%27s%20time.png",
+    imageSrc: "/images/inner%20clarity/how%20you%27ll%20know%20it%27s%20time.jpg",
     items: [
       "Decision fatigue has you second-guessing every option",
       "You've tried strategy and logic but still feel confused",
@@ -49,7 +49,7 @@ const tabs = [
     label: "Who Benefits",
     imageLabel: "Benefits image",
     imageAlt: "Illustration showing who benefits from Inner Clarity Guidance",
-    imageSrc: "/images/inner%20clarity/who%20benifits.png",
+    imageSrc: "/images/inner%20clarity/who%20benifits.jpg",
     note: "Anyone seeking clarity, closure or direction regardless of age or background gains from this work. It's best if you come present, honest with yourself and ready to engage with the guidance offered.",
   },
 ];
@@ -58,10 +58,26 @@ export default function InnerClarityTabs() {
   const [activeIndex, setActiveIndex] = useState(0);
   const activeTab = tabs[activeIndex];
 
+  const handleKeyDown = (event: KeyboardEvent<HTMLButtonElement>, index: number) => {
+    if (event.key === "ArrowRight") {
+      event.preventDefault();
+      setActiveIndex((index + 1) % tabs.length);
+    }
+
+    if (event.key === "ArrowLeft") {
+      event.preventDefault();
+      setActiveIndex((index - 1 + tabs.length) % tabs.length);
+    }
+  };
+
   return (
     <section className="bg-white px-5 py-16 sm:px-8 lg:px-10">
       <div className="mx-auto max-w-7xl">
-        <div className="overflow-x-auto rounded-full border border-[#e6dac7] bg-[#fbf8f1] p-1 shadow-sm">
+        <div
+          role="tablist"
+          aria-label="Inner clarity session information"
+          className="overflow-x-auto rounded-full border border-[#e6dac7] bg-[#fbf8f1] p-1 shadow-sm"
+        >
           <div className="flex min-w-max gap-1 lg:min-w-0">
             {tabs.map((tab, index) => {
               const isActive = activeIndex === index;
@@ -69,8 +85,14 @@ export default function InnerClarityTabs() {
               return (
                 <button
                   key={tab.label}
+                  id={`inner-clarity-tab-${index}`}
                   type="button"
+                  role="tab"
+                  aria-selected={isActive}
+                  aria-controls={`inner-clarity-panel-${index}`}
+                  tabIndex={isActive ? 0 : -1}
                   onClick={() => setActiveIndex(index)}
+                  onKeyDown={(event) => handleKeyDown(event, index)}
                   className={`whitespace-nowrap rounded-full px-5 py-3 text-sm font-semibold transition sm:px-6 lg:flex-1 ${
                     isActive
                       ? "bg-[#be7b54] text-white shadow-md shadow-[#6b513b]/10"
@@ -87,6 +109,9 @@ export default function InnerClarityTabs() {
         <AnimatePresence mode="wait">
           <motion.article
             key={activeTab.label}
+            id={`inner-clarity-panel-${activeIndex}`}
+            role="tabpanel"
+            aria-labelledby={`inner-clarity-tab-${activeIndex}`}
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -12 }}

@@ -1,0 +1,15 @@
+{
+  "name": "Preeti Semwal | Shwaastika Wellness",
+  "short_name": "Preeti Semwal",
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#fbf8f1",
+  "background_color": "#fbf8f1",
+  "icons": [
+    {
+      "src": "/images/logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

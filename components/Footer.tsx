@@ -29,7 +29,7 @@ export default function Footer() {
               />
             </span>
             <div>
-              <p className="text-base font-semibold leading-tight">SHWAASTIKA WELLNESS</p>
+              <p className="text-base font-semibold leading-tight">Shwaastika Wellness</p>
               <p className="text-[11px] uppercase tracking-[0.18em] text-[#c7d6bd]">AKR WELLNESS</p>
               <p className="text-xs italic text-[#c7bda8]">By Preeti Semwal</p>
             </div>
@@ -65,7 +65,7 @@ export default function Footer() {
         </div>
       </div>
       <div className="mx-auto mt-8 max-w-7xl border-t border-white/10 pt-5 text-xs text-[#c7bda8]">
-        <p>Copyright 2026 SHWAASTIKA WELLNESS. All rights reserved.</p>
+        <p>Copyright 2026 Shwaastika Wellness. All rights reserved.</p>
       </div>
     </footer>
   );

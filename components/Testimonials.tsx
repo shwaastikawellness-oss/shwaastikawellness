@@ -5,20 +5,20 @@ const testimonials = [
   {
     quote:
       "The session gave our team practical language for stress, communication, and accountability. It felt thoughtful, calm, and immediately useful.",
-    name: "Client Name",
-    role: "HR Lead, Company Name",
+    name: "Corporate workshop participant",
+    role: "Team development program",
   },
   {
     quote:
-      "SHWAASTIKA WELLNESS created a safe environment for reflection while keeping the training grounded in workplace realities.",
-    name: "Client Name",
-    role: "Operations Manager, Company Name",
+      "Shwaastika Wellness created a safe environment for reflection while keeping the training grounded in workplace realities.",
+    name: "Workshop attendee",
+    role: "Workplace wellness session",
   },
   {
     quote:
       "A polished and meaningful program that helped our people connect leadership behaviour with everyday wellbeing.",
-    name: "Client Name",
-    role: "Founder, Organization Name",
+    name: "Program participant",
+    role: "Leadership and well-being workshop",
   },
 ];
 

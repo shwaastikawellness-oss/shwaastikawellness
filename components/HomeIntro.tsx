@@ -1,20 +1,10 @@
-"use client";
-
-import { motion } from "framer-motion";
-
 export default function HomeIntro() {
   return (
     <section className="relative isolate overflow-hidden bg-white px-5 py-14 sm:px-8 lg:px-10 lg:py-16">
       <div className="absolute left-1/2 top-8 -z-10 h-64 w-64 -translate-x-1/2 rounded-full border border-[#d7c8ad]/16" />
       <div className="absolute bottom-10 right-[12%] -z-10 h-32 w-32 rounded-full bg-[#c7d6bd]/16 blur-3xl" />
 
-      <motion.article
-        initial={false}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.25 }}
-        transition={{ duration: 0.85, ease: "easeOut" }}
-        className="mx-auto max-w-5xl text-center"
-      >
+      <article className="mx-auto max-w-5xl text-center">
         <p className="text-sm font-semibold uppercase tracking-[0.22em] text-[#7d8b65]">
           Founder Message
         </p>
@@ -24,7 +14,7 @@ export default function HomeIntro() {
         <div className="mx-auto mt-8 max-w-4xl space-y-7 text-left text-lg leading-9 text-[#3f372f] sm:text-xl sm:leading-10">
           <p>
             Wellness comes with a choice. A choice to look within, to listen deeply, and to
-            surrender to the wisdom beyond the mind. True transformation doesn&rsquo;t come
+            surrender to the wisdom beyond the mind. True transformation doesn&apos;t come
             from curiosity alone it comes from the strong desire to live fully, with hope
             and belief that something greater is guiding us.
           </p>
@@ -38,7 +28,7 @@ export default function HomeIntro() {
             -Preeti Semwal Bembi
           </p>
         </div>
-      </motion.article>
+      </article>
     </section>
   );
 }

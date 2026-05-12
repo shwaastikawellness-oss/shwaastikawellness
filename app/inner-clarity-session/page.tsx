@@ -1,15 +1,14 @@
 import type { Metadata } from "next";
 import InnerClarityTabs from "@/components/InnerClarityTabs";
 import Reveal from "@/components/Reveal";
+import { createPageMetadata } from "../seo";
 
-export const metadata: Metadata = {
-  title: "Inner Clarity Session",
+export const metadata: Metadata = createPageMetadata({
+  title: "Inner Clarity Session | Preeti Semwal",
   description:
-    "Inner Clarity Sessions with Preeti Semwal offer intuitive insight for emotional patterns, relationships, life transitions, and grounded next steps.",
-  alternates: {
-    canonical: "/inner-clarity-session",
-  },
-};
+    "Explore inner clarity sessions by Preeti Semwal for emotional awareness, intuitive guidance, life transitions, and deeper self-connection.",
+  path: "/inner-clarity-session",
+});
 
 export default function InnerClaritySessionPage() {
   return (

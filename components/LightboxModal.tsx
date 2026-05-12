@@ -65,7 +65,7 @@ export default function LightboxModal({
               className="absolute right-5 top-5 z-10 flex h-11 w-11 items-center justify-center rounded-full bg-white/90 text-3xl font-light text-[#2f2822] shadow-sm transition hover:bg-white"
               aria-label="Close lightbox"
             >
-              ×
+              x
             </button>
             {children}
           </motion.div>

@@ -19,9 +19,9 @@ type FAQProps = {
 
 const defaultFaqs = [
   {
-    question: "What services does SHWAASTIKA WELLNESS provide?",
+    question: "What services does Shwaastika Wellness provide?",
     answer:
-      "SHWAASTIKA WELLNESS provides workplace wellness, resilience, leadership, soft skills, emotional intelligence, safety, sensitivity, and workplace behaviour training.",
+      "Shwaastika Wellness provides workplace wellness, resilience, leadership, soft skills, emotional intelligence, safety, sensitivity, and workplace behaviour training.",
   },
   {
     question: "Do you offer corporate training programs?",

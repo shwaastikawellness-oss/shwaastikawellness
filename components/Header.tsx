@@ -69,7 +69,7 @@ export default function Header() {
         <Link
           href="/"
           className="flex shrink-0 items-center gap-3"
-          aria-label="SHWAASTIKA WELLNESS home"
+          aria-label="Shwaastika Wellness home"
         >
           <span
             aria-hidden="true"
@@ -86,7 +86,7 @@ export default function Header() {
 
           <div className="leading-tight">
             <p className="text-[14px] font-semibold tracking-[0.04em] text-[#263542]">
-              SHWAASTIKA WELLNESS
+              Shwaastika Wellness
             </p>
             <p className="text-[10px] uppercase tracking-[0.18em] text-[#8b9a72]">
               AKR WELLNESS

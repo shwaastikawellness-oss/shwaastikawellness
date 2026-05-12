@@ -1,22 +1,21 @@
 import type { Metadata } from "next";
 import CorporateWorkshopTabs from "@/components/CorporateWorkshopTabs";
 import Reveal from "@/components/Reveal";
+import { createPageMetadata } from "../seo";
 
-export const metadata: Metadata = {
-  title: "Corporate Wellness Workshops",
+export const metadata: Metadata = createPageMetadata({
+  title: "Corporate Wellness Workshop | Preeti Semwal",
   description:
-    "Corporate wellness workshops with Preeti Semwal support workplace resilience, leadership presence, emotional intelligence, safety awareness, and well-being.",
-  alternates: {
-    canonical: "/corporate-workshop",
-  },
-};
+    "Corporate wellness workshops by Preeti Semwal support workplace resilience, leadership presence, emotional intelligence, safety awareness, and well-being.",
+  path: "/corporate-workshop",
+});
 
 const introParagraphs = [
   "With over 25 years of experience across defence, security and corporate environments, I bring a strong foundation of operational expertise and real-world insight into every program I deliver. As a veteran from the Indian Air Force and a seasoned safety and security professional, my work is shaped by exposure to high-pressure environments, risk assessment and real-world decision-making.",
   "Alongside this, my personal journey has been equally rooted in building resilience through experiences as a mountaineer, expedition leader, endurance runner, motorcyclist and solo traveller across multiple countries. These experiences have shaped not just physical endurance but also mental clarity, emotional balance and the ability to stay composed in uncertain situations.",
   "My approach to training reflects this integration. Each session is designed to be practical, engaging and experience-driven while also helping participants develop awareness, presence and confidence from within. The focus is not only on understanding situations but on how individuals think, respond and carry themselves within those situations.",
   "I work extensively with organisations to design and deliver programs that support both professional capability and overall well-being. These include areas such as workplace behaviour, safety awareness, leadership presence and personal effectiveness - delivered in a way that is relatable, applicable and grounded in real-life contexts.",
-  "In today’s evolving workplace, where automation and AI continue to transform roles and expectations, human capabilities such as awareness, resilience, communication, and clarity of thought are becoming increasingly critical. My programs are designed to strengthen these capabilities, enabling individuals to perform effectively while maintaining balance, confidence, and a strong sense of self.",
+  "In today's evolving workplace, where automation and AI continue to transform roles and expectations, human capabilities such as awareness, resilience, communication, and clarity of thought are becoming increasingly critical. My programs are designed to strengthen these capabilities, enabling individuals to perform effectively while maintaining balance, confidence, and a strong sense of self.",
 ];
 
 export default function CorporateWorkshopPage() {
@@ -38,7 +37,7 @@ export default function CorporateWorkshopPage() {
                     Wide workshop image
                   </p>
                   <p className="mt-3 text-sm leading-6 text-[#66584d]">
-                    Add corporate workshop visual here.
+                    Workshop setting and group learning visual
                   </p>
                 </div>
               </div>

@@ -55,8 +55,8 @@ export default function VideoTestimonials() {
           >
             <div className="relative flex aspect-video items-center justify-center rounded-[1.5rem] bg-[linear-gradient(135deg,#ead7c8,#fff8ef_48%,#dfe9d8)]">
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_24%_28%,rgba(255,255,255,0.75),transparent_28%),radial-gradient(circle_at_76%_68%,rgba(63,95,70,0.18),transparent_26%)]" />
-              <span className="relative flex h-16 w-16 items-center justify-center rounded-full bg-[#2f2822] text-2xl text-white shadow-lg transition group-hover:scale-[1.03]">
-                ▶
+              <span className="relative flex h-16 w-16 items-center justify-center rounded-full bg-[#2f2822] text-xs font-semibold uppercase tracking-[0.12em] text-white shadow-lg transition group-hover:scale-[1.03]">
+                Play
               </span>
               <div className="absolute bottom-6 left-6 right-6 rounded-2xl bg-white/75 p-5 backdrop-blur">
                 <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#7d8b65]">
@@ -81,10 +81,11 @@ export default function VideoTestimonials() {
                     ? "border-[#3f5f46] bg-[#f3eadb]"
                     : "border-[#e5d9c7] bg-white hover:bg-[#fbf8f1]"
                 }`}
+                aria-pressed={activeIndex === index}
               >
                 <div className="flex gap-4">
-                  <div className="flex aspect-video w-28 shrink-0 items-center justify-center rounded-2xl bg-[linear-gradient(135deg,#fff8ef,#dfe9d8)] text-[#3f5f46]">
-                    ▶
+                  <div className="flex aspect-video w-28 shrink-0 items-center justify-center rounded-2xl bg-[linear-gradient(135deg,#fff8ef,#dfe9d8)] text-xs font-semibold uppercase tracking-[0.12em] text-[#3f5f46]">
+                    Play
                   </div>
                   <div>
                     <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#7d8b65]">

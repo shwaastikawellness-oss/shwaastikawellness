@@ -13,7 +13,7 @@ const tabs = [
     domains: [
       {
         title: "Safety & Awareness",
-        text: "Workshops focused on personal safety, workplace safety, situational awareness, women’s safety, and building calm, confident responses under pressure.",
+        text: "Workshops focused on personal safety, workplace safety, situational awareness, women's safety, and building calm, confident responses under pressure.",
       },
       {
         title: "Emotional Intelligence & Workplace Behaviour",
@@ -48,7 +48,7 @@ const tabs = [
     paragraphs: [
       "The program is designed as a capability-building experience, combining real-life scenarios, behavioural insights and experiential learning to strengthen awareness, decision-making, and response under pressure.",
       "Sessions are interactive and engagement-driven, using discussions, scenario-based exercises, group activities, and guided techniques to build focus, composure and clarity in real situations.",
-      "Each workshop is customised based on the organisation’s context, audience profile, and objectives, and can be delivered across the workforce or tailored for specific groups.",
+      "Each workshop is customised based on the organisation's context, audience profile, and objectives, and can be delivered across the workforce or tailored for specific groups.",
     ],
   },
   {
@@ -149,7 +149,7 @@ export default function CorporateWorkshopTabs() {
                     {activeTab.image}
                   </p>
                   <p className="mt-3 text-sm leading-6 text-[#66584d]">
-                    Workshop image placeholder
+                    Workshop focus area
                   </p>
                 </div>
               </div>

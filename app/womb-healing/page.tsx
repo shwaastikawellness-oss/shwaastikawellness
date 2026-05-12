@@ -1,20 +1,19 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Reveal from "@/components/Reveal";
+import { createPageMetadata } from "../seo";
 
-export const metadata: Metadata = {
-  title: "Womb Healing & Prenatal Support",
+export const metadata: Metadata = createPageMetadata({
+  title: "Womb Healing & Prenatal Support | Preeti Semwal",
   description:
-    "Womb Healing and prenatal support with Preeti Semwal offers a nurturing space for pregnancy, emotional transitions, mother-baby connection, and mindful well-being.",
-  alternates: {
-    canonical: "/womb-healing",
-  },
-};
+    "Womb healing and prenatal support by Preeti Semwal offer a nurturing space for pregnancy, emotional transitions, mother-baby connection, and mindful well-being.",
+  path: "/womb-healing",
+});
 
 const approachParagraphs = [
   "Pregnancy is a deeply significant and transformative phase. It is not only about giving birth to a child but about nurturing the beginning of a new life.",
   "During this time, the mother becomes a primary space of support physically, emotionally and internally. The quality of this space shaped by her awareness, thoughts and daily practices, plays an important role in her own well-being and in the early environment surrounding the baby.",
-  "The experience of the baby in the womb is its earliest connection to the world. While it does not define everything that follows, it forms a meaningful foundation. The mother’s inner state her calm, balance and awareness can help create a more nurturing and supportive environment during this phase.",
+  "The experience of the baby in the womb is its earliest connection to the world. While it does not define everything that follows, it forms a meaningful foundation. The mother's inner state her calm, balance and awareness can help create a more nurturing and supportive environment during this phase.",
   "It is natural for many thoughts, emotions and impressions to arise during pregnancy. With the right guidance and conscious practices, this phase can become one of greater steadiness, clarity and inner ease. This work is designed to support you in moving through this phase with greater awareness and inner steadiness holding both the physical and subtle aspects of your experience with care.",
 ];
 

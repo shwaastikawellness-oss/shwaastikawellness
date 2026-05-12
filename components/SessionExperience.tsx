@@ -14,7 +14,7 @@ const services = [
     tone: "from-[#ead1bd] via-[#fff8ef] to-[#dfe9d8]",
     details: "Session Investment",
     pricing: [
-      ["Single Session (60–65 mins)", "INR 3,000 | USD 60"],
+      ["Single Session (60-65 mins)", "INR 3,000 | USD 60"],
       ["3-Session Journey", "INR 8,100 | USD 162", "(includes a 10% courtesy reduction)"],
     ],
   },
@@ -31,7 +31,7 @@ const services = [
   {
     title: "Corporate Workshop",
     intro: "Customized wellness and awareness work for groups.",
-    image: "/images/Book%20a%20Session/corporate%20workshop%20book%20a%20session.png",
+    image: "/images/Book%20a%20Session/corporate%20workshop%20book%20a%20session.jpg",
     imagePosition: "center center",
     maxImageWidth: "max-w-none",
     tone: "from-[#d7dfd1] via-[#f8f2e7] to-[#cdd5cf]",
@@ -48,10 +48,10 @@ const services = [
     tone: "from-[#f1d8cf] via-[#fff8ef] to-[#e7eadf]",
     details: "Session Investment",
     pricing: [
-      ["Single Session (60–65 mins)", "INR 3,500 | USD 45"],
+      ["Single Session (60-65 mins)", "INR 3,500 | USD 45"],
       ["3-Session Support Journey", "INR 9,500 | USD 120", "(includes a courtesy reduction)"],
       [
-        "Monthly Deep Support Program – 8 Sessions",
+        "Monthly Deep Support Program - 8 Sessions",
         "INR 18,400 | USD 225",
         "(approximately 2 sessions per week across the month)",
       ],

@@ -1,20 +1,19 @@
 import type { Metadata } from "next";
 import FAQ from "@/components/FAQ";
 import Reveal from "@/components/Reveal";
+import { createPageMetadata } from "../seo";
 
-export const metadata: Metadata = {
-  title: "Intuitive Healing",
+export const metadata: Metadata = createPageMetadata({
+  title: "Intuitive Healing | Preeti Semwal",
   description:
-    "Intuitive healing sessions with Preeti Semwal support emotional, mental, physical and spiritual balance through energy work, awareness, breath, and gentle practices.",
-  alternates: {
-    canonical: "/intuitive-healing",
-  },
-};
+    "Discover intuitive healing sessions by Preeti Semwal using energy awareness, breath, gentle practices, and inner guidance for whole-being support.",
+  path: "/intuitive-healing",
+});
 
 const introParagraphs = [
   "Healing is for those who seek to reach the root of their physical, emotional and spiritual concerns. It is also for those who wish to explore the deeper reasons behind their issues through the language of energy. When energy within the body and mind is disturbed, it shows up as an imbalance, sometimes felt in the body, sometimes in emotions or thoughts and at times as a sense of spiritual disconnection. These imbalances hold people back from living a healthy, joyful and fulfilling life.",
   "We are more than flesh and bone we are converging fields of energy, emotion, thought, and spirit. When these fields fall out of balance, disconnection and disease arise as chronic pain, anxiety, fatigue, or a deep sense of emptiness.",
-  "Intuitive Healing works where the surface can’t reach. Rooted in my Himalayan lineage and guided by divine grace, each session weaves together:",
+  "Intuitive Healing works where the surface cannot reach. Rooted in my Himalayan lineage and guided by divine grace, each session weaves together:",
   "Healing flows not just to your body but into your mind, emotions and soul - awakening your innate strength and restoring your natural state of wholeness.",
 ];
 
@@ -49,7 +48,7 @@ const intuitiveFaqs = [
   {
     question: "Is this a medical treatment?",
     answer:
-      "This is intuitive healing-alternative treatments for deep rooted chronic issues. It not a substitute for licensed medical or mental-health care.",
+      "This is an intuitive healing session for deeper support. It is not a substitute for licensed medical or mental-health care.",
   },
   {
     question: "Can I seek guidance about someone else?",

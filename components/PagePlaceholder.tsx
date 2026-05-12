@@ -12,7 +12,7 @@ type PagePlaceholderProps = {
 export default function PagePlaceholder({
   eyebrow,
   title,
-  intro = "Content will be added soon.",
+  intro = "Articles are being prepared and reviewed before publication.",
   ctaLabel = "Book a Session",
   ctaHref = "/book-a-session",
 }: PagePlaceholderProps) {
@@ -44,10 +44,10 @@ export default function PagePlaceholder({
               <div className="flex h-full items-center justify-center rounded-[1.5rem] border border-dashed border-[#c7b28e] bg-[linear-gradient(145deg,#fffdf8,#e5eddf)] text-center">
                 <div>
                   <p className="text-sm font-semibold uppercase tracking-[0.22em] text-[#7d8b65]">
-                    Image placeholder
+                    Editorial Notes
                   </p>
                   <p className="mt-3 text-sm leading-6 text-[#76695d]">
-                    Page image will be added here.
+                    New writing is reviewed before it appears on the site.
                   </p>
                 </div>
               </div>
@@ -60,14 +60,14 @@ export default function PagePlaceholder({
         <Reveal>
           <div className="mx-auto max-w-7xl rounded-[1.75rem] border border-[#e5d9c7] bg-[#fbf8f1] p-6 shadow-sm sm:p-8 lg:p-10">
             <p className="text-sm font-semibold uppercase tracking-[0.22em] text-[#7d8b65]">
-              Content placeholder
+              Editorial Queue
             </p>
             <h2 className="mt-3 text-3xl font-semibold text-[#2f2822] sm:text-4xl">
-              Detailed content will be added soon.
+              Upcoming insights are being prepared with care.
             </h2>
             <p className="mt-5 max-w-3xl text-base leading-8 text-[#6a5e52]">
-              This section is prepared for service details, program structure, benefits,
-              supporting copy, testimonials, FAQs, or future imagery based on this page.
+              Future articles will focus on emotional balance, inner clarity, healing
+              practices, and workplace well-being.
             </p>
           </div>
         </Reveal>
@@ -78,7 +78,7 @@ export default function PagePlaceholder({
           <div className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-6 rounded-[1.75rem] bg-[#3f5f46] p-6 text-white shadow-xl shadow-[#3f5f46]/15 sm:p-8 lg:flex-row lg:items-center">
             <div>
               <p className="text-sm font-semibold uppercase tracking-[0.22em] text-[#dfe9d8]">
-                CTA placeholder
+                Begin Here
               </p>
               <h2 className="mt-3 text-3xl font-semibold">Ready to begin your wellness journey?</h2>
             </div>

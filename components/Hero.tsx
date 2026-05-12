@@ -6,7 +6,7 @@ import Link from "next/link";
 import { useRef } from "react";
 
 const whatsappUrl =
-  "https://api.whatsapp.com/send/?phone=919310685448&text=Hello+%EF%BF%BD%0AWelcome+to+Shwaastika+Wellness.%0A%0AThank+you+for+reaching+out+through+our+website.%0APlease+tell+us+how+we+can+help+you+today.%0A%0AYou+can+share%3A%0A%E2%80%A2+Your+concern+or+goal%0A%E2%80%A2+Preferred+service%0A%E2%80%A2+Suitable+time+for+a+call%2Fsession%0A%0AOur+team+will+respond+shortly+%EF%BF%BD&type=phone_number&app_absent=0";
+  "https://api.whatsapp.com/send/?phone=919310685448&text=Hello%0AWelcome+to+SHWAASTIKA+WELLNESS.%0A%0AThank+you+for+reaching+out+through+our+website.%0APlease+tell+us+how+we+can+help+you+today.%0A%0AYou+can+share%3A%0A-+Your+concern+or+goal%0A-+Preferred+service%0A-+Suitable+time+for+a+call%2Fsession%0A%0AOur+team+will+respond+shortly&type=phone_number&app_absent=0";
 
 export default function Hero() {
   const visualRef = useRef<HTMLDivElement>(null);
@@ -35,7 +35,7 @@ export default function Hero() {
               Preeti Semwal
             </h1>
             <p className="mt-3 text-xs font-semibold uppercase tracking-[0.22em] text-[#7a9272]">
-              SHWAASTIKA WELLNESS
+              Shwaastika Wellness
             </p>
             <p className="mt-5 max-w-xl text-base leading-8 text-[#5f5349] sm:text-[17px]">
               Wellness & Personal Development Practice | Guided sessions and intuitive healing
@@ -79,8 +79,8 @@ export default function Hero() {
               className="absolute -inset-x-4 -inset-y-6"
             >
               <Image
-                src="/images/Home.png"
-                alt="Preeti Semwal intuitive healing session at SHWAASTIKA WELLNESS"
+                src="/images/Home.jpg"
+                alt="Preeti Semwal intuitive healing session at Shwaastika Wellness"
                 fill
                 className="object-cover object-center"
                 sizes="(min-width: 1024px) 50vw, 100vw"

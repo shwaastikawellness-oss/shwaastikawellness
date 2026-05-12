@@ -3,29 +3,28 @@ import ImageCarousel, { type CarouselImage } from "@/components/ImageCarousel";
 import ReviewCarousel from "@/components/ReviewCarousel";
 import VideoTestimonials from "@/components/VideoTestimonials";
 import Reveal from "@/components/Reveal";
+import { createPageMetadata } from "../seo";
 
-export const metadata: Metadata = {
-  title: "Testimonials",
+export const metadata: Metadata = createPageMetadata({
+  title: "Testimonials | Preeti Semwal",
   description:
-    "Read and watch testimonials, client stories, shared healing experiences, and Google reviews for Preeti Semwal's Healing Space.",
-  alternates: {
-    canonical: "/testimonials",
-  },
-};
+    "Read shared experiences, client reflections, and public reviews for healing sessions and workshops by Preeti Semwal.",
+  path: "/testimonials",
+});
 
 const clientTestimonialImages: CarouselImage[] = [
-  { title: "Shared Path", label: "Chat screenshot", tone: "from-[#ead7c8] via-[#fff8ef] to-[#dfe9d8]" },
-  { title: "Mind Body Spirit", label: "Story screenshot", tone: "from-[#e9ddf1] via-[#fffdf8] to-[#dfe9d8]" },
-  { title: "Healing Parent & Child", label: "Client screenshot", tone: "from-[#dce9ef] via-[#fff8ef] to-[#ead7c8]" },
-  { title: "Session Reflection", label: "Review screenshot", tone: "from-[#f3eadb] via-[#fffdf8] to-[#c7d6bd]" },
-  { title: "Clarity Shared", label: "Chat screenshot", tone: "from-[#e5eddf] via-[#fff8ef] to-[#ead7c8]" },
+  { title: "Shared Path", label: "Client reflection", tone: "from-[#ead7c8] via-[#fff8ef] to-[#dfe9d8]" },
+  { title: "Mind Body Spirit", label: "Client reflection", tone: "from-[#e9ddf1] via-[#fffdf8] to-[#dfe9d8]" },
+  { title: "Healing Parent & Child", label: "Client reflection", tone: "from-[#dce9ef] via-[#fff8ef] to-[#ead7c8]" },
+  { title: "Session Reflection", label: "Client reflection", tone: "from-[#f3eadb] via-[#fffdf8] to-[#c7d6bd]" },
+  { title: "Clarity Shared", label: "Client reflection", tone: "from-[#e5eddf] via-[#fff8ef] to-[#ead7c8]" },
 ];
 
 const googleReviewImages: CarouselImage[] = [
-  { title: "Google Review 1", label: "Google screenshot", tone: "from-[#fff8ef] via-[#e5eddf] to-[#d7e4f0]" },
-  { title: "Google Review 2", label: "Google screenshot", tone: "from-[#f3eadb] via-[#fffdf8] to-[#dfe9d8]" },
-  { title: "Google Review 3", label: "Google screenshot", tone: "from-[#ead7c8] via-[#fff8ef] to-[#dfe9d8]" },
-  { title: "Google Review 4", label: "Google screenshot", tone: "from-[#e9ddf1] via-[#fffdf8] to-[#f3eadb]" },
+  { title: "Google Review 1", label: "Public review", tone: "from-[#fff8ef] via-[#e5eddf] to-[#d7e4f0]" },
+  { title: "Google Review 2", label: "Public review", tone: "from-[#f3eadb] via-[#fffdf8] to-[#dfe9d8]" },
+  { title: "Google Review 3", label: "Public review", tone: "from-[#ead7c8] via-[#fff8ef] to-[#dfe9d8]" },
+  { title: "Google Review 4", label: "Public review", tone: "from-[#e9ddf1] via-[#fffdf8] to-[#f3eadb]" },
 ];
 
 export default function TestimonialsPage() {

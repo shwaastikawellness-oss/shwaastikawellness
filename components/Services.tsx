@@ -40,7 +40,7 @@ export default function Services() {
           <h2 className="mt-3 text-3xl font-semibold text-[#2f2822] sm:text-4xl">
             Training experiences designed for real workplace change.
           </h2>
-          <p className="mt-5 text-lg leading-8 text-[#6a5e52]">
+          <p className="mt-5 text-justify text-lg leading-8 text-[#6a5e52]">
             Choose focused modules or combine them into a custom development journey for your team.
           </p>
         </Reveal>
@@ -57,7 +57,7 @@ export default function Services() {
                   <span className="h-5 w-5 rounded-full border-2 border-[#6b7d55]" />
                 </div>
                 <h3 className="text-xl font-semibold text-[#332b24]">{service.title}</h3>
-                <p className="mt-4 text-sm leading-7 text-[#6f6256]">{service.description}</p>
+                <p className="mt-4 text-justify text-sm leading-7 text-[#6f6256]">{service.description}</p>
                 <Link
                   href="/corporate-workshop"
                   className="mt-6 inline-flex text-sm font-semibold text-[#3f5f46] hover:text-[#2f4734]"

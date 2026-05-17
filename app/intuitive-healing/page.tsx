@@ -77,7 +77,7 @@ export default function IntuitiveHealingPage() {
       <section className="bg-white px-5 py-16 sm:px-8 lg:px-10">
         <div className="mx-auto max-w-5xl">
           <Reveal>
-            <article className="space-y-8 text-lg leading-9 text-[#3f372f]">
+            <article className="space-y-8 text-justify text-lg leading-9 text-[#3f372f]">
               <p>{introParagraphs[0]}</p>
 
               <div className="rounded-[2rem] border border-[#e5d9c7] bg-[#fbf8f1] p-6 shadow-sm sm:p-8">
@@ -89,14 +89,14 @@ export default function IntuitiveHealingPage() {
               <p>{introParagraphs[1]}</p>
 
               <div className="rounded-[2rem] border border-[#e5d9c7] bg-[#f7f1e4] p-6 sm:p-8">
-                <p className="text-lg font-semibold leading-8 text-[#2f2822]">
+                <p className="text-justify text-lg font-semibold leading-8 text-[#2f2822]">
                   {introParagraphs[2]}
                 </p>
                 <ul className="mt-6 grid gap-4">
                   {features.map((feature) => (
-                    <li key={feature} className="flex gap-3 text-base leading-7 text-[#51473f]">
+                    <li key={feature} className="flex gap-3 text-justify text-base leading-7 text-[#51473f]">
                       <span className="mt-2.5 h-2.5 w-2.5 shrink-0 rounded-full bg-[#3f5f46]" />
-                      <span>{feature}</span>
+                      <span className="min-w-0 flex-1 text-justify">{feature}</span>
                     </li>
                   ))}
                 </ul>
@@ -106,20 +106,6 @@ export default function IntuitiveHealingPage() {
             </article>
           </Reveal>
         </div>
-      </section>
-
-      <section className="bg-[#fbf8f1] px-5 py-16 text-center sm:px-8 lg:px-10">
-        <Reveal>
-          <div className="mx-auto max-w-6xl">
-            <p className="text-xl leading-9 text-[#2f2822] sm:text-3xl sm:leading-[1.55] lg:text-4xl">
-              The work also holds space for deeper aspects of feminine well-being,
-              including support during phases such as{" "}
-              <strong>pregnancy, emotional transitions and inner nurturing</strong>{" "}
-              allowing the body and mind to remain supported, balanced and connected
-              through these experiences.
-            </p>
-          </div>
-        </Reveal>
       </section>
 
       <FAQ
@@ -141,11 +127,11 @@ export default function IntuitiveHealingPage() {
 
             <div className="rounded-[2rem] border border-[#e5d9c7] bg-[#fbf8f1] p-6 shadow-sm sm:p-8 lg:p-10">
               <h2 className="text-2xl font-semibold text-[#2f2822] sm:text-3xl">For Online Session</h2>
-              <ul className="mt-6 space-y-3 text-base leading-7 text-[#2f2822] sm:mt-7 sm:space-y-4 sm:text-xl sm:leading-9">
+              <ul className="mt-6 space-y-3 text-justify text-base leading-7 text-[#2f2822] sm:mt-7 sm:space-y-4 sm:text-xl sm:leading-9">
                 {instructions.map((instruction) => (
                   <li key={instruction} className="flex gap-4">
                     <span className="mt-2.5 h-2 w-2 shrink-0 rounded-full bg-[#3f5f46] sm:mt-4 sm:h-2.5 sm:w-2.5" />
-                    <span>{instruction}</span>
+                    <span className="min-w-0 flex-1 text-justify">{instruction}</span>
                   </li>
                 ))}
               </ul>

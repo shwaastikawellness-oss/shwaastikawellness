@@ -1,6 +1,5 @@
 "use client";
 
-import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -73,25 +72,22 @@ export default function Header() {
         >
           <span
             aria-hidden="true"
-            className="flex h-11 w-11 items-center justify-center overflow-hidden rounded-full border border-[#c8d9e5] bg-white/75 shadow-sm"
+            className="flex h-12 w-12 items-center justify-center overflow-hidden rounded-full border border-[#c8d9e5] bg-white/75 shadow-sm sm:h-14 sm:w-14"
           >
             <Image
               src="/images/logo.png"
               alt=""
-              width={44}
-              height={44}
+              width={56}
+              height={56}
               className="h-full w-full object-contain"
             />
           </span>
 
           <div className="leading-tight">
-            <p className="text-[14px] font-semibold tracking-[0.04em] text-[#263542]">
+            <p className="text-base font-semibold tracking-[0.04em] text-[#263542] sm:text-lg">
               Shwaastika Wellness
             </p>
-            <p className="text-[10px] uppercase tracking-[0.18em] text-[#8b9a72]">
-              AKR WELLNESS
-            </p>
-            <p className="text-[10px] italic text-[#8a7764]">
+            <p className="text-xs italic text-[#8a7764] sm:text-[13px]">
               By Preeti Semwal
             </p>
           </div>
@@ -188,14 +184,12 @@ export default function Header() {
         </button>
       </nav>
 
-      <AnimatePresence>
+      <div
+        className={`overflow-hidden border-t border-white/70 bg-[#f7f2e8] transition-[max-height,opacity] duration-300 xl:hidden ${
+          isOpen ? "max-h-[32rem] opacity-100" : "max-h-0 opacity-0"
+        }`}
+      >
         {isOpen ? (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            className="overflow-hidden border-t border-white/70 bg-[#f7f2e8] xl:hidden"
-          >
             <div className="mx-auto max-w-7xl px-5 py-4 sm:px-8">
               <ul className="flex flex-col gap-1.5">
                 {allLinks.map((link) => (
@@ -225,9 +219,8 @@ export default function Header() {
                 Book a Consultation
               </Link>
             </div>
-          </motion.div>
         ) : null}
-      </AnimatePresence>
+      </div>
     </header>
   );
 }

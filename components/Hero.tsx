@@ -1,27 +1,13 @@
-"use client";
-
-import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { useRef } from "react";
 
 const whatsappUrl =
   "https://api.whatsapp.com/send/?phone=919310685448&text=Hello%0AWelcome+to+SHWAASTIKA+WELLNESS.%0A%0AThank+you+for+reaching+out+through+our+website.%0APlease+tell+us+how+we+can+help+you+today.%0A%0AYou+can+share%3A%0A-+Your+concern+or+goal%0A-+Preferred+service%0A-+Suitable+time+for+a+call%2Fsession%0A%0AOur+team+will+respond+shortly&type=phone_number&app_absent=0";
 
 export default function Hero() {
-  const visualRef = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: visualRef,
-    offset: ["start end", "end start"],
-  });
-  const visualY = useTransform(scrollYProgress, [0, 1], ["-2%", "4%"]);
-
   return (
     <section className="bg-[#fbf8f1] px-4 pb-12 pt-7 sm:px-6 lg:px-8 lg:pb-16 lg:pt-9">
-      <motion.div
-        initial={false}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.85, ease: "easeOut" }}
+      <div
         className="relative isolate mx-auto max-w-[92rem] overflow-hidden rounded-[1.75rem] border border-white/70 bg-[#dceef4] shadow-xl shadow-[#6b513b]/8"
       >
         <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_18%_22%,rgba(255,255,255,0.78),transparent_28%),radial-gradient(circle_at_78%_18%,rgba(223,236,246,0.42),transparent_26%),linear-gradient(135deg,#eef8fb_0%,#f8f4ea_58%,#edf6fb_100%)]" />
@@ -37,7 +23,7 @@ export default function Hero() {
             <p className="mt-3 text-xs font-semibold uppercase tracking-[0.22em] text-[#7a9272]">
               Shwaastika Wellness
             </p>
-            <p className="mt-5 max-w-xl text-base leading-8 text-[#5f5349] sm:text-[17px]">
+            <p className="mt-5 max-w-xl text-justify text-base leading-8 text-[#5f5349] sm:text-[17px]">
               Wellness & Personal Development Practice | Guided sessions and intuitive healing
             </p>
             <p className="mt-3 text-base font-semibold italic text-[#7a6b5e]">
@@ -73,11 +59,8 @@ export default function Hero() {
             </a>
           </div>
 
-          <div ref={visualRef} className="relative min-h-[320px] overflow-hidden rounded-[1.75rem] bg-[#eef8fb] shadow-lg shadow-[#6b513b]/8 sm:min-h-[390px] lg:min-h-[450px]">
-            <motion.div
-              style={{ y: visualY }}
-              className="absolute -inset-x-4 -inset-y-6"
-            >
+          <div className="relative min-h-[320px] overflow-hidden rounded-[1.75rem] bg-[#eef8fb] shadow-lg shadow-[#6b513b]/8 sm:min-h-[390px] lg:min-h-[450px]">
+            <div className="absolute -inset-x-4 -inset-y-6" style={{ position: "absolute" }}>
               <Image
                 src="/images/Home.jpg"
                 alt="Preeti Semwal intuitive healing session at Shwaastika Wellness"
@@ -88,11 +71,11 @@ export default function Hero() {
                 fetchPriority="high"
                 quality={95}
               />
-            </motion.div>
+            </div>
             <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[#fbf8f1]/80 to-transparent" />
           </div>
         </div>
-      </motion.div>
+      </div>
     </section>
   );
 }

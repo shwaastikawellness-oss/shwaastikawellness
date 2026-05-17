@@ -105,7 +105,7 @@ export default function TestimonialsPage() {
             <h1 className="mt-4 text-4xl font-semibold leading-[1.08] text-[#2f2822] sm:text-5xl lg:text-6xl">
               Testimonials
             </h1>
-            <p className="mx-auto mt-6 max-w-3xl text-xl leading-9 text-[#675b50]">
+            <p className="mx-auto mt-6 max-w-3xl text-justify text-xl leading-9 text-[#675b50]">
               Real experiences from people who have found clarity, healing, and deeper alignment.
             </p>
           </div>

@@ -11,7 +11,7 @@ export default function HomeIntro() {
         <h2 className="mt-3 text-3xl font-semibold leading-tight text-[#2f2822] sm:text-4xl">
           A Space to Return Home to Yourself
         </h2>
-        <div className="mx-auto mt-8 max-w-4xl space-y-7 text-left text-lg leading-9 text-[#3f372f] sm:text-xl sm:leading-10">
+        <div className="mx-auto mt-8 max-w-4xl space-y-7 text-justify text-lg leading-9 text-[#3f372f] sm:text-xl sm:leading-10">
           <p>
             Wellness comes with a choice. A choice to look within, to listen deeply, and to
             surrender to the wisdom beyond the mind. True transformation doesn&apos;t come
@@ -21,7 +21,7 @@ export default function HomeIntro() {
           <p>
             This is the space I hold: a space where you are invited to reconnect with
             yourself, release what weighs you down and step into balance, joy and clarity.
-            Whether through intuitive healing or psychic guidance, the journey begins when
+            Whether through intuitive healing or inner clarity, the journey begins when
             you are ready to surrender - ready to return home to yourself.
           </p>
           <p className="pt-2 text-right font-semibold italic text-[#7a6b5e]">

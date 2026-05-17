@@ -79,7 +79,7 @@ export default function WombHealingPage() {
                 Womb Healing
               </p>
               <h2 className="mt-3 text-3xl font-semibold text-[#2f2822]">Womb Healing</h2>
-              <div className="mt-7 space-y-6 text-lg leading-8 text-[#4b423b]">
+              <div className="mt-7 space-y-6 text-justify text-lg leading-8 text-[#4b423b]">
                 {wombDescription.map((paragraph) => (
                   <p key={paragraph}>{paragraph}</p>
                 ))}
@@ -96,7 +96,7 @@ export default function WombHealingPage() {
               The Approach
             </p>
             <h2 className="mt-3 text-3xl font-semibold text-[#2f2822]">The Approach</h2>
-            <div className="mt-7 space-y-7 text-lg leading-9 text-[#4b423b]">
+            <div className="mt-7 space-y-7 text-justify text-lg leading-9 text-[#4b423b]">
               {approachParagraphs.map((paragraph) => (
                 <p key={paragraph}>{paragraph}</p>
               ))}
@@ -112,15 +112,15 @@ export default function WombHealingPage() {
             <h2 className="text-center text-4xl font-semibold text-[#1d63ff]">
               What the session includes
             </h2>
-            <ul className="mx-auto mt-8 max-w-4xl space-y-4 text-lg leading-8 text-[#2f2822]">
+            <ul className="mx-auto mt-8 max-w-4xl space-y-4 text-justify text-lg leading-8 text-[#2f2822]">
               {sessionIncludes.map((item) => (
                 <li key={item} className="flex gap-3">
                   <span className="mt-3 h-2 w-2 shrink-0 rounded-full bg-[#3f5f46]" />
-                  <span>{item}</span>
+                  <span className="min-w-0 flex-1 text-justify">{item}</span>
                 </li>
               ))}
             </ul>
-            <p className="mx-auto mt-6 max-w-4xl text-lg leading-9 text-[#2f2822]">
+            <p className="mx-auto mt-6 max-w-4xl text-justify text-lg leading-9 text-[#2f2822]">
               These elements are woven together to support not just the physical body but
               also the deeper emotional and energetic experience of this phase.
             </p>
@@ -135,7 +135,7 @@ export default function WombHealingPage() {
               <h2 className="text-3xl font-semibold text-[#2f2822]">
                 Womb & Baby Connection
               </h2>
-              <div className="mt-7 space-y-6 text-lg leading-8 text-[#4b423b]">
+              <div className="mt-7 space-y-6 text-justify text-lg leading-8 text-[#4b423b]">
                 <p>
                   The work is held with a deep sensitivity to the womb space, creating a
                   sense of calm, connection and support that can be experienced by both
@@ -155,11 +155,11 @@ export default function WombHealingPage() {
               <h2 className="text-3xl font-semibold text-[#2f2822]">
                 This is for you if you are:
               </h2>
-              <ul className="mt-7 space-y-4 text-lg leading-8 text-[#4b423b]">
+              <ul className="mt-7 space-y-4 text-justify text-lg leading-8 text-[#4b423b]">
                 {forYouItems.map((item) => (
                   <li key={item} className="flex gap-3">
                     <span className="mt-3 h-2 w-2 shrink-0 rounded-full bg-[#3f5f46]" />
-                    <span>{item}</span>
+                    <span className="min-w-0 flex-1 text-justify">{item}</span>
                   </li>
                 ))}
               </ul>

@@ -7,7 +7,7 @@ import { KeyboardEvent, useState } from "react";
 const tabs = [
   {
     label: "Training Domains",
-    imageSrc: "/images/corporate%20workshop/training%20domains.png",
+    imageSrc: "/images/corporate%20workshop/training%20domains.webp",
     imageAlt: "Corporate workshop training domains visual",
     imageAspect: "aspect-[4/3]",
     imageFit: "object-cover",
@@ -47,9 +47,9 @@ const tabs = [
   },
   {
     label: "Our Approach",
-    imageSrc: "/images/corporate%20workshop/our%20approach.jpg",
-    imageAlt: "Corporate workshop approach visual",
-    imageAspect: "aspect-[4/3]",
+    imageSrc: "/images/corporate%20workshop/our%20approach.png",
+    imageAlt: "Corporate team workshop and group learning visual",
+    imageAspect: "aspect-[16/10]",
     imageFit: "object-cover",
     heading: "One of a kind designs",
     paragraphs: [
@@ -60,7 +60,7 @@ const tabs = [
   },
   {
     label: "Delivery Options",
-    imageSrc: "/images/corporate%20workshop/Delivery%20option.JPG",
+    imageSrc: "/images/corporate%20workshop/Delivery%20option.webp",
     imageAlt: "Corporate workshop delivery options visual",
     imageAspect: "aspect-[3/4]",
     imageFit: "object-contain",
@@ -73,9 +73,9 @@ const tabs = [
   },
   {
     label: "Who Benefits",
-    imageSrc: "/images/corporate%20workshop/Hero.JPG",
+    imageSrc: "/images/corporate%20workshop/Who%20benefits.png",
     imageAlt: "Corporate workshop participants and benefits visual",
-    imageAspect: "aspect-[4/3]",
+    imageAspect: "aspect-[16/10]",
     imageFit: "object-cover",
     heading: "Who Benefits",
     bullets: [
@@ -176,7 +176,7 @@ export default function CorporateWorkshopTabs() {
               </h2>
 
               {"intro" in activeTab ? (
-                <p className="mt-6 text-lg leading-8 text-[#5d5045]">{activeTab.intro}</p>
+                <p className="mt-6 text-justify text-lg leading-8 text-[#5d5045]">{activeTab.intro}</p>
               ) : null}
 
               {activeTab.domains ? (
@@ -184,7 +184,7 @@ export default function CorporateWorkshopTabs() {
                   {activeTab.domains.map((domain) => (
                     <div key={domain.title}>
                       <h3 className="font-semibold text-[#2f2822]">{domain.title}</h3>
-                      <p className="mt-1 text-base leading-7 text-[#66584d]">{domain.text}</p>
+                      <p className="mt-1 text-justify text-base leading-7 text-[#66584d]">{domain.text}</p>
                     </div>
                   ))}
                 </div>
@@ -194,7 +194,7 @@ export default function CorporateWorkshopTabs() {
                 <div className="mt-7 space-y-0">
                   {activeTab.paragraphs.map((paragraph, index) => (
                     <div key={paragraph}>
-                      <p className="py-5 text-lg leading-9 text-[#4b423b]">{paragraph}</p>
+                      <p className="py-5 text-justify text-lg leading-9 text-[#4b423b]">{paragraph}</p>
                       {index < activeTab.paragraphs.length - 1 ? (
                         <motion.div
                           initial={{ scaleX: 0 }}
@@ -217,14 +217,14 @@ export default function CorporateWorkshopTabs() {
                       className="rounded-[1.5rem] border border-[#e5d9c7] bg-[#fbf8f1] p-5 shadow-sm"
                     >
                       <div className="mb-4 h-10 w-10 rounded-2xl bg-[#dfe9d8]" />
-                      <p className="text-base font-semibold leading-7 text-[#2f2822]">{card}</p>
+                      <p className="text-lg font-semibold leading-7 text-[#2f2822]">{card}</p>
                     </motion.div>
                   ))}
                 </div>
               ) : null}
 
               {activeTab.bullets ? (
-                <ul className="mt-8 space-y-5 text-2xl leading-9 text-[#2f2822]">
+                <ul className="mt-8 space-y-5 text-justify text-lg leading-8 text-[#2f2822]">
                   {activeTab.bullets.map((bullet) => (
                     <motion.li
                       key={bullet}
@@ -234,7 +234,7 @@ export default function CorporateWorkshopTabs() {
                       className="flex gap-4"
                     >
                       <span className="mt-4 h-2.5 w-2.5 shrink-0 rounded-full bg-[#3f5f46]" />
-                      <span>{bullet}</span>
+                      <span className="min-w-0 flex-1 text-justify">{bullet}</span>
                     </motion.li>
                   ))}
                 </ul>

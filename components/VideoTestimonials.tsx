@@ -87,7 +87,7 @@ export default function VideoTestimonials() {
             transition={{ duration: 0.45 }}
             className="relative mx-auto w-full max-w-[820px] overflow-hidden rounded-[1.75rem] border border-[#e5d9c7] bg-[#fbf8f1] p-3 shadow-xl shadow-[#6b513b]/10"
           >
-            <div className="relative overflow-hidden rounded-[1.5rem] bg-[linear-gradient(135deg,#ead7c8,#fff8ef_48%,#dfe9d8)]">
+            <div className="relative mx-auto aspect-[9/16] w-full max-w-[430px] overflow-hidden rounded-[1.5rem] bg-[linear-gradient(135deg,#ead7c8,#fff8ef_48%,#dfe9d8)] sm:aspect-video sm:max-w-none">
               <video
                 key={activeVideo.src}
                 ref={videoRef}
@@ -98,7 +98,7 @@ export default function VideoTestimonials() {
                 onPlay={() => setIsPlaying(true)}
                 onPause={() => setIsPlaying(false)}
                 onEnded={() => setIsPlaying(false)}
-                className="h-[250px] w-full bg-[#17130f] object-contain sm:h-[360px] lg:h-[430px] xl:h-[460px]"
+                className="h-full w-full bg-[#17130f] object-cover sm:object-contain"
                 aria-label={activeVideo.title}
               />
               {!isPlaying ? (
@@ -109,7 +109,7 @@ export default function VideoTestimonials() {
                   <h3 className="mt-1 text-lg font-semibold text-[#2f2822] sm:mt-2 sm:text-2xl">
                     {activeVideo.title}
                   </h3>
-                  <p className="mt-1 hidden text-sm text-[#66584d] sm:block">{activeVideo.note}</p>
+                  <p className="mt-1 hidden text-justify text-sm text-[#66584d] sm:block">{activeVideo.note}</p>
                 </div>
               ) : null}
             </div>

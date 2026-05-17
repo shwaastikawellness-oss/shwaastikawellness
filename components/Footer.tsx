@@ -19,19 +19,18 @@ export default function Footer() {
       <div className="mx-auto grid max-w-7xl gap-6 sm:gap-8 lg:grid-cols-[1.05fr_1fr_0.9fr] lg:items-start">
         <div>
           <div className="flex items-center gap-3">
-            <span className="flex h-9 w-9 shrink-0 items-center justify-center overflow-hidden rounded-full border border-[#d7c8ad]/70 bg-[#fbf8f1] p-0.5 text-xs font-semibold text-[#f3eadb] sm:h-10 sm:w-10">
+            <span className="flex h-11 w-11 shrink-0 items-center justify-center overflow-hidden rounded-full border border-[#d7c8ad]/70 bg-[#fbf8f1] p-0.5 text-xs font-semibold text-[#f3eadb] sm:h-12 sm:w-12">
               <Image
                 src="/images/logo.png"
                 alt=""
-                width={40}
-                height={40}
+                width={48}
+                height={48}
                 className="h-full w-full rounded-full object-contain"
               />
             </span>
             <div>
-              <p className="text-sm font-semibold leading-tight sm:text-base">Shwaastika Wellness</p>
-              <p className="text-[10px] uppercase tracking-[0.16em] text-[#c7d6bd] sm:text-[11px] sm:tracking-[0.18em]">AKR WELLNESS</p>
-              <p className="text-[11px] italic text-[#c7bda8] sm:text-xs">By Preeti Semwal</p>
+              <p className="text-base font-semibold leading-tight sm:text-lg">Shwaastika Wellness</p>
+              <p className="text-xs italic text-[#c7bda8] sm:text-sm">By Preeti Semwal</p>
             </div>
           </div>
           <p className="mt-3 max-w-sm text-sm font-semibold italic leading-6 text-[#f3eadb] sm:mt-4 sm:text-base sm:leading-7">

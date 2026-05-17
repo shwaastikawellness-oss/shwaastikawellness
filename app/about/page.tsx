@@ -56,7 +56,7 @@ export default function AboutPage() {
               <h1 className="mt-3 max-w-4xl text-4xl font-semibold leading-[1.08] text-[#2f2822] sm:text-5xl lg:text-6xl">
                 About Preeti Semwal
               </h1>
-              <p className="mt-4 max-w-2xl text-lg leading-8 text-[#675b50] sm:text-xl sm:leading-9">
+              <p className="mt-4 max-w-2xl text-justify text-lg leading-8 text-[#675b50] sm:text-xl sm:leading-9">
                 Guided healing rooted in intuition, ancestral wisdom, and holistic well-being.
               </p>
               <div className="mt-5 h-px w-24 bg-[#b9a27e]" />
@@ -78,7 +78,7 @@ export default function AboutPage() {
                 A sacred space for balance, resilience and well-being.
               </h2>
               <div className="mt-7 h-px w-24 bg-[#d7c6a9]" />
-              <div className="mt-8 space-y-7 text-lg leading-9 text-[#554b43]">
+              <div className="mt-8 space-y-7 text-justify text-lg leading-9 text-[#554b43]">
                 <p>
                   I am an intuitive energy healer devoted to helping individuals restore
                   balance, resilience and well-being. Born into a sacred lineage of
@@ -150,7 +150,7 @@ export default function AboutPage() {
                     <span className="h-5 w-5 rounded-full border-2 border-[#6b7d55]" />
                   </div>
                   <h3 className="text-2xl font-semibold text-[#2f2822]">{block.title}</h3>
-                  <div className="mt-5 space-y-4 text-base leading-8 text-[#675b50]">
+                  <div className="mt-5 space-y-4 text-justify text-base leading-8 text-[#675b50]">
                     {block.text.split("\n\n").map((paragraph) => (
                       <p key={paragraph}>{paragraph}</p>
                     ))}

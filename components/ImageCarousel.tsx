@@ -98,7 +98,10 @@ export default function ImageCarousel({ eyebrow, heading, images }: ImageCarouse
                 className="group w-full rounded-[1.5rem] border border-[#e5d9c7] bg-white p-2.5 text-left shadow-sm transition hover:-translate-y-1 hover:shadow-xl hover:shadow-[#6b513b]/10"
                 aria-label={`Open ${image.title}`}
               >
-                <div className={`relative flex aspect-[4/5] items-center justify-center overflow-hidden rounded-[1.15rem] bg-gradient-to-br ${image.tone} p-4`}>
+                <div
+                  className={`relative flex aspect-[4/5] items-center justify-center overflow-hidden rounded-[1.15rem] bg-gradient-to-br ${image.tone} p-4`}
+                  style={{ position: "relative" }}
+                >
                   {image.src ? (
                     <>
                       <Image
@@ -142,7 +145,10 @@ export default function ImageCarousel({ eyebrow, heading, images }: ImageCarouse
         {activeLightboxImage ? (
           <div className={`flex min-h-[70vh] items-center justify-center rounded-[1.5rem] bg-gradient-to-br ${activeLightboxImage.tone} p-3 sm:p-5`}>
             {activeLightboxImage.src ? (
-              <div className="relative h-[72vh] w-full overflow-hidden rounded-[1.25rem] bg-white/72 shadow-xl backdrop-blur">
+              <div
+                className="relative h-[72vh] w-full overflow-hidden rounded-[1.25rem] bg-white/72 shadow-xl backdrop-blur"
+                style={{ position: "relative" }}
+              >
                 <Image
                   src={activeLightboxImage.src}
                   alt={activeLightboxImage.alt ?? activeLightboxImage.title}

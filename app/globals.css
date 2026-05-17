@@ -35,6 +35,15 @@ li {
   text-wrap: pretty;
 }
 
+.text-justify,
+.text-justify p,
+.text-justify li {
+  text-align: justify !important;
+  text-wrap: auto;
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+
 ::selection {
   background: #c7d6bd;
   color: #2f2822;

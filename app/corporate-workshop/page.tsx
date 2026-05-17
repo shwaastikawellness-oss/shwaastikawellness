@@ -75,7 +75,7 @@ export default function CorporateWorkshopPage() {
             </div>
           </Reveal>
 
-          <div className="space-y-8 text-lg leading-9 text-[#3f372f]">
+          <div className="space-y-8 text-justify text-lg leading-9 text-[#3f372f]">
           {introParagraphs.map((paragraph, index) => (
             <Reveal key={paragraph} delay={index * 0.04}>
               <p>{paragraph}</p>

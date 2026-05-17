@@ -28,7 +28,7 @@ export default function BookASessionPage() {
             <h1 className="mt-4 text-4xl font-semibold leading-[1.08] text-[#2f2822] sm:text-5xl lg:text-6xl">
               Book A Session
             </h1>
-            <p className="mx-auto mt-6 max-w-2xl text-xl leading-8 text-[#675b50]">
+            <p className="mx-auto mt-6 max-w-2xl text-justify text-xl leading-8 text-[#675b50]">
               Choose the experience that aligns with your journey.
             </p>
           </div>

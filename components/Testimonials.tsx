@@ -8,22 +8,25 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 const testimonials = [
   {
-    title: "Client Reflection",
+    title: "Intuitive Healing Session",
     note: "A shared client experience from a healing session.",
     image: "/images/testimonial/WhatsApp%20Image%202026-05-12%20at%2013.10.24%20(1).webp",
     alt: "Client review about feeling freshness after practice",
+    imageClassName: "object-cover object-[50%_46%] scale-[1.62]",
   },
   {
-    title: "Client Reflection",
+    title: "Inner Clarity Session",
     note: "A client message about clarity and choosing the right path.",
     image: "/images/testimonial/WhatsApp%20Image%202026-05-12%20at%2013.10.25.webp",
     alt: "Client review for craniosacral therapy and healing session",
+    imageClassName: "object-cover object-[50%_46%] scale-[1.12]",
   },
   {
-    title: "Client Reflection",
+    title: "Womb Healing Session",
     note: "A review shared after personal guidance and support.",
     image: "/images/testimonial/WhatsApp%20Image%202026-05-12%20at%2013.10.35.webp",
     alt: "Client review shared for Preeti Semwal",
+    imageClassName: "object-contain",
   },
 ];
 
@@ -35,18 +38,15 @@ function TestimonialCard({ testimonial }: { testimonial: typeof testimonials[num
           src={testimonial.image}
           alt={testimonial.alt}
           fill
-          className="object-contain"
+          className={testimonial.imageClassName}
           sizes="(max-width: 640px) 92vw, (max-width: 1180px) 45vw, 360px"
           loading="lazy"
           quality={88}
         />
       </div>
       <div className="px-3 py-5">
-        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#7d8b65]">
-          Client Feedback
-        </p>
-        <h3 className="mt-2 text-xl font-semibold text-[#332b24]">{testimonial.title}</h3>
-        <p className="mt-2 text-sm leading-6 text-[#6a5d52]">{testimonial.note}</p>
+        <h3 className="text-xl font-semibold text-[#332b24]">{testimonial.title}</h3>
+        <p className="mt-2 text-justify text-sm leading-6 text-[#6a5d52]">{testimonial.note}</p>
       </div>
     </article>
   );
@@ -78,7 +78,7 @@ export default function Testimonials() {
               pauseOnMouseEnter: true,
             }}
             speed={650}
-            loop
+            loop={testimonials.length > 3}
             pagination={{ clickable: true }}
             slidesPerView={1.05}
             spaceBetween={16}

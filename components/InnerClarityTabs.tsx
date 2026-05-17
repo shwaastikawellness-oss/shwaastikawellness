@@ -7,7 +7,6 @@ import { KeyboardEvent, useState } from "react";
 const tabs = [
   {
     label: "How a Session Works",
-    imageLabel: "Session image",
     imageAlt: "Illustration explaining how an Inner Clarity Guidance session works",
     imageSrc: "/images/inner%20clarity/How%20a%20session%20work.jpg",
     items: [
@@ -20,7 +19,6 @@ const tabs = [
   },
   {
     label: "How You'll Know It's Time",
-    imageLabel: "Clarity image",
     imageAlt: "Illustration describing signs that it is time for Inner Clarity Guidance",
     imageSrc: "/images/inner%20clarity/how%20you%27ll%20know%20it%27s%20time.jpg",
     items: [
@@ -29,13 +27,12 @@ const tabs = [
       "Emotional triggers derail you at key moments",
       "You long for guidance that feels both compassionate and actionable",
     ],
-    note: "If any of these resonate, Psychic Guidance will help you access the insights already inside you and turn them into clear, confident next steps.",
+    note: "If any of these resonate, Inner Clarity will help you access the insights already inside you and turn them into clear, confident next steps.",
   },
   {
-    label: "Is Psychic Guidance Right for You?",
-    imageLabel: "Guidance image",
+    label: "Is Inner Clarity Right for You?",
     items: [
-      "Psychic Guidance isn't about mystifying the process, it's for anyone who senses there's more beneath the surface of their life and wants to translate subtle signals into real-world clarity. Book a session when you:",
+      "Inner Clarity isn't about mystifying the process, it's for anyone who senses there's more beneath the surface of their life and wants to translate subtle signals into real-world clarity. Book a session when you:",
       "Feel stuck or overwhelmed by a decision",
       "Sense recurring relationship or work patterns you can't shake",
       "Face a major transition (career pivot, breakup, loss) and need grounded support",
@@ -47,7 +44,6 @@ const tabs = [
   },
   {
     label: "Who Benefits",
-    imageLabel: "Benefits image",
     imageAlt: "Illustration showing who benefits from Inner Clarity Guidance",
     imageSrc: "/images/inner%20clarity/who%20benifits.jpg",
     note: "Anyone seeking clarity, closure or direction regardless of age or background gains from this work. It's best if you come present, honest with yourself and ready to engage with the guidance offered.",
@@ -132,16 +128,10 @@ export default function InnerClarityTabs() {
                       quality={90}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-[#17130f]/8 via-transparent to-transparent" />
-                    <p className="absolute bottom-5 left-5 rounded-full bg-white/90 px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-[#3f5f46] shadow-sm">
-                      {activeTab.imageLabel}
-                    </p>
                   </>
                 ) : (
                   <div className="flex h-full min-h-[300px] flex-col justify-end bg-[linear-gradient(145deg,#fffdf8,#f5e9f7_48%,#dfe9d8)] p-7 sm:min-h-[360px] lg:min-h-[430px]">
-                    <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#7d8b65]">
-                      {activeTab.imageLabel}
-                    </p>
-                    <p className="mt-4 text-3xl font-semibold leading-tight text-[#2f2822]">
+                    <p className="text-justify text-3xl font-semibold leading-tight text-[#2f2822]">
                       Tune into what is asking for clarity.
                     </p>
                     <div className="mt-7 h-px w-24 bg-[#b9a27e]" />
@@ -150,16 +140,13 @@ export default function InnerClarityTabs() {
               </div>
 
               <div className="flex rounded-[1.5rem] border border-white/65 bg-white/80 p-6 shadow-sm shadow-[#6b513b]/5 sm:p-8 lg:p-9">
-                <div className="self-center text-lg leading-9 text-[#332b24]">
-                  <p className="mb-5 text-sm font-semibold uppercase tracking-[0.22em] text-[#7d8b65]">
-                    {activeTab.label}
-                  </p>
+                <div className="self-center text-justify text-lg leading-9 text-[#332b24]">
                   {activeTab.items ? (
                     <ul className="space-y-3">
                       {activeTab.items.map((item) => (
                         <li key={item} className="flex gap-3">
                           <span className="mt-4 h-2 w-2 shrink-0 rounded-full bg-[#3f5f46]" />
-                          <span>{item}</span>
+                          <span className="min-w-0 flex-1 text-justify">{item}</span>
                         </li>
                       ))}
                     </ul>

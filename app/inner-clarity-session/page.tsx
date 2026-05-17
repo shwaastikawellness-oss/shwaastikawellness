@@ -29,11 +29,11 @@ export default function InnerClaritySessionPage() {
 
       <section className="bg-white px-5 py-16 sm:px-8 lg:px-10">
         <Reveal>
-          <article className="mx-auto max-w-5xl space-y-8 text-lg leading-9 text-[#3f372f]">
+          <article className="mx-auto max-w-5xl space-y-8 text-justify text-lg leading-9 text-[#3f372f]">
             <p>
               Every moment, you live inside a vast field of energy that holds every
               thought, feeling and possibility this is your higher-consciousness energy
-              field. Psychic Guidance is the blend of these unseen energies with your
+              field. Inner Clarity is the blend of these unseen energies with your
               strong intention, creating a safe place where old wisdom and fresh insight
               come together to light your path. Think of your energy field as an invisible
               library where memories, dreams, and intuitive sparks are quietly stored.
@@ -57,7 +57,7 @@ export default function InnerClaritySessionPage() {
 
             <div className="rounded-[2rem] border border-[#e5d9c7] bg-[#fbf8f1] p-6 sm:p-8">
               <h2 className="text-2xl font-semibold text-[#2f2822]">What This Session Offers</h2>
-              <ul className="mt-6 space-y-3 text-base leading-8">
+              <ul className="mt-6 space-y-3 text-justify text-base leading-8">
                 <li>Clarity on relationships, career choices, emotional patterns and life transitions</li>
                 <li>Gentle exploration of past wounds or recurring cycles with healing suggestions</li>
                 <li>Practical, actionable guidance: rituals, boundaries, breath practices, journaling prompts</li>

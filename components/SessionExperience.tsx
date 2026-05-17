@@ -62,6 +62,83 @@ const positions = [
   { x: -245, y: 34, scale: 0.78, rotate: -4, zIndex: 20, opacity: 1 },
 ];
 
+type Service = (typeof services)[number];
+
+function ServiceDetails({
+  service,
+  showPricing,
+  onTogglePricing,
+  variant = "desktop",
+}: {
+  service: Service;
+  showPricing: boolean;
+  onTogglePricing: () => void;
+  variant?: "desktop" | "mobile";
+}) {
+  const isMobile = variant === "mobile";
+
+  return (
+    <>
+      <p className={`text-sm font-semibold uppercase text-[#7d8b65] ${isMobile ? "tracking-[0.16em]" : "tracking-[0.22em]"}`}>
+        Selected Experience
+      </p>
+      <h2 className={`${isMobile ? "mt-2 text-2xl" : "mt-3 text-3xl"} font-semibold leading-tight text-[#2f2822]`}>
+        {service.title}
+      </h2>
+      <p className={`${isMobile ? "mt-3 text-base leading-7" : "mt-4 text-lg leading-8"} text-justify text-[#66584d]`}>{service.intro}</p>
+
+      <button
+        type="button"
+        onClick={onTogglePricing}
+        className={`${isMobile ? "mt-6 w-full justify-center py-3.5" : "mt-8 px-6 py-3"} inline-flex rounded-full border border-[#cdbd9f] bg-[#fbf8f1] text-sm font-semibold text-[#3f352d] transition hover:border-[#8a9b72] hover:bg-white`}
+        aria-expanded={showPricing}
+      >
+        {showPricing ? "Hide Session Investment" : "View Session Investment"}
+      </button>
+
+      <AnimatePresence initial={false}>
+        {showPricing ? (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.35, ease: "easeOut" }}
+            className="overflow-hidden"
+          >
+            <div className={`${isMobile ? "mt-5 rounded-[1.25rem] p-4" : "mt-7 rounded-[1.5rem] p-5"} border border-white/60 bg-white/60 shadow-inner`}>
+              <p className={`${isMobile ? "mb-3 tracking-[0.14em]" : "mb-4 tracking-[0.18em]"} text-sm font-semibold uppercase text-[#7d8b65]`}>
+                {service.details}
+              </p>
+              {service.pricing.length > 0 ? (
+                <div className={isMobile ? "space-y-4" : "space-y-5"}>
+                  {service.pricing.map(([name, price, note]) => (
+                    <div key={name} className="border-b border-[#e5d9c7] pb-4 last:border-b-0 last:pb-0">
+                      <p className="font-semibold text-[#2f2822]">{name}</p>
+                      <p className={`${isMobile ? "text-base" : "text-lg"} mt-1 text-[#3f5f46]`}>{price}</p>
+                      {note ? <p className="mt-1 text-sm text-[#786b5f]">{note}</p> : null}
+                    </div>
+                  ))}
+                </div>
+              ) : (
+                <p className="text-justify text-base leading-8 text-[#4b423b]">{service.details}</p>
+              )}
+            </div>
+          </motion.div>
+        ) : null}
+      </AnimatePresence>
+
+      {isMobile ? (
+        <a
+          href="#for-bookings"
+          className="mt-5 inline-flex w-full items-center justify-center rounded-full bg-[#2f2822] px-6 py-3.5 text-sm font-semibold tracking-[0.14em] text-white shadow-lg shadow-[#2f2822]/15 transition hover:bg-[#3f5f46]"
+        >
+          Contact Us
+        </a>
+      ) : null}
+    </>
+  );
+}
+
 export default function SessionExperience() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [showPricing, setShowPricing] = useState(false);
@@ -70,74 +147,6 @@ export default function SessionExperience() {
   const selectService = (index: number) => {
     setActiveIndex(index);
     setShowPricing(false);
-  };
-
-  const renderServiceDetails = (
-    service: typeof services[number],
-    variant: "desktop" | "mobile" = "desktop",
-  ) => {
-    const isMobile = variant === "mobile";
-
-    return (
-      <>
-        <p className={`text-sm font-semibold uppercase text-[#7d8b65] ${isMobile ? "tracking-[0.16em]" : "tracking-[0.22em]"}`}>
-          Selected Experience
-        </p>
-        <h2 className={`${isMobile ? "mt-2 text-2xl" : "mt-3 text-3xl"} font-semibold leading-tight text-[#2f2822]`}>
-          {service.title}
-        </h2>
-        <p className={`${isMobile ? "mt-3 text-base leading-7" : "mt-4 text-lg leading-8"} text-[#66584d]`}>{service.intro}</p>
-
-        <button
-          type="button"
-          onClick={() => setShowPricing((value) => !value)}
-          className={`${isMobile ? "mt-6 w-full justify-center py-3.5" : "mt-8 px-6 py-3"} inline-flex rounded-full border border-[#cdbd9f] bg-[#fbf8f1] text-sm font-semibold text-[#3f352d] transition hover:border-[#8a9b72] hover:bg-white`}
-          aria-expanded={showPricing}
-        >
-          {showPricing ? "Hide Session Investment" : "View Session Investment"}
-        </button>
-
-        <AnimatePresence initial={false}>
-          {showPricing ? (
-            <motion.div
-              initial={{ height: 0, opacity: 0 }}
-              animate={{ height: "auto", opacity: 1 }}
-              exit={{ height: 0, opacity: 0 }}
-              transition={{ duration: 0.35, ease: "easeOut" }}
-              className="overflow-hidden"
-            >
-              <div className={`${isMobile ? "mt-5 rounded-[1.25rem] p-4" : "mt-7 rounded-[1.5rem] p-5"} border border-white/60 bg-white/60 shadow-inner`}>
-                <p className={`${isMobile ? "mb-3 tracking-[0.14em]" : "mb-4 tracking-[0.18em]"} text-sm font-semibold uppercase text-[#7d8b65]`}>
-                  {service.details}
-                </p>
-                {service.pricing.length > 0 ? (
-                  <div className={isMobile ? "space-y-4" : "space-y-5"}>
-                    {service.pricing.map(([name, price, note]) => (
-                      <div key={name} className="border-b border-[#e5d9c7] pb-4 last:border-b-0 last:pb-0">
-                        <p className="font-semibold text-[#2f2822]">{name}</p>
-                        <p className={`${isMobile ? "text-base" : "text-lg"} mt-1 text-[#3f5f46]`}>{price}</p>
-                        {note ? <p className="mt-1 text-sm text-[#786b5f]">{note}</p> : null}
-                      </div>
-                    ))}
-                  </div>
-                ) : (
-                  <p className="text-base leading-8 text-[#4b423b]">{service.details}</p>
-                )}
-              </div>
-            </motion.div>
-          ) : null}
-        </AnimatePresence>
-
-        {isMobile ? (
-          <a
-            href="#for-bookings"
-            className="mt-5 inline-flex w-full items-center justify-center rounded-full bg-[#2f2822] px-6 py-3.5 text-sm font-semibold tracking-[0.14em] text-white shadow-lg shadow-[#2f2822]/15 transition hover:bg-[#3f5f46]"
-          >
-            Contact Us
-          </a>
-        ) : null}
-      </>
-    );
   };
 
   return (
@@ -244,7 +253,12 @@ export default function SessionExperience() {
                   exit={{ opacity: 0, y: -10 }}
                   transition={{ duration: 0.24 }}
                 >
-                  {renderServiceDetails(activeService, "mobile")}
+                  <ServiceDetails
+                    service={activeService}
+                    showPricing={showPricing}
+                    onTogglePricing={() => setShowPricing((value) => !value)}
+                    variant="mobile"
+                  />
                 </motion.div>
               </AnimatePresence>
             </motion.div>
@@ -262,7 +276,11 @@ export default function SessionExperience() {
                 exit={{ opacity: 0, y: -12 }}
                 transition={{ duration: 0.28 }}
               >
-                {renderServiceDetails(activeService)}
+                <ServiceDetails
+                  service={activeService}
+                  showPricing={showPricing}
+                  onTogglePricing={() => setShowPricing((value) => !value)}
+                />
               </motion.div>
             </AnimatePresence>
           </motion.div>

@@ -40,6 +40,7 @@ function ReviewStars({ rating }: { rating: number }) {
 export default function ReviewsSection() {
   const mobileReviewSwiperRef = useRef<SwiperInstance | null>(null);
   const desktopReviewSwiperRef = useRef<SwiperInstance | null>(null);
+  const [activeDesktopDot, setActiveDesktopDot] = useState(0);
   const [selectedReview, setSelectedReview] = useState<Review | null>(null);
 
   useEffect(() => {
@@ -129,6 +130,7 @@ export default function ReviewsSection() {
             onSwiper={(swiper) => {
               desktopReviewSwiperRef.current = swiper;
             }}
+            onSlideChange={(swiper) => setActiveDesktopDot(swiper.realIndex % 3)}
             autoplay={{
               delay: 3600,
               disableOnInteraction: false,
@@ -156,6 +158,21 @@ export default function ReviewsSection() {
               </SwiperSlide>
             ))}
           </Swiper>
+        </div>
+
+        <div className="mt-7 hidden justify-center gap-2 md:flex" aria-label="Google reviews carousel position">
+          {Array.from({ length: 3 }, (_, index) => (
+            <button
+              key={index}
+              type="button"
+              onClick={() => desktopReviewSwiperRef.current?.slideToLoop(index)}
+              className={`h-2.5 rounded-full transition ${
+                activeDesktopDot === index ? "w-8 bg-[#3f5f46]" : "w-2.5 bg-[#d2c3a9]"
+              }`}
+              aria-label={`Show Google reviews group ${index + 1}`}
+              aria-pressed={activeDesktopDot === index}
+            />
+          ))}
         </div>
       </div>
 

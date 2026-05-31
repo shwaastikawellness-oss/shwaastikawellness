@@ -81,14 +81,29 @@ export default function InnerClaritySessionPage() {
 
       <section className="bg-white px-5 py-16 sm:px-8 lg:px-10">
         <Reveal>
-          <article className="mx-auto max-w-5xl">
+          <article className="mx-auto max-w-[52rem]">
             <h2 className="text-3xl font-semibold leading-tight text-[#2f2822] sm:text-4xl">
               What Inner Clarity Is
             </h2>
-            <div className="mt-7 space-y-6 text-justify text-base leading-8 text-[#3f372f] sm:text-lg sm:leading-9">
-              {introParagraphs.map((paragraph) => (
-                <p key={paragraph}>{paragraph}</p>
-              ))}
+            <div className="editorial-prose mt-8">
+              <p>{introParagraphs[0]}</p>
+              <p>
+                The difference however is that these sessions do not work through any
+                external tools or fixed systems. Instead the process works intuitively
+                through the individual&apos;s own{" "}
+                <span className="editorial-highlight">emotional and energetic field</span>.
+              </p>
+              <p>
+                The intention is not to provide dependency-based answers but to support{" "}
+                <span className="editorial-highlight">greater self-awareness</span>,
+                emotional understanding, practical clarity, and a more grounded connection
+                with oneself.
+              </p>
+              <p>
+                Many individuals leave the sessions feeling emotionally lighter, mentally
+                clearer, more balanced, and better able to move forward with{" "}
+                <span className="editorial-highlight">awareness and confidence</span>.
+              </p>
             </div>
 
             <div className="mt-10 border-y border-[#e5d9c7] py-8">

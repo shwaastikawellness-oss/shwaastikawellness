@@ -11,8 +11,31 @@ export default function Hero() {
         className="relative isolate mx-auto max-w-[92rem] overflow-hidden rounded-[1.75rem] border border-[#eadfce] bg-[#fffaf2] shadow-xl shadow-[#6b513b]/7"
       >
         <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_16%_18%,rgba(234,219,226,0.58),transparent_30%),radial-gradient(circle_at_78%_18%,rgba(223,238,247,0.5),transparent_28%),linear-gradient(135deg,#ffffff_0%,#fff7ec_54%,#f8f1e8_100%)]" />
+        <div className="home-hero-sea" aria-hidden="true">
+          <svg
+            className="home-hero-sea-wave home-hero-sea-wave-back"
+            viewBox="0 0 1440 220"
+            preserveAspectRatio="none"
+          >
+            <path d="M0 118C118 88 214 86 332 113C470 145 548 154 690 120C842 84 934 79 1078 112C1226 145 1324 142 1440 106V220H0V118Z" />
+          </svg>
+          <svg
+            className="home-hero-sea-wave home-hero-sea-wave-mid"
+            viewBox="0 0 1440 220"
+            preserveAspectRatio="none"
+          >
+            <path d="M0 135C126 107 230 106 350 131C493 161 582 164 722 131C866 97 960 101 1108 136C1244 168 1340 157 1440 124V220H0V135Z" />
+          </svg>
+          <svg
+            className="home-hero-sea-wave home-hero-sea-wave-front"
+            viewBox="0 0 1440 220"
+            preserveAspectRatio="none"
+          >
+            <path d="M0 154C130 126 238 126 362 151C500 179 602 182 744 149C878 118 992 119 1126 151C1254 181 1348 176 1440 148V220H0V154Z" />
+          </svg>
+        </div>
 
-        <div className="grid min-h-[520px] items-center gap-9 px-5 py-9 sm:px-9 lg:grid-cols-[0.95fr_1.05fr] lg:px-12 lg:py-12">
+        <div className="relative z-10 grid min-h-[520px] items-center gap-9 px-5 py-9 sm:px-9 lg:grid-cols-[0.95fr_1.05fr] lg:px-12 lg:py-12">
           <div className="max-w-2xl">
             <p className="text-xs font-bold uppercase tracking-[0.24em] text-[#9a6f55]">
               Wellness sanctuary
@@ -72,7 +95,7 @@ export default function Hero() {
                 quality={95}
               />
             </div>
-            <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-[#fffdf8]/55 to-transparent" />
+            <div className="home-hero-image-glow absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-[#fffdf8]/55 to-transparent" />
           </div>
         </div>
       </div>

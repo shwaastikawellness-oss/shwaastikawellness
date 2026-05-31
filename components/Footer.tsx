@@ -33,8 +33,8 @@ export default function Footer() {
               <p className="text-xs italic text-[#c7bda8] sm:text-sm">By Preeti Semwal</p>
             </div>
           </div>
-          <p className="mt-3 max-w-sm text-sm font-semibold italic leading-6 text-[#fff7ec] sm:mt-4 sm:text-base sm:leading-7">
-            Transformative Energy Work for Mind, Body & Spirit
+          <p className="mt-3 max-w-sm text-sm italic leading-7 text-[#fff7ec] sm:mt-4 sm:text-base sm:leading-8">
+            Transformative energy work for <span className="font-semibold text-white">mind, body, and spirit</span>.
           </p>
         </div>
 

@@ -82,15 +82,42 @@ export default function WombHealingPage() {
           </Reveal>
 
           <Reveal delay={0.12}>
-            <article>
+            <article className="max-w-[52rem]">
               <p className="text-sm font-semibold uppercase tracking-[0.22em] text-[#7d8b65]">
                 Womb Healing
               </p>
-              <h2 className="mt-3 text-3xl font-semibold text-[#2f2822]">Womb Healing</h2>
-              <div className="mt-7 space-y-6 text-lg leading-8 text-[#2f2822]">
-                {wombDescription.map((paragraph) => (
-                  <p key={paragraph}>{paragraph}</p>
-                ))}
+              <h2 className="mt-3 text-3xl font-semibold leading-tight text-[#2f2822] sm:text-4xl">
+                Womb Healing
+              </h2>
+              <div className="editorial-prose mt-8">
+                <p>
+                  Womb Healing is a{" "}
+                  <span className="editorial-highlight">deeply nurturing and intuitive practice</span>{" "}
+                  designed to support women through the emotional, physical, and spiritual
+                  journey of conception, pregnancy, birth, and postpartum recovery. Rather
+                  than following a fixed structure or routine, each session unfolds as a
+                  personalized and responsive experience, carefully attuned to the unique
+                  needs, emotions, and stage of life of the individual.
+                </p>
+                <p>
+                  Rooted in compassion, presence, and energetic awareness, this work creates
+                  a safe and sacred space where women can reconnect with their bodies,
+                  release emotional tension, restore inner balance, and cultivate a deeper
+                  bond with themselves and their child. The process is gentle, supportive,
+                  and deeply grounding, allowing mothers to feel{" "}
+                  <span className="editorial-highlight">seen, heard, and emotionally supported</span>{" "}
+                  throughout their journey.
+                </p>
+                <p>{wombDescription[2]}</p>
+                <p>
+                  Beyond physical support, Womb Healing also works on subtle energetic levels,
+                  helping mothers feel emotionally held, spiritually aligned, and deeply
+                  connected to their <span className="editorial-highlight">inner wisdom</span>.
+                  Whether preparing for birth, navigating postpartum transitions, healing
+                  emotional wounds connected to the womb space, or simply seeking peace and
+                  reconnection, this practice offers a compassionate pathway toward harmony,
+                  resilience, empowerment, and inner calm.
+                </p>
               </div>
             </article>
           </Reveal>
@@ -100,11 +127,12 @@ export default function WombHealingPage() {
       <section className="bg-white px-5 pb-16 sm:px-8 lg:px-10">
         <Reveal>
           <article className="mx-auto max-w-6xl">
-            <div className="max-w-3xl">
+            <div className="mx-auto max-w-[52rem]">
               <h2 className="text-3xl font-semibold text-[#2f2822]">The Approach</h2>
-              <p className="mt-4 text-left text-lg font-medium leading-8 text-[#3f372f]">
+              <p className="mt-5 text-lg leading-9 text-[#3f372f]">
                 This part of the work is less about a fixed routine and more about the
-                emotional atmosphere created around the mother and baby.
+                <span className="editorial-highlight"> emotional atmosphere</span> created
+                around the mother and baby.
               </p>
             </div>
 
@@ -117,7 +145,7 @@ export default function WombHealingPage() {
                   <h3 className="text-xl font-bold leading-7 text-[#17120f]">
                     {experience.title}
                   </h3>
-                  <p className="mt-3 text-left text-base font-medium leading-7 text-[#332b24] sm:text-lg sm:leading-8">
+                  <p className="mt-3 text-left text-base leading-8 text-[#332b24] sm:text-lg sm:leading-9">
                     {experience.text}
                   </p>
                 </section>
@@ -134,7 +162,7 @@ export default function WombHealingPage() {
             <h2 className="text-center text-4xl font-bold text-[#17120f]">
               What the session includes
             </h2>
-            <ul className="mx-auto mt-8 max-w-4xl space-y-4 text-lg font-medium leading-8 text-[#2f2822]">
+            <ul className="mx-auto mt-8 max-w-[52rem] space-y-4 text-lg leading-9 text-[#2f2822]">
               {sessionIncludes.map((item) => (
                 <li key={item} className="flex gap-3">
                   <span className="mt-3 h-2 w-2 shrink-0 rounded-full bg-[#3f5f46]" />
@@ -142,9 +170,11 @@ export default function WombHealingPage() {
                 </li>
               ))}
             </ul>
-            <p className="mx-auto mt-6 max-w-4xl text-lg font-medium leading-9 text-[#2f2822]">
+            <p className="mx-auto mt-7 max-w-[52rem] text-lg leading-9 text-[#2f2822]">
               These elements are woven together to support not just the physical body but
-              also the deeper emotional and energetic experience of this phase.
+              also the deeper{" "}
+              <span className="editorial-highlight">emotional and energetic experience</span>{" "}
+              of this phase.
             </p>
           </div>
         </Reveal>
@@ -157,11 +187,11 @@ export default function WombHealingPage() {
               <h2 className="text-3xl font-bold text-[#17120f]">
                 Womb & Baby Connection
               </h2>
-              <div className="mt-7 space-y-6 text-lg font-medium leading-8 text-[#332b24]">
+              <div className="editorial-prose mt-7">
                 <p>
                   The work is held with a deep sensitivity to the womb space, creating a
-                  sense of calm, connection and support that can be experienced by both
-                  the mother and the baby.
+                  sense of <span className="editorial-highlight">calm, connection and support</span>{" "}
+                  that can be experienced by both the mother and the baby.
                 </p>
                 <p>
                   It offers a space where the mother can consciously slow down, reconnect
@@ -177,7 +207,7 @@ export default function WombHealingPage() {
               <h2 className="text-3xl font-bold text-[#17120f]">
                 This is for you if you are:
               </h2>
-              <ul className="mt-7 space-y-4 text-lg font-medium leading-8 text-[#332b24]">
+              <ul className="mt-7 space-y-4 text-lg leading-9 text-[#332b24]">
                 {forYouItems.map((item) => (
                   <li key={item} className="flex gap-3">
                     <span className="mt-3 h-2 w-2 shrink-0 rounded-full bg-[#3f5f46]" />

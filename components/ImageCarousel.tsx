@@ -98,11 +98,11 @@ export default function ImageCarousel({ eyebrow, heading, images }: ImageCarouse
               <button
                 type="button"
                 onClick={() => setLightboxIndex(index)}
-                className="group w-full rounded-[1.5rem] border border-[#eadfce] bg-white p-2.5 text-left shadow-sm shadow-[#6b513b]/4 transition hover:-translate-y-1 hover:shadow-xl hover:shadow-[#6b513b]/8"
+                className="group w-full rounded-[2rem] border border-[#e9dfcf] bg-white p-4 text-left shadow-[0_22px_60px_rgba(80,62,42,0.055)] transition duration-300 hover:-translate-y-0.5 hover:border-[#d9c9ad] hover:shadow-[0_28px_70px_rgba(80,62,42,0.075)] sm:rounded-[2.25rem]"
                 aria-label={`Open ${image.label ? `${image.label} ` : ""}${image.title}`}
               >
                 <div
-                  className={`relative flex aspect-[4/5] items-center justify-center overflow-hidden rounded-[1.15rem] bg-gradient-to-br ${image.tone} p-4`}
+                  className={`relative flex aspect-[7/9] items-center justify-center overflow-hidden rounded-[1.45rem] bg-gradient-to-br ${image.tone} p-6 sm:rounded-[1.65rem]`}
                   style={{ position: "relative" }}
                 >
                   {image.src ? (
@@ -110,8 +110,8 @@ export default function ImageCarousel({ eyebrow, heading, images }: ImageCarouse
                       src={image.src}
                       alt={image.alt ?? image.title}
                       fill
-                      className={image.imageClassName ?? "object-contain"}
-                      sizes="(max-width: 640px) 92vw, (max-width: 1180px) 45vw, 320px"
+                      className={image.imageClassName ?? "object-contain p-4"}
+                      sizes="(max-width: 640px) 82vw, (max-width: 1180px) 40vw, 300px"
                       loading="lazy"
                       quality={88}
                     />
@@ -127,13 +127,13 @@ export default function ImageCarousel({ eyebrow, heading, images }: ImageCarouse
                     </div>
                   )}
                 </div>
-                <div className="px-2 pb-2 pt-4 text-center">
+                <div className="px-2 pb-3 pt-5 text-center">
                   {image.label ? (
                     <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#7d8b65]">
                       {image.label}
                     </p>
                   ) : null}
-                  <h3 className={image.label ? "mt-1 text-lg font-bold text-[#17120f] sm:text-xl" : "text-lg font-bold text-[#17120f] sm:text-xl"}>
+                  <h3 className={image.label ? "mt-1 text-xl text-[#171412] sm:text-2xl" : "text-xl text-[#171412] sm:text-2xl"}>
                     {image.title}
                   </h3>
                 </div>
@@ -148,7 +148,7 @@ export default function ImageCarousel({ eyebrow, heading, images }: ImageCarouse
               type="button"
               onClick={() => swiperRef.current?.slideToLoop(index)}
               className={`h-2.5 rounded-full transition ${
-                activeDot === index ? "w-8 bg-[#3f5f46]" : "w-2.5 bg-[#d2c3a9]"
+                activeDot === index ? "w-8 bg-[#171412]" : "w-2.5 bg-[#d2c3a9]"
               }`}
               aria-label={`Show client stories group ${index + 1}`}
               aria-pressed={activeDot === index}
@@ -163,17 +163,17 @@ export default function ImageCarousel({ eyebrow, heading, images }: ImageCarouse
         onClose={() => setLightboxIndex(null)}
       >
         {activeLightboxImage ? (
-          <div className={`flex min-h-[70vh] items-center justify-center rounded-[1.5rem] bg-gradient-to-br ${activeLightboxImage.tone} p-3 sm:p-5`}>
+          <div className={`flex min-h-[70vh] items-center justify-center rounded-[2rem] bg-gradient-to-br ${activeLightboxImage.tone} p-3 sm:p-5`}>
             {activeLightboxImage.src ? (
               <div
-                className="relative h-[72vh] w-full overflow-hidden rounded-[1.25rem] bg-white/72 shadow-xl backdrop-blur"
+                className="relative h-[72vh] w-full overflow-hidden rounded-[1.5rem] bg-white/72 shadow-[0_24px_80px_rgba(80,62,42,0.12)] backdrop-blur"
                 style={{ position: "relative" }}
               >
                 <Image
                   src={activeLightboxImage.src}
                   alt={activeLightboxImage.alt ?? activeLightboxImage.title}
                   fill
-                  className={activeLightboxImage.lightboxImageClassName ?? "object-contain"}
+                  className={activeLightboxImage.lightboxImageClassName ?? "object-contain p-4"}
                   sizes="(max-width: 768px) 92vw, 720px"
                   quality={92}
                 />

@@ -27,9 +27,10 @@ export default function FeaturedConversation() {
           <h2 className="mt-2 text-3xl font-semibold leading-tight text-[#241d18] sm:text-4xl lg:text-[2.65rem]">
             Soulful Sharing with Preeti Semwal
           </h2>
-          <p className="mx-auto mt-3 max-w-2xl text-justify text-base leading-8 text-[#4f463e] sm:text-lg">
-            A gentle conversation on healing, intuition, transformation, and returning to
-            emotional balance from within.
+          <p className="editorial-prose editorial-prose-center mt-4 max-w-2xl">
+            A gentle conversation on healing, intuition,{" "}
+            <span className="editorial-highlight">transformation</span>, and returning to{" "}
+            <span className="editorial-highlight">emotional balance</span> from within.
           </p>
         </div>
 
@@ -48,7 +49,7 @@ export default function FeaturedConversation() {
         </div>
 
         <div className="mx-auto mt-5 flex max-w-3xl flex-col items-center justify-between gap-5 rounded-[1.5rem] border border-[#eadfce] bg-white/78 p-5 text-center shadow-sm backdrop-blur sm:flex-row sm:text-left">
-          <p className="text-justify text-base italic leading-7 text-[#4f463e]">
+          <p className="text-base italic leading-8 text-[#4f463e]">
             &quot;Conversations that heal, inspire, and reconnect us with ourselves.&quot;
           </p>
           <a

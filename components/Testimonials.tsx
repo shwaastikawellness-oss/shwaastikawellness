@@ -12,41 +12,41 @@ const testimonials = [
     note: "A shared client experience from an Intuitive Healing session.",
     image: "/images/testimonial/Sai%20GokulIntuitive%20Healing.png",
     alt: "Sai Gokul Intuitive Healing testimonial",
-    imageClassName: "object-contain p-4",
+    imageClassName: "object-contain p-6",
   },
   {
     title: "Womb Healing",
     note: "A practice review shared after Womb Healing support.",
     image: "/images/testimonial/Practice%20ReviewWomb%20Healing.png",
     alt: "Practice Review Womb Healing testimonial",
-    imageClassName: "object-contain p-4",
+    imageClassName: "object-contain p-6",
   },
   {
     title: "Intuitive Healing",
     note: "A client reflection from an Intuitive Healing session.",
     image: "/images/testimonial/Intuitive%20Healing.png",
     alt: "Intuitive Healing testimonial",
-    imageClassName: "object-contain p-4",
+    imageClassName: "object-contain p-6",
   },
 ];
 
 function TestimonialCard({ testimonial }: { testimonial: typeof testimonials[number] }) {
   return (
-    <article className="h-full rounded-[1.35rem] border border-[#eadfce] bg-white p-3 shadow-sm shadow-[#6b513b]/4 sm:rounded-[1.5rem]">
-      <div className="relative aspect-[4/5] overflow-hidden rounded-[1.05rem] bg-[#fff7ec] p-3 sm:rounded-[1.2rem]">
-        <div className="absolute inset-3 rounded-[0.9rem] bg-white shadow-inner" />
+    <article className="h-full rounded-[2rem] border border-[#e9dfcf] bg-white p-4 shadow-[0_22px_60px_rgba(80,62,42,0.055)] transition duration-300 hover:-translate-y-0.5 hover:shadow-[0_28px_70px_rgba(80,62,42,0.075)] sm:rounded-[2.25rem]">
+      <div className="relative aspect-[7/9] overflow-hidden rounded-[1.45rem] bg-[#f7f1e7] p-5 sm:rounded-[1.65rem]">
+        <div className="absolute inset-5 rounded-[1.15rem] bg-white" />
         <Image
           src={testimonial.image}
           alt={testimonial.alt}
           fill
           className={testimonial.imageClassName}
-          sizes="(max-width: 640px) 92vw, (max-width: 1180px) 45vw, 360px"
+          sizes="(max-width: 640px) 82vw, (max-width: 1180px) 40vw, 320px"
           loading="lazy"
           quality={88}
         />
       </div>
-      <div className="px-3 py-5">
-        <h3 className="text-xl font-bold text-[#17120f]">{testimonial.title}</h3>
+      <div className="px-2 pb-3 pt-5">
+        <h3 className="text-[1.65rem] leading-tight text-[#171412]">{testimonial.title}</h3>
         <p className="mt-2 text-sm leading-6 text-[#4f463e]">{testimonial.note}</p>
       </div>
     </article>

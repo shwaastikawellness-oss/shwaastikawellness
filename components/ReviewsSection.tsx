@@ -59,8 +59,9 @@ export default function ReviewsSection() {
             <h2 className="mt-3 text-3xl font-semibold text-[#241d18] sm:text-4xl">
               What Our Clients Say
             </h2>
-            <p className="mt-4 max-w-2xl text-justify text-base leading-8 text-[#4f463e]">
-              Curated client experiences preserved from earlier public Google reviews.
+            <p className="mt-4 max-w-2xl text-base leading-8 text-[#4f463e]">
+              Curated client experiences preserved from earlier{" "}
+              <span className="editorial-highlight">public Google reviews</span>.
             </p>
           </div>
           <div className="flex flex-wrap items-center gap-3">
@@ -254,7 +255,7 @@ export default function ReviewsSection() {
               <ReviewStars rating={selectedReview.rating} />
             </div>
 
-            <p className="mt-5 whitespace-pre-line text-justify text-base leading-8 text-[#3f352d] sm:text-lg sm:leading-9">
+            <p className="mt-5 whitespace-pre-line text-base leading-8 text-[#3f352d] sm:text-lg sm:leading-9">
               {selectedReview.review}
             </p>
           </article>

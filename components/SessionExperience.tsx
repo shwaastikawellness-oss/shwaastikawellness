@@ -4,287 +4,326 @@ import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
 import { useState } from "react";
 
+const whatsappUrl =
+  "https://api.whatsapp.com/send/?phone=919310685448&text=Hello%0AWelcome+to+SHWAASTIKA+WELLNESS.%0A%0AThank+you+for+reaching+out+through+our+website.%0APlease+tell+us+how+we+can+help+you+today.%0A%0AYou+can+share%3A%0A-+Your+concern+or+goal%0A-+Preferred+service%0A-+Suitable+time+for+a+call%2Fsession%0A%0AOur+team+will+respond+shortly&type=phone_number&app_absent=0";
+
 const services = [
   {
     title: "Intuitive Healing",
+    label: "Intuitive Healing",
     intro: "Energy, yoga and awareness for whole-being support.",
+    description: (
+      <>
+        A personalized session held with{" "}
+        <span className="editorial-highlight">calm awareness</span>, intuitive energy work,
+        supportive conversation, and practices guided by the individual&apos;s current
+        physical, emotional, and mental state.
+      </>
+    ),
     image: "/images/Book%20a%20Session/Intutive%20healing%20book%20a%20seesion.png",
     imagePosition: "center center",
-    tone: "from-[#ead1bd] via-[#fff8ef] to-[#dfe9d8]",
-    details: "Session Investment",
+    duration: "60-65 mins",
+    included: [
+      "Intuitive energy work",
+      "Guided awareness and grounding",
+      "Supportive practices based on what emerges",
+    ],
     pricing: [
-      ["Single Session (60-65 mins)", "INR 3,000 | USD 60"],
-      ["3-Session Journey", "INR 8,100 | USD 162", "(includes a 10% courtesy reduction)"],
+      ["Single Session", "INR 3,000 | USD 60"],
+      ["3-Session Journey", "INR 8,100 | USD 162", "Includes a 10% courtesy reduction"],
     ],
   },
   {
     title: "Inner Clarity Guidance",
+    label: "Inner Clarity Guidance",
     intro: "Gentle intuitive guidance for clarity, direction and next steps.",
+    description: (
+      <>
+        A reflective guidance session for{" "}
+        <span className="editorial-highlight">emotional understanding</span>, relationship
+        patterns, life transitions, decision-making, and a more grounded connection with
+        yourself.
+      </>
+    ),
     image: "/images/Book%20a%20Session/inner%20clarity%20guidance%20book%20a%20session.png",
     imagePosition: "center center",
-    tone: "from-[#dfe9d8] via-[#fffdf8] to-[#ead7c8]",
-    details: "Session Investment",
-    pricing: [["Single Session (40-45 mins)", "INR 2,500 | USD 55"]],
-  },
-  {
-    title: "Corporate Workshop",
-    intro: "Customized wellness and awareness work for groups.",
-    image: "/images/Book%20a%20Session/corporate%20workshop%20book%20a%20session.jpg",
-    imagePosition: "center center",
-    tone: "from-[#d7dfd1] via-[#f8f2e7] to-[#cdd5cf]",
-    details:
-      "Corporate workshop engagements are customized based on scope and requirements, with pricing shared upon discussion.",
-    pricing: [],
+    duration: "40-45 mins",
+    included: [
+      "Space to ask questions openly",
+      "Practical guidance and self-reflection",
+      "Emotional grounding and clarity",
+    ],
+    pricing: [["Single Session", "INR 2,500 | USD 55"]],
   },
   {
     title: "Womb Healing & Prenatal Support",
+    label: "Womb Healing & Prenatal Support",
     intro: "Nurturing support through pregnancy, birth and postpartum recovery.",
+    description: (
+      <>
+        A gentle, responsive session for womb connection, pregnancy, birth preparation,
+        postpartum recovery, <span className="editorial-highlight">emotional support</span>,
+        and deeper feminine well-being.
+      </>
+    ),
     image: "/images/Book%20a%20Session/womb%20healing%20book%20a%20session.jpeg",
     imagePosition: "center top",
-    tone: "from-[#f1d8cf] via-[#fff8ef] to-[#e7eadf]",
-    details: "Session Investment",
+    duration: "60-65 mins",
+    included: [
+      "Personalized womb and prenatal support",
+      "Emotional holding and grounding",
+      "Gentle practices based on individual needs",
+    ],
     pricing: [
-      ["Single Session (60-65 mins)", "INR 3,500 | USD 45"],
-      ["3-Session Support Journey", "INR 9,500 | USD 120", "(includes a courtesy reduction)"],
+      ["Single Session", "INR 3,500 | USD 45"],
+      ["3-Session Support Journey", "INR 9,500 | USD 120", "Includes a courtesy reduction"],
       [
         "Monthly Deep Support Program - 8 Sessions",
         "INR 18,400 | USD 225",
-        "(approximately 2 sessions per week across the month)",
+        "Approximately 2 sessions per week across the month",
       ],
     ],
   },
-];
-
-const positions = [
-  { x: 0, y: 0, scale: 1, rotate: 0, zIndex: 30, opacity: 1, blur: 0 },
-  { x: 245, y: 34, scale: 0.78, rotate: 4, zIndex: 20, opacity: 1 },
-  { x: 0, y: 84, scale: 0.66, rotate: 0, zIndex: 10, opacity: 1 },
-  { x: -245, y: 34, scale: 0.78, rotate: -4, zIndex: 20, opacity: 1 },
+  {
+    title: "Corporate Workshop",
+    label: "Corporate Workshops",
+    intro: "Customized wellness and awareness work for groups.",
+    description: (
+      <>
+        Mindfulness-based corporate wellness sessions shaped around the group&apos;s scope,
+        needs, format, and <span className="editorial-highlight">desired outcomes</span>.
+      </>
+    ),
+    image: "/images/Book%20a%20Session/corporate%20workshop%20book%20a%20session.jpg",
+    imagePosition: "center center",
+    duration: "Customized",
+    included: [
+      "Scope-based workshop planning",
+      "Mindfulness, breath and awareness practices",
+      "Format adapted for the group",
+    ],
+    pricing: [["Custom engagement", "Pricing shared upon discussion"]],
+  },
 ];
 
 type Service = (typeof services)[number];
 
-function ServiceDetails({
+function InvestmentDetails({ service }: { service: Service }) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 18 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -12 }}
+      transition={{ duration: 0.32, ease: "easeOut" }}
+      className="overflow-hidden"
+    >
+      <div className="rounded-[2rem] bg-[#fffefa] p-6 text-left shadow-[0_24px_70px_rgba(77,75,55,0.08)] sm:rounded-[2.25rem] sm:p-7 lg:p-9">
+        <div>
+          <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#8d7158]">
+            Session Details
+          </p>
+          <h3 className="mt-4 text-2xl leading-tight text-[#171412] sm:text-3xl">
+            {service.title}
+          </h3>
+          <p className="mt-4 max-w-[42rem] text-[1.02rem] leading-8 text-[#4f463e]">
+            {service.description}
+          </p>
+          <p className="mt-4 text-sm text-[#6c6259]">
+            <span className="font-semibold text-[#171412]">Duration:</span> {service.duration}
+          </p>
+        </div>
+
+        <div className="mt-5">
+          <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#8d7158]">
+            What Is Included
+          </p>
+          <ul className="mt-4 space-y-3 text-sm leading-7 text-[#4f463e]">
+            {service.included.map((item) => (
+              <li key={item} className="flex gap-3">
+                <span className="mt-3 h-px w-5 shrink-0 bg-[#bda98b]" />
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div className="mt-5 space-y-2.5">
+          {service.pricing.map(([name, price, note]) => (
+            <div key={name} className="border-t border-[#efe6d8] pt-3">
+              <div>
+                <p className="font-medium text-[#171412]">{name}</p>
+                {note ? <p className="mt-1 text-sm text-[#7a6b5e]">{note}</p> : null}
+              </div>
+              <p className="mt-1 text-sm font-semibold text-[#5f6f55]">{price}</p>
+            </div>
+          ))}
+        </div>
+
+        <div className="mt-6">
+          <a
+            href={whatsappUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex w-full justify-center rounded-full bg-[#565c43] px-6 py-3.5 text-xs font-semibold uppercase tracking-[0.15em] text-white shadow-[0_14px_30px_rgba(86,92,67,0.18)] transition hover:bg-[#4b513a]"
+          >
+            WhatsApp / Contact
+          </a>
+        </div>
+      </div>
+    </motion.div>
+  );
+}
+
+function ServiceCard({
   service,
-  showPricing,
-  onTogglePricing,
-  variant = "desktop",
+  index,
+  isActive,
+  isExpanded,
+  onSelect,
 }: {
   service: Service;
-  showPricing: boolean;
-  onTogglePricing: () => void;
-  variant?: "desktop" | "mobile";
+  index: number;
+  isActive: boolean;
+  isExpanded: boolean;
+  onSelect: (expand?: boolean) => void;
 }) {
-  const isMobile = variant === "mobile";
-
   return (
-    <>
-      <p className={`text-sm font-semibold uppercase text-[#7d8b65] ${isMobile ? "tracking-[0.16em]" : "tracking-[0.22em]"}`}>
-        Selected Experience
-      </p>
-      <h2 className={`${isMobile ? "mt-2 text-2xl" : "mt-3 text-3xl"} font-semibold leading-tight text-[#2f2822]`}>
-        {service.title}
-      </h2>
-      <p className={`${isMobile ? "mt-3 text-base leading-7" : "mt-4 text-lg leading-8"} text-justify text-[#66584d]`}>{service.intro}</p>
-
+    <motion.article
+      layout
+      className={`mx-auto w-full max-w-[29rem] overflow-hidden rounded-[2rem] bg-white shadow-[0_24px_68px_rgba(77,75,55,0.10)] transition duration-300 hover:-translate-y-0.5 hover:shadow-[0_32px_80px_rgba(77,75,55,0.13)] sm:rounded-[2.25rem] ${
+        isActive ? "ring-1 ring-[#565c43]/40" : ""
+      }`}
+    >
       <button
         type="button"
-        onClick={onTogglePricing}
-        className={`${isMobile ? "mt-6 w-full justify-center py-3.5" : "mt-8 px-6 py-3"} inline-flex rounded-full border border-[#cdbd9f] bg-[#fbf8f1] text-sm font-semibold text-[#3f352d] transition hover:border-[#8a9b72] hover:bg-white`}
-        aria-expanded={showPricing}
+        onClick={() => onSelect(false)}
+        className="block w-full text-left"
+        aria-pressed={isActive}
       >
-        {showPricing ? "Hide Session Investment" : "View Session Investment"}
+        <div className="relative aspect-[16/9] max-h-[17.5rem] overflow-hidden bg-[#d8d2c0]">
+          <Image
+            src={service.image}
+            alt={`${service.title} booking option`}
+            fill
+            className="object-cover"
+            style={{ objectPosition: service.imagePosition }}
+            sizes="(max-width: 768px) 92vw, (max-width: 1180px) 46vw, 460px"
+            priority={index === 0}
+            quality={90}
+          />
+        </div>
+
+        <div className="px-6 pb-6 pt-5 text-center sm:px-7 sm:pb-7">
+          <h2 className="text-[1.55rem] leading-tight text-[#171412] sm:text-[1.65rem]">
+            {service.title}
+          </h2>
+          <p className="mx-auto mt-3 max-w-sm text-sm leading-6 text-[#5f5349]">
+            {service.intro}
+          </p>
+        </div>
       </button>
 
-      <AnimatePresence initial={false}>
-        {showPricing ? (
-          <motion.div
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.35, ease: "easeOut" }}
-            className="overflow-hidden"
-          >
-            <div className={`${isMobile ? "mt-5 rounded-[1.25rem] p-4" : "mt-7 rounded-[1.5rem] p-5"} border border-white/60 bg-white/60 shadow-inner`}>
-              <p className={`${isMobile ? "mb-3 tracking-[0.14em]" : "mb-4 tracking-[0.18em]"} text-sm font-semibold uppercase text-[#7d8b65]`}>
-                {service.details}
-              </p>
-              {service.pricing.length > 0 ? (
-                <div className={isMobile ? "space-y-4" : "space-y-5"}>
-                  {service.pricing.map(([name, price, note]) => (
-                    <div key={name} className="border-b border-[#e5d9c7] pb-4 last:border-b-0 last:pb-0">
-                      <p className="font-semibold text-[#2f2822]">{name}</p>
-                      <p className={`${isMobile ? "text-base" : "text-lg"} mt-1 text-[#3f5f46]`}>{price}</p>
-                      {note ? <p className="mt-1 text-sm text-[#786b5f]">{note}</p> : null}
-                    </div>
-                  ))}
-                </div>
-              ) : (
-                <p className="text-justify text-base leading-8 text-[#4b423b]">{service.details}</p>
-              )}
-            </div>
-          </motion.div>
-        ) : null}
-      </AnimatePresence>
-
-      {isMobile ? (
-        <a
-          href="#for-bookings"
-          className="mt-5 inline-flex w-full items-center justify-center rounded-full bg-[#2f2822] px-6 py-3.5 text-sm font-semibold tracking-[0.14em] text-white shadow-lg shadow-[#2f2822]/15 transition hover:bg-[#3f5f46]"
+      <div className="px-6 pb-7 text-center sm:px-7">
+        <button
+          type="button"
+          onClick={() => onSelect(true)}
+          className="inline-flex items-center justify-center gap-3 rounded-full bg-[#565c43] px-7 py-3 text-xs font-semibold uppercase tracking-[0.12em] text-white shadow-[0_14px_30px_rgba(86,92,67,0.22)] transition hover:-translate-y-0.5 hover:bg-[#4b513a]"
+          aria-expanded={isActive && isExpanded}
         >
-          Contact Us
-        </a>
-      ) : null}
-    </>
+          {isActive && isExpanded ? "Hide Details" : "View Details"}
+          <span aria-hidden="true" className="text-lg leading-none">
+            &rarr;
+          </span>
+        </button>
+
+        <div className="lg:hidden">
+          <AnimatePresence initial={false}>
+            {isActive && isExpanded ? (
+              <div className="mt-6">
+                <InvestmentDetails service={service} />
+              </div>
+            ) : null}
+          </AnimatePresence>
+        </div>
+      </div>
+    </motion.article>
   );
 }
 
 export default function SessionExperience() {
   const [activeIndex, setActiveIndex] = useState(0);
-  const [showPricing, setShowPricing] = useState(false);
-  const activeService = services[activeIndex];
+  const [isExpanded, setIsExpanded] = useState(false);
 
-  const selectService = (index: number) => {
+  const selectService = (index: number, expand = false) => {
+    const isCurrent = index === activeIndex;
     setActiveIndex(index);
-    setShowPricing(false);
+    setIsExpanded(expand ? (isCurrent ? (value) => !value : true) : false);
   };
 
   return (
-    <section className="overflow-hidden bg-[#fbf8f1] px-5 py-10 sm:px-8 sm:py-16 lg:px-10">
-      <div className="mx-auto max-w-7xl">
-        <div className="grid items-center gap-10 lg:grid-cols-[1.02fr_0.98fr]">
-          <div className="relative hidden h-[510px] items-center justify-center lg:flex">
-            <div className="absolute h-[390px] w-[390px] rounded-full border border-[#d7c8ad]/70" />
-            <div className="absolute h-[260px] w-[260px] rounded-full bg-[#e5eddf]/45 blur-2xl" />
-            {services.map((service, index) => {
-              const relative = (index - activeIndex + services.length) % services.length;
-              const position = positions[relative];
-
-              return (
-                <motion.button
-                  key={service.title}
-                  type="button"
-                  onClick={() => selectService(index)}
-                  className="absolute w-[285px] overflow-hidden rounded-[1.75rem] border border-white/70 bg-white p-3 text-left shadow-xl shadow-[#6b513b]/12"
-                  animate={{
-                    x: position.x,
-                    y: position.y,
-                    scale: position.scale,
-                    rotate: position.rotate,
-                    opacity: position.opacity,
-                    zIndex: position.zIndex,
-                  }}
-                  transition={{ type: "spring", stiffness: 120, damping: 22 }}
-                  aria-pressed={activeIndex === index}
-                >
-                  <div className={`relative flex aspect-[4/5] items-end overflow-hidden rounded-[1.5rem] bg-gradient-to-br ${service.tone} p-4`}>
-                    <Image
-                      src={service.image}
-                      alt={`${service.title} booking option`}
-                      fill
-                      className="object-cover object-center"
-                      style={{ objectPosition: service.imagePosition }}
-                      sizes="285px"
-                      loading="lazy"
-                      quality={90}
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#17130f]/10 via-transparent to-white/5" />
-                    <div className="relative ml-auto max-w-[88%] rounded-full border border-white/75 bg-white/90 px-4 py-2.5 shadow-lg shadow-black/10">
-                      <h3 className="text-base font-semibold leading-tight text-[#2f2822]">{service.title}</h3>
-                    </div>
-                  </div>
-                </motion.button>
-              );
-            })}
-          </div>
-
-          <div className="lg:hidden">
-            <div className="grid gap-3">
-              {services.map((service, index) => {
-                const isActive = activeIndex === index;
-
-                return (
-                  <button
-                    key={service.title}
-                    type="button"
-                    onClick={() => selectService(index)}
-                    className={`flex w-full items-center gap-3 rounded-[1.25rem] border p-2.5 text-left shadow-sm transition ${
-                      isActive
-                        ? "border-[#3f5f46] bg-white shadow-[#6b513b]/12"
-                        : "border-[#e5d9c7] bg-white/70"
-                    }`}
-                    aria-pressed={isActive}
-                  >
-                    <div className={`relative h-16 w-16 shrink-0 overflow-hidden rounded-[0.9rem] bg-gradient-to-br ${service.tone}`}>
-                      <Image
-                        src={service.image}
-                        alt={`${service.title} booking option`}
-                        fill
-                        className="object-cover object-center"
-                        style={{ objectPosition: service.imagePosition }}
-                        sizes="64px"
-                        loading="lazy"
-                        quality={85}
-                      />
-                    </div>
-                    <div className="min-w-0 flex-1">
-                      <h3 className="text-base font-semibold leading-snug text-[#2f2822]">
-                        {service.title}
-                      </h3>
-                      <p className="mt-1 text-xs font-semibold uppercase tracking-[0.12em] text-[#3f5f46]">
-                        {isActive ? "Selected" : "Tap to choose"}
-                      </p>
-                    </div>
-                    <span className={`h-3 w-3 shrink-0 rounded-full ${isActive ? "bg-[#3f5f46]" : "bg-[#d8cbb9]"}`} />
-                  </button>
-                );
-              })}
-            </div>
-
-            <motion.div
-              layout
-              className="mt-4 rounded-[1.5rem] border border-[#e5d9c7] bg-white/90 p-5 shadow-xl shadow-[#6b513b]/10"
-            >
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={activeService.title}
-                  initial={{ opacity: 0, y: 14 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -10 }}
-                  transition={{ duration: 0.24 }}
-                >
-                  <ServiceDetails
-                    service={activeService}
-                    showPricing={showPricing}
-                    onTogglePricing={() => setShowPricing((value) => !value)}
-                    variant="mobile"
-                  />
-                </motion.div>
-              </AnimatePresence>
-            </motion.div>
-          </div>
-
-          <motion.div
-            layout
-            className="hidden rounded-[2rem] border border-[#e5d9c7] bg-white/90 p-7 shadow-xl shadow-[#6b513b]/8 sm:p-9 lg:block"
-          >
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={activeService.title}
-                initial={{ opacity: 0, y: 18 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -12 }}
-                transition={{ duration: 0.28 }}
-              >
-                <ServiceDetails
-                  service={activeService}
-                  showPricing={showPricing}
-                  onTogglePricing={() => setShowPricing((value) => !value)}
-                />
-              </motion.div>
-            </AnimatePresence>
-          </motion.div>
+    <section className="overflow-hidden bg-[#fffefa] px-0 pb-10 pt-0 sm:pb-14">
+      <div className="mx-auto max-w-[118rem] rounded-b-[2.75rem] bg-[#eeede5] px-5 pb-14 pt-12 sm:rounded-b-[4rem] sm:px-8 sm:pb-16 sm:pt-14 lg:px-12">
+        <div className="mx-auto mb-11 max-w-3xl text-center lg:mb-10">
+          <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[#8d7158]">
+            Book a Session
+          </p>
+          <h1 className="mt-5 text-4xl leading-[1.08] text-[#2f312d] sm:text-5xl lg:text-[3.35rem]">
+            Choose the experience that supports this season of your life.
+          </h1>
         </div>
+
+        <div className="mx-auto max-w-[78rem] space-y-11 sm:space-y-14 lg:space-y-16">
+          {services.map((service, index) => {
+            const isActive = activeIndex === index;
+            const isReversed = index % 2 === 1;
+
+            return (
+              <motion.section
+                key={service.title}
+                layout
+                className={`grid items-center gap-7 lg:grid-cols-[0.95fr_1.05fr] lg:gap-8 xl:gap-10 ${
+                  isReversed ? "lg:grid-cols-[1.05fr_0.95fr]" : ""
+                }`}
+              >
+                {isReversed ? (
+                  <div className="hidden lg:block">
+                    <AnimatePresence initial={false}>
+                      {isActive && isExpanded ? (
+                        <InvestmentDetails service={service} />
+                      ) : (
+                        <div />
+                      )}
+                    </AnimatePresence>
+                  </div>
+                ) : null}
+
+                <ServiceCard
+                  service={service}
+                  index={index}
+                  isActive={isActive}
+                  isExpanded={isExpanded}
+                  onSelect={(expand = false) => selectService(index, expand)}
+                />
+
+                {!isReversed ? (
+                  <div className="hidden lg:block">
+                    <AnimatePresence initial={false}>
+                      {isActive && isExpanded ? (
+                        <InvestmentDetails service={service} />
+                      ) : (
+                        <div />
+                      )}
+                    </AnimatePresence>
+                  </div>
+                ) : null}
+              </motion.section>
+            );
+          })}
+        </div>
+
+        <p className="mx-auto mt-14 max-w-[88rem] border-t border-[#d8d2c0] pt-5 text-center text-[11px] uppercase tracking-[0.18em] text-[#7c7667]">
+          Shwaastika Wellness by Preeti Semwal
+        </p>
       </div>
     </section>
   );

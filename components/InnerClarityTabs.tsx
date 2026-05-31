@@ -142,13 +142,13 @@ export default function InnerClarityTabs() {
               </div>
 
               <div className="flex rounded-[1.5rem] border border-white/65 bg-white/80 p-6 shadow-sm shadow-[#6b513b]/5 sm:p-8 lg:p-9">
-                <div className="self-center text-justify text-lg leading-9 text-[#332b24]">
+                <div className="editorial-prose self-center">
                   {activeTab.items ? (
                     <ul className="space-y-3">
                       {activeTab.items.map((item) => (
                         <li key={item} className="flex gap-3">
                           <span className="mt-4 h-2 w-2 shrink-0 rounded-full bg-[#3f5f46]" />
-                          <span className="min-w-0 flex-1 text-justify">{item}</span>
+                          <span className="min-w-0 flex-1">{item}</span>
                         </li>
                       ))}
                     </ul>

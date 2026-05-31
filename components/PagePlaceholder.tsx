@@ -29,7 +29,7 @@ export default function PagePlaceholder({
               <h1 className="mt-4 max-w-4xl text-4xl font-semibold leading-[1.08] text-[#2f2822] sm:text-5xl">
                 {title}
               </h1>
-              <p className="mt-6 max-w-2xl text-justify text-lg leading-8 text-[#6a5e52]">{intro}</p>
+              <p className="mt-6 max-w-2xl text-lg leading-9 text-[#6a5e52]">{intro}</p>
               <Link
                 href={ctaHref}
                 className="mt-8 inline-flex rounded-full bg-[#3f5f46] px-7 py-4 text-sm font-semibold text-white shadow-xl shadow-[#3f5f46]/15 transition hover:bg-[#334f39]"
@@ -46,7 +46,7 @@ export default function PagePlaceholder({
                   <p className="text-sm font-semibold uppercase tracking-[0.22em] text-[#7d8b65]">
                     Editorial Notes
                   </p>
-                  <p className="mt-3 text-justify text-sm leading-6 text-[#76695d]">
+                  <p className="mt-3 text-sm leading-6 text-[#76695d]">
                     New writing is reviewed before it appears on the site.
                   </p>
                 </div>
@@ -65,9 +65,10 @@ export default function PagePlaceholder({
             <h2 className="mt-3 text-3xl font-semibold text-[#2f2822] sm:text-4xl">
               Upcoming insights are being prepared with care.
             </h2>
-            <p className="mt-5 max-w-3xl text-justify text-base leading-8 text-[#6a5e52]">
-              Future articles will focus on emotional balance, inner clarity, healing
-              practices, and workplace well-being.
+            <p className="mt-5 max-w-3xl text-base leading-8 text-[#6a5e52]">
+              Future articles will focus on{" "}
+              <span className="editorial-highlight">emotional balance</span>, inner clarity,
+              healing practices, and workplace well-being.
             </p>
           </div>
         </Reveal>

@@ -56,8 +56,9 @@ export default function AboutPage() {
               <h1 className="mt-3 max-w-4xl text-4xl font-semibold leading-[1.08] text-[#241d18] sm:text-5xl lg:text-6xl">
                 About Preeti Semwal
               </h1>
-              <p className="mt-4 max-w-2xl text-justify text-lg leading-8 text-[#4f463e] sm:text-xl sm:leading-9">
-                Guided healing rooted in intuition, ancestral wisdom, and holistic well-being.
+              <p className="mt-5 max-w-2xl text-lg leading-9 text-[#4f463e] sm:text-xl sm:leading-10">
+                <span className="editorial-highlight">Guided healing</span> rooted in intuition,
+                ancestral wisdom, and holistic well-being.
               </p>
               <div className="mt-5 h-px w-24 bg-[#b9a27e]" />
             </div>
@@ -70,25 +71,26 @@ export default function AboutPage() {
       <section className="bg-white px-5 py-16 sm:px-8 lg:px-10">
         <div className="mx-auto max-w-7xl">
           <Reveal>
-            <article className="max-w-5xl">
+            <article className="mx-auto max-w-[52rem]">
               <p className="text-sm font-semibold uppercase tracking-[0.22em] text-[#7d8b65]">
                 Introduction
               </p>
-              <h2 className="mt-3 text-3xl font-semibold text-[#2f2822] sm:text-4xl">
+              <h2 className="mt-3 text-3xl font-semibold leading-tight text-[#2f2822] sm:text-4xl">
                 A sacred space for balance, resilience and well-being.
               </h2>
               <div className="mt-7 h-px w-24 bg-[#d7c6a9]" />
-              <div className="mt-8 space-y-7 text-justify text-lg leading-9 text-[#554b43]">
+              <div className="editorial-prose mt-8">
                 <p>
-                  I am an intuitive energy healer devoted to helping individuals restore
-                  balance, resilience and well-being. Born into a sacred lineage of
+                  I am an intuitive energy healer devoted to helping individuals restore{" "}
+                  <span className="editorial-highlight">balance, resilience and well-being</span>.
+                  Born into a sacred lineage of
                   Himalayan healers, astrologers, and temple priests, I was raised in an
                   environment where intuitive gifts, spiritual rituals, and energetic
                   wisdom were part of daily life. From childhood, I was naturally sensitive
                   to subtle energy fields and received intuitive insights through dreams
                   and spontaneous knowing. These ancestral gifts, nurtured through
                   generations of practice, allow me to perceive imbalances even from afar
-                  and guide people toward deep healing and transformation. Every session I
+                  and guide people toward <span className="editorial-highlight">deep healing and transformation</span>. Every session I
                   hold is guided by these ancestral threads, enabling me to sense the
                   unseen and channel healing with clarity, compassion and grace. My healing
                   sessions are integrative and multidimensional, addressing the physical,
@@ -97,7 +99,7 @@ export default function AboutPage() {
                 <p>
                   While I am trained in modalities like Craniosacral Therapy, Bach Flower
                   Remedies and few others, my work is guided entirely by intuition and
-                  energy channeled through ancestral wisdom rather than learned technique.
+                  energy channeled through <span className="editorial-highlight">ancestral wisdom</span> rather than learned technique.
                   Each session is a sacred space where clients feel safe, seen and
                   supported. I empower individuals to become active participants in their
                   healing journey, making choices that align with joy, vitality and inner
@@ -133,7 +135,7 @@ export default function AboutPage() {
 
       <section className="bg-white px-5 py-16 sm:px-8 lg:px-10">
         <div className="mx-auto max-w-7xl">
-          <Reveal className="max-w-3xl">
+          <Reveal className="mx-auto max-w-[52rem]">
             <p className="text-sm font-semibold uppercase tracking-[0.22em] text-[#7d8b65]">
               Healing Philosophy
             </p>
@@ -147,7 +149,7 @@ export default function AboutPage() {
               <Reveal key={block.title} delay={index * 0.08}>
                 <article className="h-full rounded-[2rem] border border-[#eadfce] bg-white p-7 shadow-sm shadow-[#6b513b]/5">
                   <h3 className="text-2xl font-semibold text-[#241d18]">{block.title}</h3>
-                  <div className="mt-5 space-y-4 text-justify text-base leading-8 text-[#675b50]">
+                  <div className="mt-5 space-y-5 text-base leading-8 text-[#675b50]">
                     {block.text.split("\n\n").map((paragraph) => (
                       <p key={paragraph}>{paragraph}</p>
                     ))}

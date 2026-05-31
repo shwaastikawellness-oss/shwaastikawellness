@@ -12,25 +12,27 @@ export default function HomeIntro() {
         <h2 className="mx-auto mt-3 max-w-3xl text-3xl font-bold leading-tight text-[#17120f] sm:text-4xl">
           A Space to Return Home to Yourself
         </h2>
-        <div className="mx-auto mt-8 max-w-4xl space-y-5 text-base leading-8 text-[#332b24] sm:space-y-6 sm:text-xl sm:leading-10">
+        <div className="editorial-prose editorial-prose-center mt-8">
           <p>
             Wellness comes with a choice. A choice to look within, to listen deeply, and to
-            surrender to the wisdom beyond the mind.
+            <span className="editorial-highlight"> surrender to the wisdom beyond the mind</span>.
           </p>
           <p>
             True transformation doesn&apos;t come from curiosity alone it comes from the
-            strong desire to live fully, with hope and belief that something greater is
+            <span className="editorial-highlight"> strong desire to live fully</span>, with hope and belief that something greater is
             guiding us.
           </p>
           <p>
             This is the space I hold: a space where you are invited to reconnect with
-            yourself, release what weighs you down and step into balance, joy and clarity.
+            yourself, release what weighs you down and step into{" "}
+            <span className="editorial-highlight">balance, joy and clarity</span>.
           </p>
           <p>
-            Whether through intuitive healing or inner clarity, the journey begins when
+            Whether through <span className="editorial-highlight">intuitive healing</span> or{" "}
+            <span className="editorial-highlight">inner clarity</span>, the journey begins when
             you are ready to surrender - ready to return home to yourself.
           </p>
-          <p className="pt-2 text-right font-semibold italic text-[#7a6b5e]">
+          <p className="pt-2 text-right italic text-[#7a6b5e]">
             -Preeti Semwal Bembi
           </p>
         </div>

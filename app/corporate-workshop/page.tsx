@@ -86,14 +86,14 @@ export default function CorporateWorkshopPage() {
             </div>
           </Reveal>
 
-          <div className="space-y-7 text-base leading-8 text-[#3f372f] sm:space-y-8 sm:text-lg sm:leading-9">
+          <div className="editorial-prose space-y-8">
             {foundations.map((item, index) => (
               <Reveal key={item.title} delay={index * 0.04}>
                 <section className="border-l border-[#d7c6a9] pl-4 sm:pl-6">
                   <h3 className="text-left text-xl font-semibold leading-tight text-[#2f2822] sm:text-2xl">
                     {item.title}
                   </h3>
-                  <p className="mt-3 text-left sm:text-justify">
+                  <p className="mt-4 text-left">
                     {item.text}
                   </p>
                 </section>

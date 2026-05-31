@@ -135,13 +135,36 @@ export default function IntuitiveHealingPage() {
       </section>
 
       <section className="bg-white px-5 py-16 sm:px-8 lg:px-10">
-        <div className="mx-auto max-w-5xl">
+        <div className="mx-auto max-w-[52rem]">
           <Reveal>
             <article>
-              <div className="space-y-6 text-justify text-base leading-8 text-[#3f372f] sm:text-lg sm:leading-9">
-                {introParagraphs.map((paragraph) => (
-                  <p key={paragraph}>{paragraph}</p>
-                ))}
+              <div className="editorial-prose">
+                <p>
+                  Intuitive Healing is an{" "}
+                  <span className="editorial-highlight">awareness-based energy healing</span>{" "}
+                  approach that works with deeper physical, emotional, and mental imbalances.
+                  Often, what individuals repeatedly experience in the body or mind is not
+                  limited to the surface symptom alone. Emotional stress, anxiety, fatigue,
+                  physical discomfort, recurring patterns, or a persistent sense of imbalance
+                  may also carry deeper emotional and energetic layers beneath the surface.
+                </p>
+                <p>
+                  The process works intuitively through the individual&apos;s energetic field to
+                  understand emotional strain, stress patterns, inner blocks, energetic
+                  disturbances, or imbalances that may be contributing to the present concern.
+                  The work is compassionate, aware, and deeply individualized, creating a{" "}
+                  <span className="editorial-highlight">supportive space</span> to explore
+                  what may be affecting the person physically, emotionally, or mentally.
+                </p>
+                <p>{introParagraphs[2]}</p>
+                <p>
+                  At times, physical discomfort may also carry emotional, mental,
+                  stress-related, or energetic components beneath the surface. As{" "}
+                  <span className="editorial-highlight">emotional regulation</span>, stress
+                  reduction, inner balance, and overall energetic awareness improve,
+                  individuals may also experience supportive shifts in their physical
+                  well-being.
+                </p>
               </div>
 
               <div className="mt-10 border-y border-[#e5d9c7] py-8">
@@ -178,10 +201,26 @@ export default function IntuitiveHealingPage() {
                 <h2 className="text-2xl font-semibold leading-tight text-[#2f2822] sm:text-3xl">
                   How the Process Works
                 </h2>
-                <div className="mt-6 space-y-6 text-justify text-base leading-8 text-[#3f372f] sm:text-lg sm:leading-9">
-                  {processParagraphs.map((paragraph) => (
-                    <p key={paragraph}>{paragraph}</p>
-                  ))}
+                <div className="editorial-prose mt-7">
+                  <p>{processParagraphs[0]}</p>
+                  <p>
+                    At times, the process may help bring awareness to the connection between
+                    emotional experiences, mental patterns, lifestyle habits, and{" "}
+                    <span className="editorial-highlight">physical well-being</span>. Based
+                    on what emerges during the session, supportive interventions may be
+                    suggested in the form of breathwork, grounding practices, meditation,
+                    gentle movement practices, emotional awareness work, lifestyle adjustments,
+                    dietary changes, routine-based changes, or other holistic supportive
+                    approaches.
+                  </p>
+                  <p>{processParagraphs[2]}</p>
+                  <p>
+                    Intuitive Healing is not approached as passive healing, but as a{" "}
+                    <span className="editorial-highlight">collaborative process</span> where
+                    awareness, participation, consistency, and openness from the individual
+                    play an important role in the overall journey toward healing, regulation,
+                    and balance.
+                  </p>
                 </div>
 
                 <div className="mt-8 rounded-[1.5rem] border border-[#e5d9c7] bg-[#fbf8f1] p-5 sm:p-6">
@@ -203,7 +242,7 @@ export default function IntuitiveHealingPage() {
 
               <div className="mt-10 rounded-[1.5rem] border border-[#e5d9c7] bg-[#fbf8f1] p-5 sm:p-6">
                 <h2 className="text-xl font-semibold text-[#2f2822]">Medical Disclaimer</h2>
-                <p className="mt-3 text-justify text-base leading-8 text-[#5d5045]">
+                <p className="mt-4 max-w-3xl text-base leading-8 text-[#5d5045]">
                   {medicalDisclaimer}
                 </p>
               </div>
@@ -236,11 +275,11 @@ export default function IntuitiveHealingPage() {
                   <span className="hidden group-open:inline">Hide</span>
                 </span>
               </summary>
-              <ul className="border-t border-[#e5d9c7] px-6 py-5 space-y-3 text-justify text-base leading-7 text-[#2f2822] sm:px-7 sm:py-6 sm:space-y-4">
+              <ul className="space-y-3 border-t border-[#e5d9c7] px-6 py-5 text-base leading-8 text-[#2f2822] sm:space-y-4 sm:px-7 sm:py-6">
                 {instructions.map((instruction) => (
                   <li key={instruction} className="flex gap-4">
                     <span className="mt-2.5 h-2 w-2 shrink-0 rounded-full bg-[#3f5f46]" />
-                    <span className="min-w-0 flex-1 text-justify">{instruction}</span>
+                    <span className="min-w-0 flex-1">{instruction}</span>
                   </li>
                 ))}
               </ul>

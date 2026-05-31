@@ -68,8 +68,9 @@ export default function TestimonialsPage() {
             <h1 className="text-4xl font-semibold leading-[1.08] text-[#241d18] sm:text-5xl lg:text-6xl">
               Testimonials
             </h1>
-            <p className="mx-auto mt-6 max-w-3xl text-justify text-xl leading-9 text-[#4f463e]">
-              Real experiences from people who have found clarity, healing, and deeper alignment.
+            <p className="editorial-prose editorial-prose-center mt-6 max-w-3xl">
+              Real experiences from people who have found{" "}
+              <span className="editorial-highlight">clarity, healing, and deeper alignment</span>.
             </p>
           </div>
         </Reveal>

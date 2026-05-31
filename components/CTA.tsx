@@ -12,8 +12,9 @@ export default function CTA() {
               <h2 className="mt-4 max-w-3xl text-3xl font-semibold leading-tight sm:text-4xl">
                 Ready to build a healthier, more resilient workplace?
               </h2>
-              <p className="mt-5 max-w-2xl text-justify text-base leading-7 text-[#fff7ec]">
-                Plan a custom wellness, leadership, or emotional intelligence program for your people.
+              <p className="mt-5 max-w-2xl text-base leading-8 text-[#fff7ec]">
+                Plan a custom wellness, leadership, or emotional intelligence program for{" "}
+                <span className="font-semibold text-white">your people</span>.
               </p>
             </div>
             <Link

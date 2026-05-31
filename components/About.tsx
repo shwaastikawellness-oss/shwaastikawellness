@@ -16,7 +16,7 @@ export default function About() {
             <div className="flex h-full items-center justify-center rounded-[1.5rem] border border-dashed border-[#c9b693] bg-[linear-gradient(145deg,#fffdf8,#e5eddf)] text-center">
               <div>
                 <p className="text-sm font-semibold uppercase tracking-[0.22em] text-[#7d8b65]">Practice Visual</p>
-                <p className="mt-3 max-w-xs text-justify text-sm leading-6 text-[#76695d]">
+                <p className="mt-3 max-w-xs text-sm leading-6 text-[#76695d]">
                   A calm space for guided reflection and personal growth.
                 </p>
               </div>
@@ -30,12 +30,13 @@ export default function About() {
             <h2 className="mt-3 text-3xl font-semibold text-[#2f2822] sm:text-4xl">
               About Shwaastika Wellness
             </h2>
-            <p className="mt-6 text-justify text-lg leading-8 text-[#6a5e52]">
+            <p className="editorial-prose mt-6">
               Shwaastika Wellness creates thoughtful programs for workplace wellness,
               emotional intelligence, leadership readiness, professional behaviour,
               safety capability, and holistic growth. The approach blends practical
-              training with human-centered reflection so teams and individuals can build
-              confidence, awareness, resilience, and healthier ways of working.
+              training with <span className="editorial-highlight">human-centered reflection</span>{" "}
+              so teams and individuals can build confidence, awareness, resilience, and
+              healthier ways of working.
             </p>
             <Link
               href="/about"

@@ -92,7 +92,7 @@ export default function ReviewCard({ review, variant = "default", onClick }: Rev
       </div>
 
       <div className="mt-4 min-h-0 flex-1 overflow-y-auto pr-2 [scrollbar-color:#cdbd9f_transparent] [scrollbar-width:thin]">
-        <p className="whitespace-pre-line text-justify text-[15px] leading-7 text-[#3f352d]">
+        <p className="whitespace-pre-line text-[15px] leading-7 text-[#3f352d]">
           {review.review}
         </p>
       </div>

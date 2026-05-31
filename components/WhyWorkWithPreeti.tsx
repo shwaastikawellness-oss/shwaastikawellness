@@ -32,10 +32,10 @@ export default function WhyWorkWithPreeti() {
           </div>
 
           <div className="rounded-[1.35rem] border border-[#eadfce] bg-white p-5 shadow-sm shadow-[#6b513b]/3 sm:rounded-[1.75rem] sm:p-7">
-            <p className="text-base font-medium leading-8 text-[#2f2822]">
+            <p className="max-w-[46rem] text-base leading-8 text-[#2f2822] sm:text-lg sm:leading-9">
               Her work brings together disciplined real-world experience, Himalayan
-              spiritual grounding, intuitive energy healing, yoga, meditation, and
-              awareness-based practices.
+              spiritual grounding, <span className="editorial-highlight">intuitive energy healing</span>,
+              yoga, meditation, and awareness-based practices.
             </p>
             <button
               type="button"
@@ -62,7 +62,7 @@ export default function WhyWorkWithPreeti() {
               A Unique Blend of Experience, Awareness & Healing
             </h3>
           </div>
-          <ul className="grid gap-0 text-justify text-base leading-7 text-[#4b423b]">
+          <ul className="grid gap-0 text-base leading-8 text-[#4b423b]">
             {reasons.map((reason) => (
               <li key={reason} className="flex gap-3 border-t border-[#eee4d4] px-5 py-4 sm:px-7">
                 <span className="mt-0.5 shrink-0 font-semibold text-[#3f5f46]">&#10003;</span>

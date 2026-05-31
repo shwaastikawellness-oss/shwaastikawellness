@@ -22,9 +22,10 @@ export default function LocationMap() {
               <p className="mt-3 text-sm font-semibold uppercase tracking-[0.2em] text-[#8a7764]">
                 Shwaastika Wellness
               </p>
-              <p className="mt-5 max-w-xl text-justify text-lg leading-8 text-[#66584d]">
+              <p className="mt-5 max-w-xl text-lg leading-9 text-[#66584d]">
                 Located in Yapral, Secunderabad, with a calm and accessible space for
-                in-person wellness sessions and consultations.
+                <span className="editorial-highlight"> in-person wellness sessions</span> and
+                consultations.
               </p>
 
               <div className="mt-7 rounded-[1.5rem] border border-[#e5d9c7] bg-[#fbf8f1]/85 p-5 shadow-sm">

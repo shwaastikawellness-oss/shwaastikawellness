@@ -28,6 +28,7 @@ export default function Header() {
   const moreDropdownRef = useRef<HTMLLIElement>(null);
   const pathname = usePathname();
   const isHomePage = pathname === "/";
+  const isBookingPage = pathname === "/book-a-session";
 
   useEffect(() => {
     if (!isMoreOpen) {
@@ -59,6 +60,51 @@ export default function Header() {
       document.removeEventListener("keydown", handleKeyDown);
     };
   }, [isMoreOpen]);
+
+  if (isBookingPage) {
+    return (
+      <header className="border-b border-[#eadfce]/70 bg-[#fffdf8]/90">
+        <nav
+          aria-label="Booking navigation"
+          className="mx-auto flex max-w-[86rem] items-center justify-between gap-4 px-5 py-4 sm:px-6 lg:px-10"
+        >
+          <Link
+            href="/"
+            className="flex shrink-0 items-center gap-3"
+            aria-label="Shwaastika Wellness home"
+          >
+            <span
+              aria-hidden="true"
+              className="flex h-11 w-11 items-center justify-center overflow-hidden rounded-full border border-[#eadfce] bg-white shadow-sm sm:h-12 sm:w-12"
+            >
+              <Image
+                src="/images/logo.png"
+                alt=""
+                width={52}
+                height={52}
+                className="h-full w-full object-contain"
+              />
+            </span>
+            <div className="leading-tight">
+              <p className="text-base font-semibold tracking-[0.04em] text-[#241d18] sm:text-lg">
+                Shwaastika Wellness
+              </p>
+              <p className="text-xs italic text-[#8a7764] sm:text-[13px]">
+                By Preeti Semwal
+              </p>
+            </div>
+          </Link>
+
+          <Link
+            href="/"
+            className="rounded-full border border-[#d8c7ad] bg-white/80 px-4 py-2 text-sm font-semibold text-[#3f352d] shadow-sm transition hover:bg-white"
+          >
+            Back to Home
+          </Link>
+        </nav>
+      </header>
+    );
+  }
 
   return (
     <header className="sticky top-0 z-50 border-b border-[#eadfce]/70 bg-[#fffdf8]/90 backdrop-blur-xl">

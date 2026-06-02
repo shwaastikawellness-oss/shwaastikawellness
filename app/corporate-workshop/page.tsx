@@ -33,7 +33,7 @@ const foundations = [
 export default function CorporateWorkshopPage() {
   return (
     <main className="bg-[#fffdf8]">
-      <section className="relative isolate overflow-hidden px-4 py-12 sm:px-8 sm:py-16 lg:px-10 lg:py-20">
+      <section className="relative isolate overflow-hidden px-5 py-12 sm:px-8 sm:py-16 lg:px-10 lg:py-20">
         <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_18%_18%,rgba(234,223,206,0.58),transparent_28%),linear-gradient(135deg,#fffdf8_0%,#fff7ec_58%,#f8f1e8_100%)]" />
         <div className="mx-auto max-w-7xl">
           <Reveal>
@@ -48,7 +48,7 @@ export default function CorporateWorkshopPage() {
           </Reveal>
 
           <Reveal delay={0.12}>
-            <div className="group mt-8 overflow-hidden rounded-[1.25rem] border border-[#e5d9c7] bg-[#fbf8f1] p-2 shadow-xl shadow-[#6b513b]/10 sm:mt-9 sm:rounded-[1.75rem] sm:p-3">
+            <div className="group mt-8 overflow-hidden rounded-[1.25rem] border border-[#e5d9c7] bg-[#fbf8f1] p-2 shadow-lg shadow-[#6b513b]/8 sm:mt-9 sm:rounded-[1.75rem] sm:p-3">
               <div className="relative aspect-[4/3] overflow-hidden rounded-[1rem] bg-[#dfe9d8] transition duration-700 group-hover:scale-[1.008] sm:aspect-[16/5] sm:min-h-[220px] sm:rounded-[1.35rem]">
                 <Image
                   src="/images/corporate%20workshop/Hero.JPG"
@@ -72,7 +72,7 @@ export default function CorporateWorkshopPage() {
         </div>
       </section>
 
-      <section className="bg-white px-4 py-12 sm:px-8 sm:py-16 lg:px-10">
+      <section className="bg-white px-5 py-12 sm:px-8 sm:py-16 lg:px-10">
         <article className="mx-auto grid max-w-6xl gap-9 lg:grid-cols-[0.36fr_0.64fr] lg:gap-14">
           <Reveal>
             <div className="lg:sticky lg:top-28">
@@ -86,7 +86,7 @@ export default function CorporateWorkshopPage() {
             </div>
           </Reveal>
 
-          <div className="editorial-prose space-y-8">
+          <div className="editorial-prose space-y-6 sm:space-y-8">
             {foundations.map((item, index) => (
               <Reveal key={item.title} delay={index * 0.04}>
                 <section className="border-l border-[#d7c6a9] pl-4 sm:pl-6">

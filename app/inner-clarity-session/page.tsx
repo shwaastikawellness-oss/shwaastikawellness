@@ -34,7 +34,7 @@ const sessionOffers = [
 export default function InnerClaritySessionPage() {
   return (
     <main className="bg-[#fffdf8]">
-      <section className="relative isolate overflow-hidden px-5 py-16 sm:px-8 lg:px-10 lg:py-20">
+      <section className="relative isolate overflow-hidden px-5 py-14 sm:px-8 sm:py-16 lg:px-10 lg:py-20">
         <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_18%_18%,rgba(234,223,206,0.58),transparent_28%),linear-gradient(135deg,#fffdf8_0%,#fff7ec_58%,#f8f1e8_100%)]" />
         <div className="mx-auto max-w-5xl text-center">
           <Reveal>
@@ -48,7 +48,7 @@ export default function InnerClaritySessionPage() {
         </div>
       </section>
 
-      <section className="bg-white px-5 py-16 sm:px-8 lg:px-10">
+      <section className="bg-white px-5 py-12 sm:px-8 sm:py-16 lg:px-10">
         <Reveal>
           <article className="mx-auto max-w-[75rem]">
             <div className="mx-auto max-w-[52rem]">

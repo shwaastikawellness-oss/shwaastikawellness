@@ -1,8 +1,8 @@
 "use client";
 
 import { AnimatePresence, motion } from "framer-motion";
-import Image from "next/image";
 import { KeyboardEvent, useState } from "react";
+import ServiceContentSection from "./ServiceContentSection";
 
 const tabs = [
   {
@@ -32,7 +32,7 @@ const tabs = [
   {
     label: "Is Inner Clarity Right for You?",
     imageAlt: "Calm reflective visual for Inner Clarity suitability",
-    imageSrc: "/images/inner%20clarity/who%20benifits.jpg",
+    imageSrc: "/images/inner%20clarity/is%20Inner%20Clarity%20right%20for%20you.png",
     items: [
       "Inner Clarity isn't about mystifying the process, it's for anyone who senses there's more beneath the surface of their life and wants to translate subtle signals into real-world clarity. Book a session when you:",
       "Feel stuck or overwhelmed by a decision",
@@ -69,12 +69,12 @@ export default function InnerClarityTabs() {
   };
 
   return (
-    <section className="bg-white px-5 py-16 sm:px-8 lg:px-10">
+    <section className="bg-white px-5 py-12 sm:px-8 sm:py-16 lg:px-10">
       <div className="mx-auto max-w-7xl">
         <div
           role="tablist"
           aria-label="Inner clarity information"
-          className="rounded-[1.25rem] border border-[#e6dac7] bg-[#fbf8f1] p-1.5 shadow-sm lg:rounded-full lg:p-1"
+          className="sticky top-[72px] z-30 rounded-[1rem] border border-[#e2d4bd] bg-white/90 p-1.5 shadow-sm shadow-[#6b513b]/5 backdrop-blur lg:rounded-full lg:p-1"
         >
           <div className="grid grid-cols-2 gap-1.5 lg:flex lg:min-w-0 lg:gap-1">
             {tabs.map((tab, index) => {
@@ -91,9 +91,9 @@ export default function InnerClarityTabs() {
                   tabIndex={isActive ? 0 : -1}
                   onClick={() => setActiveIndex(index)}
                   onKeyDown={(event) => handleKeyDown(event, index)}
-                  className={`min-h-12 rounded-full px-3 py-3 text-center text-[13px] font-semibold leading-snug transition sm:px-5 sm:text-sm lg:flex-1 lg:whitespace-nowrap lg:px-6 ${
+                  className={`relative min-h-11 rounded-full px-2.5 py-2.5 text-center text-xs font-medium leading-snug transition sm:min-h-12 sm:px-5 sm:py-3 sm:text-sm lg:flex-1 lg:whitespace-nowrap lg:px-6 ${
                     isActive
-                      ? "bg-[#be7b54] text-white shadow-md shadow-[#6b513b]/10"
+                      ? "bg-[#a8bc98] text-[#26382a] shadow-sm shadow-[#6b513b]/5"
                       : "text-[#5f5349] hover:bg-white hover:text-[#3f5f46]"
                   }`}
                 >
@@ -114,51 +114,31 @@ export default function InnerClarityTabs() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -12 }}
             transition={{ duration: 0.28, ease: "easeOut" }}
-            className="mt-6 overflow-hidden rounded-[2rem] border border-[#eadfce] bg-[#f5e9f7] p-4 shadow-xl shadow-[#6b513b]/5 sm:p-5 lg:p-6"
+            className="mt-6 sm:mt-8"
           >
-            <div className="grid items-stretch gap-7 lg:grid-cols-[0.78fr_1.22fr]">
-              <div className="relative min-h-[300px] overflow-hidden rounded-[1.5rem] border border-white/75 bg-white shadow-lg shadow-[#6b513b]/8 sm:min-h-[360px] lg:min-h-[430px]">
-                {activeTab.imageSrc ? (
-                  <>
-                    <Image
-                      src={activeTab.imageSrc}
-                      alt={activeTab.imageAlt}
-                      fill
-                      className="object-cover object-center"
-                      sizes="(max-width: 768px) 100vw, 50vw"
-                      loading="lazy"
-                      quality={90}
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#17130f]/8 via-transparent to-transparent" />
-                  </>
-                ) : (
-                  <div className="flex h-full min-h-[300px] flex-col justify-end bg-[linear-gradient(145deg,#fffdf8,#f5e9f7_48%,#dfe9d8)] p-7 sm:min-h-[360px] lg:min-h-[430px]">
-                    <p className="text-justify text-3xl font-semibold leading-tight text-[#2f2822]">
-                      Tune into what is asking for clarity.
-                    </p>
-                    <div className="mt-7 h-px w-24 bg-[#b9a27e]" />
-                  </div>
-                )}
+            <ServiceContentSection
+              imageSrc={activeTab.imageSrc}
+              imageAlt={activeTab.imageAlt}
+              title={activeTab.label}
+            >
+              <div className="editorial-prose">
+                {activeTab.items ? (
+                  <ul className="space-y-2.5 sm:space-y-3">
+                    {activeTab.items.map((item, index) => (
+                      <li key={item} className="flex gap-3">
+                        <span className="mt-3.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#8a9f78] sm:mt-4 sm:h-2 sm:w-2" />
+                        <span className={`min-w-0 flex-1 ${index === 0 && activeTab.label === "Is Inner Clarity Right for You?" ? "text-[#2f2822]" : ""}`}>
+                          {item}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                ) : null}
+                {activeTab.note ? (
+                  <p className={`${activeTab.items ? "mt-8" : ""}`}>{activeTab.note}</p>
+                ) : null}
               </div>
-
-              <div className="flex rounded-[1.5rem] border border-white/65 bg-white/80 p-6 shadow-sm shadow-[#6b513b]/5 sm:p-8 lg:p-9">
-                <div className="editorial-prose self-center">
-                  {activeTab.items ? (
-                    <ul className="space-y-3">
-                      {activeTab.items.map((item) => (
-                        <li key={item} className="flex gap-3">
-                          <span className="mt-4 h-2 w-2 shrink-0 rounded-full bg-[#3f5f46]" />
-                          <span className="min-w-0 flex-1">{item}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  ) : null}
-                  {activeTab.note ? (
-                    <p className={`${activeTab.items ? "mt-8" : ""}`}>{activeTab.note}</p>
-                  ) : null}
-                </div>
-              </div>
-            </div>
+            </ServiceContentSection>
           </motion.article>
         </AnimatePresence>
       </div>

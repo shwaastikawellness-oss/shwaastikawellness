@@ -149,7 +149,7 @@ export default function Header() {
                 className={`block rounded-full px-4 py-2 text-[13px] font-medium transition ${
                   pathname === link.href
                     ? "bg-white text-[#241d18] shadow-sm"
-                    : "text-[#5f5349] hover:bg-white/75 hover:text-[#241d18]"
+                    : "text-[#5f5349] hover:bg-[#eef3e8] hover:text-[#26382a]"
                 }`}
               >
                 {link.label}
@@ -163,7 +163,7 @@ export default function Header() {
               aria-expanded={isMoreOpen}
               aria-haspopup="menu"
               onClick={() => setIsMoreOpen((value) => !value)}
-              className="rounded-full px-4 py-2 text-[13px] font-medium text-[#5f5349] transition hover:bg-white/75 hover:text-[#241d18]"
+              className="rounded-full px-4 py-2 text-[13px] font-medium text-[#5f5349] transition hover:bg-[#eef3e8] hover:text-[#26382a]"
             >
               More
             </button>
@@ -184,7 +184,7 @@ export default function Header() {
                   className={`block rounded-xl px-4 py-3 text-sm font-medium transition ${
                     pathname === link.href
                       ? "bg-white text-[#241d18] shadow-sm"
-                      : "text-[#5f5349] hover:bg-white/80 hover:text-[#241d18]"
+                      : "text-[#5f5349] hover:bg-[#eef3e8] hover:text-[#26382a]"
                   }`}
                 >
                   {link.label}
@@ -199,7 +199,7 @@ export default function Header() {
             <Link
               href="/book-a-session"
               scroll
-              className="rounded-full bg-[#2b211a] px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-[#2b211a]/12 transition hover:-translate-y-0.5 hover:bg-[#5f4a38]"
+              className="rounded-full bg-[#5f4a38] px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-[#2b211a]/12 transition hover:-translate-y-0.5 hover:bg-[#2b211a]"
             >
               Book a Consultation
             </Link>
@@ -250,7 +250,7 @@ export default function Header() {
                       className={`block rounded-full px-4 py-3 text-sm font-semibold ${
                         pathname === link.href
                           ? "bg-white text-[#241d18] shadow-sm"
-                          : "text-[#5f5349] hover:bg-white/75"
+                          : "text-[#5f5349] hover:bg-[#eef3e8] hover:text-[#26382a]"
                       }`}
                     >
                       {link.label}
@@ -264,7 +264,7 @@ export default function Header() {
                   href="/book-a-session"
                   scroll
                   onClick={() => setIsOpen(false)}
-                  className="mt-3 block rounded-full bg-[#2b211a] px-5 py-3 text-center text-sm font-semibold text-white"
+                  className="mt-3 block rounded-full bg-[#5f4a38] px-5 py-3 text-center text-sm font-semibold text-white transition hover:bg-[#2b211a]"
                 >
                   Book a Consultation
                 </Link>

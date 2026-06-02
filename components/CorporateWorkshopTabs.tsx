@@ -1,15 +1,18 @@
 "use client";
 
 import { AnimatePresence, motion } from "framer-motion";
-import Image from "next/image";
 import { KeyboardEvent, useState } from "react";
+import ServiceContentSection, {
+  serviceBodyClass,
+  serviceInsetGroupClass,
+  serviceSubheadingClass,
+} from "./ServiceContentSection";
 
 const tabs = [
   {
     label: "Training Domains",
     imageSrc: "/images/corporate%20workshop/training%20domains.webp",
     imageAlt: "Corporate workshop training domains visual",
-    imageAspect: "aspect-[4/3]",
     imageFit: "object-cover",
     heading: "Training Domains",
     intro:
@@ -49,7 +52,6 @@ const tabs = [
     label: "Our Approach",
     imageSrc: "/images/corporate%20workshop/our%20approach.png",
     imageAlt: "Corporate team workshop and group learning visual",
-    imageAspect: "aspect-[16/10]",
     imageFit: "object-cover",
     heading: "Our Approach",
     paragraphs: [
@@ -62,7 +64,6 @@ const tabs = [
     label: "Delivery Options",
     imageSrc: "/images/corporate%20workshop/Delivery%20option.webp",
     imageAlt: "Corporate workshop delivery options visual",
-    imageAspect: "aspect-[3/4]",
     imageFit: "object-contain",
     heading: "Delivery Options",
     cards: [
@@ -75,7 +76,6 @@ const tabs = [
     label: "Who Benefits",
     imageSrc: "/images/corporate%20workshop/Who%20benefits.png",
     imageAlt: "Corporate workshop participants and benefits visual",
-    imageAspect: "aspect-[16/10]",
     imageFit: "object-cover",
     heading: "Who Benefits",
     bullets: [
@@ -86,12 +86,9 @@ const tabs = [
   },
 ];
 
-const contentCardClass =
-  "h-full rounded-[1.1rem] border border-[#e5d9c7] bg-[#fbf8f1] p-4 shadow-sm sm:rounded-[1.35rem] sm:p-5";
+const contentCardClass = "h-full border-l border-[#d7c6a9] pl-4 sm:pl-5";
 
-const contentTitleClass = "text-base font-semibold leading-7 text-[#2f2822] sm:text-lg";
-
-const contentTextClass = "mt-2 text-left text-sm leading-7 text-[#66584d] sm:text-justify sm:text-base";
+const contentTextClass = "mt-2 text-left text-sm leading-7 text-[#66584d] sm:text-base";
 
 export default function CorporateWorkshopTabs() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -110,12 +107,12 @@ export default function CorporateWorkshopTabs() {
   };
 
   return (
-    <section className="bg-[#f4f1eb] px-4 py-12 sm:px-8 sm:py-16 lg:px-10">
+    <section className="bg-white px-5 py-12 sm:px-8 sm:py-16 lg:px-10">
       <div className="mx-auto max-w-7xl">
         <div
           role="tablist"
           aria-label="Corporate workshop information"
-          className="sticky top-[72px] z-30 mb-8 rounded-[1rem] border border-[#d7c8ad] bg-white/90 p-1.5 shadow-sm backdrop-blur sm:mb-10 lg:rounded-full lg:p-1"
+          className="sticky top-[72px] z-30 rounded-[1rem] border border-[#e2d4bd] bg-white/90 p-1.5 shadow-sm shadow-[#6b513b]/5 backdrop-blur lg:rounded-full lg:p-1"
         >
           <div className="grid grid-cols-2 gap-1.5 lg:flex lg:min-w-0 lg:gap-1">
             {tabs.map((tab, index) => {
@@ -132,17 +129,12 @@ export default function CorporateWorkshopTabs() {
                   tabIndex={isActive ? 0 : -1}
                   onClick={() => setActiveIndex(index)}
                   onKeyDown={(event) => handleKeyDown(event, index)}
-                  className={`relative min-h-11 rounded-full px-2 py-2.5 text-center text-xs font-medium leading-snug transition sm:min-h-12 sm:px-5 sm:py-3 sm:text-sm lg:flex-1 lg:whitespace-nowrap lg:px-6 ${
-                    isActive ? "text-[#26382a]" : "text-[#5f5349] hover:text-[#3f5f46]"
+                  className={`relative min-h-11 rounded-full px-2.5 py-2.5 text-center text-xs font-medium leading-snug transition sm:min-h-12 sm:px-5 sm:py-3 sm:text-sm lg:flex-1 lg:whitespace-nowrap lg:px-6 ${
+                    isActive
+                      ? "bg-[#a8bc98] text-[#26382a] shadow-sm shadow-[#6b513b]/5"
+                      : "text-[#5f5349] hover:bg-white hover:text-[#3f5f46]"
                   }`}
                 >
-                  {isActive ? (
-                    <motion.span
-                      layoutId="corporate-active-tab"
-                      className="absolute inset-0 rounded-full bg-[#a8bc98]"
-                      transition={{ type: "spring", stiffness: 360, damping: 32 }}
-                    />
-                  ) : null}
                   <span className="relative">{tab.label}</span>
                 </button>
               );
@@ -160,37 +152,23 @@ export default function CorporateWorkshopTabs() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -16 }}
             transition={{ duration: 0.32, ease: "easeOut" }}
-            className="grid items-start gap-6 rounded-[1.35rem] border border-[#e1d4bf] bg-white p-4 shadow-xl shadow-[#6b513b]/8 sm:gap-8 sm:rounded-[2rem] sm:p-8 lg:grid-cols-[0.68fr_1.32fr] lg:gap-10 lg:p-10"
+            className="mt-6 sm:mt-8"
           >
-            <div className="group mx-auto w-full self-start overflow-hidden rounded-[1.1rem] border border-[#e5d9c7] bg-[#fbf8f1] p-2 shadow-lg shadow-[#6b513b]/8 sm:rounded-[1.5rem] sm:p-3 lg:max-w-[430px]">
-              <div className={`relative ${activeTab.imageAspect} max-sm:aspect-[4/3] overflow-hidden rounded-[0.9rem] bg-[#dfe9d8] transition duration-500 group-hover:scale-[1.01] sm:rounded-[1.15rem]`}>
-                <Image
-                  src={activeTab.imageSrc}
-                  alt={activeTab.imageAlt}
-                  fill
-                  className={`${activeTab.imageFit} object-center`}
-                  sizes="(max-width: 1024px) 100vw, 430px"
-                  loading="lazy"
-                  quality={100}
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#17130f]/18 via-transparent to-white/5" />
-              </div>
-            </div>
-
-            <div className="self-center">
-              <h2 className="text-2xl font-semibold leading-tight text-[#2f2822] sm:text-4xl">
-                {activeTab.heading}
-              </h2>
-
+            <ServiceContentSection
+              imageSrc={activeTab.imageSrc}
+              imageAlt={activeTab.imageAlt}
+              imageFit={activeTab.imageFit as "object-cover" | "object-contain"}
+              title={activeTab.heading}
+            >
               {"intro" in activeTab ? (
-                <p className="mt-5 text-left text-base leading-8 text-[#5d5045] sm:mt-6 sm:text-justify sm:text-lg">{activeTab.intro}</p>
+                <p className={serviceBodyClass}>{activeTab.intro}</p>
               ) : null}
 
               {activeTab.domains ? (
-                <div className="mt-7 grid gap-x-7 gap-y-5 sm:mt-8 lg:grid-cols-2">
+                <div className={serviceInsetGroupClass}>
                   {activeTab.domains.map((domain) => (
                     <div key={domain.title} className={contentCardClass}>
-                      <h3 className={contentTitleClass}>{domain.title}</h3>
+                      <h3 className={serviceSubheadingClass}>{domain.title}</h3>
                       <p className={contentTextClass}>{domain.text}</p>
                     </div>
                   ))}
@@ -198,10 +176,10 @@ export default function CorporateWorkshopTabs() {
               ) : null}
 
               {activeTab.paragraphs ? (
-                <div className="mt-7 grid gap-4 sm:mt-8">
+                <div className="mt-6 grid gap-4 sm:mt-8">
                   {activeTab.paragraphs.map((paragraph) => (
                     <div key={paragraph} className={contentCardClass}>
-                      <p className="text-left text-base leading-8 text-[#4b423b] sm:text-justify sm:text-lg">
+                      <p className={serviceBodyClass}>
                         {paragraph}
                       </p>
                     </div>
@@ -210,35 +188,25 @@ export default function CorporateWorkshopTabs() {
               ) : null}
 
               {activeTab.cards ? (
-                <div className="mt-7 grid gap-4 sm:mt-8 sm:grid-cols-3">
+                <div className="mt-6 grid gap-4 sm:mt-8 sm:grid-cols-3">
                   {activeTab.cards.map((card) => (
-                    <motion.div
-                      key={card}
-                      whileHover={{ y: -6 }}
-                      className={contentCardClass}
-                    >
-                      <p className={contentTitleClass}>{card}</p>
-                    </motion.div>
+                    <div key={card} className={contentCardClass}>
+                      <p className={serviceSubheadingClass}>{card}</p>
+                    </div>
                   ))}
                 </div>
               ) : null}
 
               {activeTab.bullets ? (
-                <ul className="mt-7 grid gap-4 text-base leading-8 text-[#2f2822] sm:mt-8 sm:grid-cols-3 sm:text-lg">
+                <ul className="mt-6 grid gap-4 text-base leading-8 text-[#2f2822] sm:mt-8 sm:grid-cols-3 sm:text-lg">
                   {activeTab.bullets.map((bullet) => (
-                    <motion.li
-                      key={bullet}
-                      initial={{ opacity: 0, x: 16 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true }}
-                      className={contentCardClass}
-                    >
-                      <span className={`block min-w-0 text-left ${contentTitleClass}`}>{bullet}</span>
-                    </motion.li>
+                    <li key={bullet} className={contentCardClass}>
+                      <span className={`block min-w-0 text-left ${serviceSubheadingClass}`}>{bullet}</span>
+                    </li>
                   ))}
                 </ul>
               ) : null}
-            </div>
+            </ServiceContentSection>
           </motion.div>
         </AnimatePresence>
       </div>

@@ -1,6 +1,12 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Reveal from "@/components/Reveal";
+import ServiceContentSection, {
+  ServiceBulletList,
+  serviceBodyClass,
+  serviceInsetGroupClass,
+  serviceSubheadingClass,
+  serviceTitleClass,
+} from "@/components/ServiceContentSection";
 import { createPageMetadata } from "../seo";
 
 export const metadata: Metadata = createPageMetadata({
@@ -62,34 +68,17 @@ export default function WombHealingPage() {
         </Reveal>
       </section>
 
-      <section className="bg-white px-5 py-16 sm:px-8 lg:px-10">
-        <div className="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-[0.92fr_1.08fr]">
-          <Reveal>
-            <div className="rounded-[2rem] border border-[#eadfce] bg-white p-4 shadow-lg shadow-[#6b513b]/5">
-              <div className="relative aspect-[4/5] overflow-hidden rounded-[1.5rem] bg-[#f3eadb]">
-                <Image
-                  src="/images/womb%20healing.jpg"
-                  alt="Womb Healing and prenatal support session"
-                  fill
-                  className="object-cover object-top"
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                  loading="lazy"
-                  quality={90}
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#17130f]/12 via-transparent to-transparent" />
-              </div>
-            </div>
-          </Reveal>
-
+      <section className="bg-white px-5 py-12 sm:px-8 sm:py-16 lg:px-10">
+        <div className="mx-auto max-w-[75rem]">
           <Reveal delay={0.12}>
-            <article className="max-w-[52rem]">
-              <p className="text-sm font-semibold uppercase tracking-[0.22em] text-[#7d8b65]">
-                Womb Healing
-              </p>
-              <h2 className="mt-3 text-3xl font-semibold leading-tight text-[#2f2822] sm:text-4xl">
-                Womb Healing
-              </h2>
-              <div className="editorial-prose mt-8">
+            <ServiceContentSection
+              imageSrc="/images/womb%20healing.jpg"
+              imageAlt="Womb Healing and prenatal support session"
+              eyebrow="Womb Healing"
+              title="Womb Healing"
+              imagePosition="object-top"
+            >
+              <div className="editorial-prose">
                 <p>
                   Womb Healing is a{" "}
                   <span className="editorial-highlight">deeply nurturing and intuitive practice</span>{" "}
@@ -119,33 +108,33 @@ export default function WombHealingPage() {
                   resilience, empowerment, and inner calm.
                 </p>
               </div>
-            </article>
+            </ServiceContentSection>
           </Reveal>
         </div>
       </section>
 
-      <section className="bg-white px-5 pb-16 sm:px-8 lg:px-10">
+      <section className="bg-white px-5 pb-12 sm:px-8 sm:pb-16 lg:px-10">
         <Reveal>
           <article className="mx-auto max-w-6xl">
             <div className="mx-auto max-w-[52rem]">
-              <h2 className="text-3xl font-semibold text-[#2f2822]">The Approach</h2>
-              <p className="mt-5 text-lg leading-9 text-[#3f372f]">
+              <h2 className={serviceTitleClass}>The Approach</h2>
+              <p className={`mt-5 ${serviceBodyClass}`}>
                 This part of the work is less about a fixed routine and more about the
                 <span className="editorial-highlight"> emotional atmosphere</span> created
                 around the mother and baby.
               </p>
             </div>
 
-            <div className="mt-8 space-y-4">
+            <div className={serviceInsetGroupClass}>
               {approachExperiences.map((experience) => (
                 <section
                   key={experience.title}
-                  className="rounded-[1.35rem] border border-[#eadfce] bg-white px-5 py-5 shadow-sm shadow-[#6b513b]/3 sm:px-7 sm:py-6"
+                  className="border-l border-[#d7c6a9] pl-4 sm:pl-5"
                 >
-                  <h3 className="text-xl font-bold leading-7 text-[#17120f]">
+                  <h3 className={serviceSubheadingClass}>
                     {experience.title}
                   </h3>
-                  <p className="mt-3 text-left text-base leading-8 text-[#332b24] sm:text-lg sm:leading-9">
+                  <p className="mt-2 text-left text-sm leading-7 text-[#66584d] sm:text-base">
                     {experience.text}
                   </p>
                 </section>
@@ -155,22 +144,14 @@ export default function WombHealingPage() {
         </Reveal>
       </section>
 
-      <section className="relative isolate overflow-hidden bg-[#b8b7bf] px-5 py-16 sm:px-8 lg:px-10">
-        <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_12%_22%,rgba(199,214,189,0.55),transparent_24%),radial-gradient(circle_at_88%_16%,rgba(190,123,84,0.24),transparent_24%),radial-gradient(circle_at_32%_74%,rgba(238,215,246,0.7),transparent_34%),linear-gradient(135deg,#bcbac4_0%,#e7e1da_54%,#c5c7c0_100%)]" />
+      <section className="bg-white px-5 py-12 sm:px-8 sm:py-16 lg:px-10">
         <Reveal>
-          <div className="mx-auto max-w-5xl rounded-[1.75rem] border border-white/55 bg-white p-6 shadow-lg shadow-[#6b513b]/6 sm:p-8 lg:p-10">
-            <h2 className="text-center text-4xl font-bold text-[#17120f]">
+          <div className="mx-auto max-w-5xl border-y border-[#eadfce] py-8 sm:py-10">
+            <h2 className={serviceTitleClass}>
               What the session includes
             </h2>
-            <ul className="mx-auto mt-8 max-w-[52rem] space-y-4 text-lg leading-9 text-[#2f2822]">
-              {sessionIncludes.map((item) => (
-                <li key={item} className="flex gap-3">
-                  <span className="mt-3 h-2 w-2 shrink-0 rounded-full bg-[#3f5f46]" />
-                  <span className="min-w-0 flex-1">{item}</span>
-                </li>
-              ))}
-            </ul>
-            <p className="mx-auto mt-7 max-w-[52rem] text-lg leading-9 text-[#2f2822]">
+            <ServiceBulletList items={sessionIncludes} />
+            <p className={`mt-7 max-w-[52rem] ${serviceBodyClass}`}>
               These elements are woven together to support not just the physical body but
               also the deeper{" "}
               <span className="editorial-highlight">emotional and energetic experience</span>{" "}
@@ -183,8 +164,8 @@ export default function WombHealingPage() {
       <section className="bg-white px-5 py-16 sm:px-8 lg:px-10">
         <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-2">
           <Reveal>
-            <article className="h-full rounded-[2rem] border border-[#eadfce] bg-white p-7 shadow-sm shadow-[#6b513b]/3 sm:p-9">
-              <h2 className="text-3xl font-bold text-[#17120f]">
+            <article className="h-full border-y border-[#eadfce] py-7">
+              <h2 className={serviceTitleClass}>
                 Womb & Baby Connection
               </h2>
               <div className="editorial-prose mt-7">
@@ -203,18 +184,11 @@ export default function WombHealingPage() {
           </Reveal>
 
           <Reveal delay={0.1}>
-            <article className="h-full rounded-[2rem] border border-[#eadfce] bg-white p-7 shadow-sm shadow-[#6b513b]/3 sm:p-9">
-              <h2 className="text-3xl font-bold text-[#17120f]">
+            <article className="h-full border-y border-[#eadfce] py-7">
+              <h2 className={serviceTitleClass}>
                 This is for you if you are:
               </h2>
-              <ul className="mt-7 space-y-4 text-lg leading-9 text-[#332b24]">
-                {forYouItems.map((item) => (
-                  <li key={item} className="flex gap-3">
-                    <span className="mt-3 h-2 w-2 shrink-0 rounded-full bg-[#3f5f46]" />
-                    <span className="min-w-0 flex-1">{item}</span>
-                  </li>
-                ))}
-              </ul>
+              <ServiceBulletList items={forYouItems} />
             </article>
           </Reveal>
         </div>

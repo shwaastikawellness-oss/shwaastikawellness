@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import AreasOfSupport from "@/components/AreasOfSupport";
 import FAQ from "@/components/FAQ";
 import Reveal from "@/components/Reveal";
+import ServiceContentSection from "@/components/ServiceContentSection";
 import { createPageMetadata } from "../seo";
 
 export const metadata: Metadata = createPageMetadata({
@@ -102,11 +103,18 @@ export default function IntuitiveHealingPage() {
         </Reveal>
       </section>
 
-      <section className="bg-white px-5 py-16 sm:px-8 lg:px-10">
+      <section className="bg-white px-5 py-12 sm:px-8 sm:py-16 lg:px-10">
         <div className="mx-auto max-w-[75rem]">
           <Reveal>
             <article>
-              <div className="editorial-prose mx-auto">
+              <ServiceContentSection
+                imageSrc="/images/Book%20a%20Session/Intutive%20healing%20book%20a%20seesion.png"
+                imageAlt="Intuitive Healing session visual"
+                eyebrow="Intuitive Healing"
+                title="Intuitive Healing"
+                imagePosition="object-center"
+              >
+                <div className="editorial-prose">
                 <p>
                   Intuitive Healing is an{" "}
                   <span className="editorial-highlight">awareness-based energy healing</span>{" "}
@@ -134,6 +142,7 @@ export default function IntuitiveHealingPage() {
                   well-being.
                 </p>
               </div>
+              </ServiceContentSection>
 
               <AreasOfSupport
                 eyebrow="Areas of support"
@@ -141,7 +150,7 @@ export default function IntuitiveHealingPage() {
                 items={supportAreas}
               />
 
-              <div className="mx-auto mt-10 max-w-[52rem]">
+              <div className="mx-auto mt-9 max-w-[52rem] sm:mt-10">
                 <h2 className="text-2xl font-semibold leading-tight text-[#2f2822] sm:text-3xl">
                   How the Process Works
                 </h2>
@@ -167,15 +176,15 @@ export default function IntuitiveHealingPage() {
                   </p>
                 </div>
 
-                <div className="mt-8 rounded-[1.5rem] border border-[#e5d9c7] bg-[#fbf8f1] p-5 sm:p-6">
+                <div className="mt-7 border-y border-[#eadfce] py-5 sm:mt-8">
                   <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#7d8b65]">
                     Supportive Practices May Include
                   </p>
-                  <div className="mt-4 flex flex-wrap gap-2.5">
+                  <div className="mt-4 flex flex-wrap gap-x-3 gap-y-2.5">
                   {processSupports.map((support) => (
                     <span
                       key={support}
-                      className="rounded-full border border-[#d7c8ad] bg-white/75 px-3.5 py-2 text-sm font-semibold leading-6 text-[#3f352d]"
+                      className="rounded-full border border-[#d7c8ad] bg-[#fffaf2]/75 px-3.5 py-2 text-sm font-semibold leading-6 text-[#3f352d]"
                     >
                       {support}
                     </span>
@@ -184,7 +193,7 @@ export default function IntuitiveHealingPage() {
                 </div>
               </div>
 
-              <div className="mt-10 rounded-[1.5rem] border border-[#e5d9c7] bg-[#fbf8f1] p-5 sm:p-6">
+              <div className="mt-9 border-l border-[#d7c6a9] pl-4 sm:mt-10 sm:pl-6">
                 <h2 className="text-xl font-semibold text-[#2f2822]">Medical Disclaimer</h2>
                 <p className="mt-4 max-w-3xl text-base leading-8 text-[#5d5045]">
                   {medicalDisclaimer}
@@ -195,10 +204,10 @@ export default function IntuitiveHealingPage() {
         </div>
       </section>
 
-      <section className="bg-white px-5 py-12 sm:px-8 lg:px-10">
+      <section className="bg-white px-5 py-10 sm:px-8 sm:py-14 lg:px-10">
         <Reveal>
           <div className="mx-auto max-w-5xl">
-            <div className="mb-8 flex items-center gap-4">
+            <div className="mb-6 flex items-center gap-4 sm:mb-8">
               <div className="h-px flex-1 bg-[#cdbd9f]" />
               <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#7d8b65]">
                 Mandatory Instructions
@@ -206,28 +215,17 @@ export default function IntuitiveHealingPage() {
               <div className="h-px flex-1 bg-[#cdbd9f]" />
             </div>
 
-            <details className="group rounded-2xl border border-[#e5d9c7] bg-[#fbf8f1] shadow-sm">
-              <summary className="flex cursor-pointer list-none items-center justify-between gap-5 px-6 py-5 text-left marker:hidden sm:px-7">
-                <div>
-                  <h2 className="text-xl font-semibold text-[#2f2822] sm:text-2xl">For Online Session</h2>
-                  <p className="mt-1 text-sm leading-6 text-[#74675c]">
-                    Tap to view the preparation checklist for online sessions.
-                  </p>
-                </div>
-                <span className="shrink-0 text-sm font-semibold uppercase tracking-[0.14em] text-[#3f5f46]">
-                  <span className="group-open:hidden">View</span>
-                  <span className="hidden group-open:inline">Hide</span>
-                </span>
-              </summary>
-              <ul className="space-y-3 border-t border-[#e5d9c7] px-6 py-5 text-base leading-8 text-[#2f2822] sm:space-y-4 sm:px-7 sm:py-6">
+            <div className="border-y border-[#eadfce] py-6">
+              <h2 className="text-xl font-semibold text-[#2f2822] sm:text-2xl">For Online Session</h2>
+              <ul className="mt-5 grid gap-x-8 gap-y-3 text-base leading-7 text-[#2f2822] sm:mt-6 sm:grid-cols-2 sm:gap-y-4 sm:leading-8">
                 {instructions.map((instruction) => (
                   <li key={instruction} className="flex gap-4">
-                    <span className="mt-2.5 h-2 w-2 shrink-0 rounded-full bg-[#3f5f46]" />
+                    <span className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#8a9f78] sm:h-2 sm:w-2" />
                     <span className="min-w-0 flex-1">{instruction}</span>
                   </li>
                 ))}
               </ul>
-            </details>
+            </div>
           </div>
         </Reveal>
       </section>

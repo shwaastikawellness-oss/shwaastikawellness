@@ -32,7 +32,7 @@ function SupportGlyph({ index }: { index: number }) {
   ];
 
   return (
-    <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full border border-[#e0d2bc] bg-[#fffdf8] text-[#8a6a4f] sm:h-6 sm:w-6">
+    <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full border border-[#e0d2bc] bg-white/80 text-[#8a6a4f] sm:h-6 sm:w-6">
       {glyphs[index % glyphs.length]}
     </span>
   );
@@ -52,10 +52,10 @@ export default function AreasOfSupport({ eyebrow, title, items }: AreasOfSupport
         </h2>
       </div>
 
-      <ul className="mx-auto mt-5 grid max-w-[58rem] grid-cols-2 gap-2.5 sm:mt-7 sm:flex sm:flex-wrap sm:justify-center sm:gap-3">
+      <ul className="mx-auto mt-5 grid max-w-[58rem] grid-cols-2 gap-x-3 gap-y-2.5 sm:mt-7 sm:flex sm:flex-wrap sm:justify-center sm:gap-3">
         {items.map((item, index) => (
           <li key={item}>
-            <span className="inline-flex min-h-10 w-full items-center justify-center gap-1.5 rounded-full border border-[#e5d9c7] bg-[#fffaf2] px-2.5 py-2 text-center text-[12px] font-semibold leading-4 text-[#3f352d] shadow-sm shadow-[#6b513b]/5 transition duration-300 ease-out hover:-translate-y-0.5 hover:border-[#d7c4a7] hover:bg-white hover:shadow-md hover:shadow-[#6b513b]/8 sm:min-h-11 sm:w-auto sm:justify-start sm:gap-2 sm:px-5 sm:py-2.5 sm:text-base sm:leading-5">
+            <span className="inline-flex min-h-10 w-full items-center justify-center gap-1.5 rounded-full border border-[#e5d9c7] bg-[#fffaf2]/70 px-2.5 py-2 text-center text-[12px] font-semibold leading-4 text-[#3f352d] transition duration-300 ease-out hover:border-[#d7c4a7] hover:bg-white sm:min-h-11 sm:w-auto sm:justify-start sm:gap-2 sm:px-5 sm:py-2.5 sm:text-base sm:leading-5">
               <SupportGlyph index={index} />
               <span>{item}</span>
             </span>

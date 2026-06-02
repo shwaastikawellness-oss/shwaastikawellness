@@ -63,12 +63,12 @@ li {
 .editorial-prose {
   max-width: 52rem;
   color: #3f372f;
-  font-size: 1.0625rem;
-  line-height: 2.05;
+  font-size: 1rem;
+  line-height: 1.95;
 }
 
 .editorial-prose p + p {
-  margin-top: 1.8rem;
+  margin-top: 1.45rem;
 }
 
 .editorial-prose-center {
@@ -107,8 +107,8 @@ li {
 
 @media (min-width: 640px) {
   .editorial-prose {
-    font-size: 1.16rem;
-    line-height: 2.15;
+    font-size: 1.0625rem;
+    line-height: 2;
   }
 }
 

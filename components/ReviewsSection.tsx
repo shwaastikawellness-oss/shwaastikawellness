@@ -23,14 +23,14 @@ function getInitials(name: string) {
 
 function ReviewStars({ rating }: { rating: number }) {
   return (
-    <div className="flex gap-1 text-lg" aria-label={`${rating} out of 5 stars`}>
+    <div className="flex gap-1 text-[1.25rem] leading-none" aria-label={`${rating} out of 5 stars`}>
       {Array.from({ length: 5 }, (_, index) => (
         <span
           key={index}
-          className={index < rating ? "text-[#fbbc04]" : "text-[#d7d0c5]"}
+          className={index < rating ? "text-[#bda98b]" : "text-[#eae3d9]"}
           aria-hidden="true"
         >
-          &#9733;
+          ★
         </span>
       ))}
     </div>
@@ -68,7 +68,7 @@ export default function ReviewsSection() {
             <button
               type="button"
               onClick={() => setShowAllReviews((current) => !current)}
-              className="rounded-full border border-[#d8c7ad] bg-[#fffdf8] px-5 py-3 text-sm font-semibold text-[#241d18] shadow-sm transition hover:border-[#8d735f] hover:bg-white"
+              className="rounded-full border border-[#d8cab5] bg-[#fffefa] px-6 py-2.5 text-[11px] font-bold uppercase tracking-[0.15em] text-[#565c43] shadow-sm transition hover:border-[#565c43] hover:bg-[#565c43] hover:text-white"
               aria-expanded={showAllReviews}
             >
               {showAllReviews ? "Show Less" : "Read All Reviews"}
@@ -206,7 +206,7 @@ export default function ReviewsSection() {
               <button
                 type="button"
                 onClick={() => setShowAllReviews(false)}
-                className="rounded-full border border-[#cdbd9f] bg-white px-6 py-3 text-sm font-semibold text-[#2f2822] shadow-sm transition hover:border-[#8a9b72] hover:bg-[#fbf8f1]"
+                className="rounded-full border border-[#d8cab5] bg-[#fffefa] px-6 py-2.5 text-[11px] font-bold uppercase tracking-[0.15em] text-[#565c43] shadow-sm transition hover:border-[#565c43] hover:bg-[#565c43] hover:text-white"
               >
                 Show Less
               </button>
@@ -221,43 +221,49 @@ export default function ReviewsSection() {
         onClose={() => setSelectedReview(null)}
       >
         {selectedReview ? (
-          <article className="rounded-[1.5rem] border border-[#e5d9c7] bg-white p-5 shadow-sm sm:p-7">
-            <div className="flex items-start gap-4 pr-12">
-              <div className="relative h-14 w-14 shrink-0">
-                <div className="flex h-14 w-14 items-center justify-center rounded-full bg-[#3f5f46] text-lg font-semibold text-white">
-                  {getInitials(selectedReview.name) || "R"}
+          <article className="rounded-[1.75rem] border border-[#eae3d9] bg-[#fffdf8] p-6 shadow-sm sm:p-9 relative overflow-hidden">
+            {/* Subtle decorative quote mark for modal */}
+            <span className="absolute top-2 -right-2 text-[8rem] leading-none text-[#f3eadb] font-serif z-0 select-none opacity-40">
+              "
+            </span>
+
+            <div className="relative z-10">
+              <div className="flex items-start justify-between gap-4">
+                <div className="flex items-center gap-3">
+                  <div className="relative h-14 w-14 shrink-0">
+                    <div className="flex h-14 w-14 items-center justify-center rounded-full bg-[#f3eadb] text-lg font-semibold text-[#8d7158] border border-[#e5d9c7]">
+                      {getInitials(selectedReview.name) || "R"}
+                    </div>
+                  </div>
+                  <div className="min-w-0">
+                    <h3 className="text-lg font-semibold text-[#2f2822]">{selectedReview.name}</h3>
+                    <p className="mt-0.5 text-sm text-[#8a7a6a]">
+                      {selectedReview.time}
+                    </p>
+                  </div>
                 </div>
-                <span className="absolute -bottom-1 -right-1 flex h-7 w-7 items-center justify-center rounded-full bg-white shadow-sm ring-2 ring-white">
+
+                <div className="flex shrink-0 items-center justify-center h-10 w-10 rounded-full bg-[#f8f4ec] border border-[#eae3d9]">
                   <Image
                     src="/images/google.png"
                     alt="Google review"
-                    width={22}
-                    height={22}
-                    className="h-5 w-5 object-contain"
+                    width={18}
+                    height={18}
+                    className="object-contain opacity-80"
                   />
-                </span>
+                </div>
               </div>
 
-              <div className="min-w-0 flex-1">
-                <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
-                  <h3 className="text-xl font-semibold text-[#2f2822]">{selectedReview.name}</h3>
-                  <span className="inline-flex h-5 w-5 items-center justify-center rounded-full bg-[#1a73e8] text-xs font-bold text-white" aria-label="Verified public review">
-                    &#10003;
-                  </span>
-                </div>
-                <p className="mt-1 text-sm text-[#7a6d61]">
-                  {selectedReview.time}
+              <div className="mt-7">
+                <ReviewStars rating={selectedReview.rating} />
+              </div>
+
+              <div className="mt-6">
+                <p className="font-serif italic whitespace-pre-line text-[1.1rem] leading-[1.8] text-[#5c5249] sm:text-[1.2rem]">
+                  {selectedReview.review}
                 </p>
               </div>
             </div>
-
-            <div className="mt-6">
-              <ReviewStars rating={selectedReview.rating} />
-            </div>
-
-            <p className="mt-5 whitespace-pre-line text-base leading-8 text-[#3f352d] sm:text-lg sm:leading-9">
-              {selectedReview.review}
-            </p>
           </article>
         ) : null}
       </LightboxModal>

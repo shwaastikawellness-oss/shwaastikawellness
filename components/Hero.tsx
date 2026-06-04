@@ -58,15 +58,15 @@ export default function Hero() {
                 href={whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded-full bg-[#5f4a38] px-7 py-3.5 text-center text-sm font-bold text-white shadow-lg shadow-[#2b211a]/16 transition hover:-translate-y-0.5 hover:bg-[#17120f]"
+                className="rounded-full bg-[#5d686f] px-7 py-3.5 text-center text-sm font-bold text-white shadow-lg shadow-[#5d686f]/20 transition hover:-translate-y-0.5 hover:bg-[#7b878f]"
               >
                 Book a Consultation
               </a>
               <Link
-                href="#choose-healing-session"
-                className="rounded-full border border-[#d8c7ad] bg-white/82 px-7 py-3.5 text-center text-sm font-bold text-[#3f352d] backdrop-blur transition hover:-translate-y-0.5 hover:bg-white"
+                href="/book-a-session"
+                className="rounded-full bg-[#5d686f] px-7 py-3.5 text-center text-sm font-bold text-white shadow-lg shadow-[#5d686f]/20 transition hover:-translate-y-0.5 hover:bg-[#7b878f]"
               >
-                Explore Healing Sessions
+                Explore Sessions
               </Link>
             </div>
 
@@ -74,7 +74,7 @@ export default function Hero() {
               href="https://docs.google.com/forms/d/e/1FAIpQLSfO7gDBYyXmGLCCzgZUlWptEyUIo4VbTuBsrQD9ardaQi5e6w/viewform"
               target="_blank"
               rel="noopener noreferrer"
-              className="group mt-8 block cursor-pointer rounded-[1.15rem] border border-[#2b211a]/10 bg-[#5f4a38] px-5 py-4 text-center text-sm font-bold leading-6 text-white shadow-xl shadow-[#5f4a38]/16 transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#17120f] hover:shadow-2xl hover:shadow-[#5f4a38]/18 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#9a6f55]/50 focus-visible:ring-offset-2 focus-visible:ring-offset-[#fffdf8] sm:rounded-full"
+              className="group mt-8 block cursor-pointer rounded-[1.15rem] border border-[#2b211a]/10 bg-[#5d686f] px-5 py-4 text-center text-sm font-bold leading-6 text-white shadow-xl shadow-[#5d686f]/20 transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#7b878f] hover:shadow-2xl hover:shadow-[#5d686f]/18 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#9a6f55]/50 focus-visible:ring-offset-2 focus-visible:ring-offset-[#fffdf8] sm:rounded-full"
             >
               <span className="block text-base font-semibold sm:text-sm">
                 Free | Weekly Inner Alignment Session | Movement, meditation & awareness for inner balance - Click to Join

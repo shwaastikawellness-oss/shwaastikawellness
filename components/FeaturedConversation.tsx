@@ -56,7 +56,7 @@ export default function FeaturedConversation() {
             href={youtubeWatchUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex shrink-0 items-center gap-2 rounded-full bg-[#2b211a] px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-[#2b211a]/12 transition hover:-translate-y-0.5 hover:bg-[#5f4a38]"
+            className="inline-flex shrink-0 items-center gap-2 rounded-full bg-[#5d686f] px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-[#5d686f]/20 transition hover:-translate-y-0.5 hover:bg-[#7b878f]"
           >
             <span className="flex h-5 w-5 items-center justify-center rounded-full bg-white text-[10px] text-[#2f2822]">
               Play

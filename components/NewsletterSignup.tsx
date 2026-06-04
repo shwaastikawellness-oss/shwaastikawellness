@@ -184,7 +184,7 @@ export default function NewsletterSignup() {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="rounded-full bg-[#5f4a38] px-10 py-4 text-base font-semibold text-white shadow-lg shadow-[#5f4a38]/14 transition hover:-translate-y-0.5 hover:bg-[#2f2822] disabled:cursor-not-allowed disabled:opacity-70 disabled:hover:translate-y-0"
+                className="rounded-full bg-[#5d686f] px-10 py-4 text-base font-semibold text-white shadow-lg shadow-[#5d686f]/20 transition hover:-translate-y-0.5 hover:bg-[#7b878f] disabled:cursor-not-allowed disabled:opacity-70 disabled:hover:translate-y-0"
               >
                 {isSubmitting ? "Subscribing..." : "Subscribe"}
               </button>

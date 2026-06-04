@@ -20,14 +20,15 @@ function getInitials(name: string) {
 
 function StarRating({ rating }: { rating: number }) {
   return (
-    <div className="flex gap-0.5" aria-label={`${rating} out of 5 stars`}>
+    <div className="flex gap-1" aria-label={`${rating} out of 5 stars`}>
       {Array.from({ length: 5 }, (_, index) => (
         <span
           key={index}
-          className={index < rating ? "text-[#fbbc04]" : "text-[#d7d0c5]"}
+          className={index < rating ? "text-[#bda98b]" : "text-[#eae3d9]"}
           aria-hidden="true"
+          style={{ fontSize: "1.1rem", lineHeight: 1 }}
         >
-          &#9733;
+          ★
         </span>
       ))}
     </div>
@@ -53,49 +54,60 @@ export default function ReviewCard({ review, variant = "default", onClick }: Rev
         }
       }}
       className={[
-        "flex flex-col rounded-[1.4rem] border border-[#e5d9c7] bg-white p-5 shadow-sm shadow-[#6b513b]/8 transition hover:-translate-y-0.5 hover:shadow-lg hover:shadow-[#6b513b]/10",
-        onClick ? "cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#7d8b65]/70 focus-visible:ring-offset-2" : "",
-        isMobileVariant ? "h-[440px]" : "h-[390px] sm:h-[420px]",
+        "flex flex-col rounded-[1.75rem] border border-[#eae3d9] bg-[#fffdf8] p-6 sm:p-8 transition-all duration-300 hover:bg-white hover:-translate-y-1 hover:shadow-[0_20px_50px_rgba(77,75,55,0.08)]",
+        onClick ? "cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#8d7158]/50 focus-visible:ring-offset-2 focus-visible:ring-offset-[#fffdf8]" : "",
+        isMobileVariant ? "h-[420px]" : "h-[380px] sm:h-[420px]",
       ].join(" ")}
     >
-      <div className="shrink-0 flex items-start gap-3">
-        <div className="relative h-12 w-12 shrink-0">
-          <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#3f5f46] text-base font-semibold text-white">
-            {getInitials(review.name) || "R"}
+      <div className="shrink-0 flex items-start justify-between gap-4">
+        <div className="flex items-center gap-3">
+          <div className="relative h-11 w-11 shrink-0">
+            <div className="flex h-11 w-11 items-center justify-center rounded-full bg-[#f3eadb] text-sm font-semibold text-[#8d7158] border border-[#e5d9c7]">
+              {getInitials(review.name) || "R"}
+            </div>
           </div>
-          <span className="absolute -bottom-1 -right-1 flex h-6 w-6 items-center justify-center rounded-full bg-white shadow-sm ring-2 ring-white">
-            <Image
-              src="/images/google.png"
-              alt="Google review"
-              width={20}
-              height={20}
-              className="h-5 w-5 object-contain"
-            />
-          </span>
-        </div>
-
-        <div className="min-w-0 flex-1">
-          <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
-            <h3 className="truncate text-lg font-semibold leading-tight text-[#2f2822]">
+          <div className="min-w-0">
+            <h3 className="truncate text-[0.95rem] font-semibold text-[#2f2822]">
               {review.name}
             </h3>
-            <span className="inline-flex h-5 w-5 items-center justify-center rounded-full bg-[#1a73e8] text-xs font-bold text-white" aria-label="Verified public review">
-              &#10003;
-            </span>
+            <p className="mt-0.5 text-xs text-[#8a7a6a]">{review.time}</p>
           </div>
-          <p className="mt-0.5 text-sm text-[#7a6d61]">{review.time}</p>
+        </div>
+
+        <div className="flex shrink-0 items-center justify-center h-8 w-8 rounded-full bg-[#f8f4ec] border border-[#eae3d9]">
+          <Image
+            src="/images/google.png"
+            alt="Google review"
+            width={14}
+            height={14}
+            className="object-contain opacity-80"
+          />
         </div>
       </div>
 
-      <div className="mt-4">
+      <div className="mt-5">
         <StarRating rating={review.rating} />
       </div>
 
-      <div className="mt-4 min-h-0 flex-1 overflow-y-auto pr-2 [scrollbar-color:#cdbd9f_transparent] [scrollbar-width:thin]">
-        <p className="whitespace-pre-line text-[15px] leading-7 text-[#3f352d]">
-          {review.review}
-        </p>
+      <div className="relative mt-5 min-h-0 flex-1 overflow-hidden">
+        {/* Subtle decorative quote mark */}
+        <span className="absolute -top-3 -left-2 text-[4rem] leading-none text-[#f3eadb] font-serif z-0 select-none opacity-60">
+          "
+        </span>
+        <div className="relative z-10 h-full overflow-y-auto pr-3 [scrollbar-color:#d7c8ad_transparent] [scrollbar-width:thin]">
+          <p className="font-serif italic text-[1.05rem] leading-relaxed text-[#5c5249] whitespace-pre-line">
+            {review.review}
+          </p>
+        </div>
       </div>
+      
+      {onClick && (
+         <div className="mt-4 border-t border-[#eae3d9]/60 pt-4 flex justify-end">
+            <span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#bda98b] group-hover:text-[#8d7158] transition-colors">
+              Read Full Review →
+            </span>
+         </div>
+      )}
     </article>
   );
 }

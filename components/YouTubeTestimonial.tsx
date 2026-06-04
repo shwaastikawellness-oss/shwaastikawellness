@@ -33,7 +33,7 @@ export default function YouTubeTestimonial() {
             href={youtubeWatchUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-5 inline-flex rounded-full bg-[#2b211a] px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-[#2b211a]/12 transition hover:-translate-y-0.5 hover:bg-[#5f4a38]"
+            className="mt-5 inline-flex rounded-full bg-[#5d686f] px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-[#5d686f]/20 transition hover:-translate-y-0.5 hover:bg-[#7b878f]"
           >
             Watch on YouTube
           </a>

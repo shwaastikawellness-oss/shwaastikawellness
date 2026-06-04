@@ -1,70 +1,210 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { FormEvent, useState } from "react";
 
-const quickLinks = [
-  { label: "Home", href: "/" },
-  { label: "About", href: "/about" },
-  { label: "Inner Clarity", href: "/inner-clarity-session" },
-  { label: "Intuitive Healing", href: "/intuitive-healing" },
-  { label: "Womb Healing", href: "/womb-healing" },
-  { label: "Book A Session", href: "/book-a-session" },
-  { label: "Testimonials", href: "/testimonials" },
-  { label: "Blog", href: "/blog" },
-  { label: "Corporate Workshop", href: "/corporate-workshop" },
-];
+const whatsappUrl =
+  "https://api.whatsapp.com/send/?phone=919310685448&text=Hello%0AWelcome+to+SHWAASTIKA+WELLNESS.%0A%0AThank+you+for+reaching+out+through+our+website.%0APlease+tell+us+how+we+can+help+you+today.&type=phone_number&app_absent=0";
+
+const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 export default function Footer() {
+  const [email, setEmail] = useState("");
+  const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
+  const [message, setMessage] = useState("");
+
+  const handleSubscribe = async (e: FormEvent) => {
+    e.preventDefault();
+    if (!email.trim() || !emailPattern.test(email.trim())) {
+      setStatus("error");
+      setMessage("Please enter a valid email address.");
+      return;
+    }
+
+    setStatus("submitting");
+    setMessage("");
+
+    try {
+      const response = await fetch("/api/newsletter", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email: email.trim(), firstName: "Friend", consent: true }),
+      });
+      const result = await response.json();
+
+      if (!response.ok) {
+        setStatus("error");
+        setMessage(result.message || "Unable to subscribe. Please try again.");
+        return;
+      }
+
+      setStatus("success");
+      setMessage(result.message || "Thank you for subscribing!");
+      setEmail("");
+    } catch {
+      setStatus("error");
+      setMessage("Unable to subscribe. Please try again.");
+    }
+  };
+
   return (
-    <footer className="border-t border-[#d8cab5] bg-[#241d18] px-5 py-6 text-white sm:px-8 sm:py-9 lg:px-10">
-      <div className="mx-auto grid max-w-7xl gap-6 sm:gap-8 lg:grid-cols-[1.05fr_1fr_0.9fr] lg:items-start">
-        <div>
-          <div className="flex items-center gap-3">
-            <span className="flex h-11 w-11 shrink-0 items-center justify-center overflow-hidden rounded-full border border-[#d7c8ad]/70 bg-[#fffdf8] p-0.5 text-xs font-semibold text-[#f3eadb] sm:h-12 sm:w-12">
-              <Image
-                src="/images/logo.png"
-                alt=""
-                width={48}
-                height={48}
-                className="h-full w-full rounded-full object-contain"
+    <footer className="bg-[#5d686f] text-[#f2f5f6]">
+      {/* Super compact padding based on Stojo inspiration */}
+      <div className="mx-auto max-w-[90rem] px-6 py-10 lg:px-12">
+        <div className="flex flex-col gap-10 lg:flex-row lg:justify-between lg:gap-16">
+          
+          {/* Left Column: Newsletter Signup */}
+          <div className="max-w-md w-full">
+            {/* Brand Logo & Name (Moved to top left to avoid WhatsApp overlap) */}
+            <div className="flex items-center gap-4 mb-8">
+              <span className="flex h-12 w-12 items-center justify-center overflow-hidden rounded-full bg-white shadow-sm">
+                <Image
+                  src="/images/logo.png"
+                  alt="Logo"
+                  width={48}
+                  height={48}
+                  className="h-full w-full object-contain"
+                />
+              </span>
+              <div className="flex flex-col">
+                <span className="font-serif text-[1.35rem] font-medium tracking-tight text-white leading-none">
+                  Preeti Semwal
+                </span>
+                <span className="text-[11px] text-white/70 font-medium tracking-widest uppercase mt-1.5">
+                  Shwaastika Wellness
+                </span>
+              </div>
+            </div>
+
+            <h3 className="font-serif text-[1.5rem] leading-[1.25] tracking-tight text-white mb-6 md:text-[1.75rem]">
+              Stay connected with insights, reflections and offerings from Shwaastika.
+            </h3>
+            
+            <form className="relative mt-2 max-w-sm" onSubmit={handleSubscribe} noValidate>
+              <label htmlFor="footer-email" className="sr-only">
+                Email address
+              </label>
+              <input
+                type="email"
+                id="footer-email"
+                value={email}
+                onChange={(e) => {
+                  setEmail(e.target.value);
+                  if (status !== "idle") setStatus("idle");
+                }}
+                placeholder="Your email, please"
+                // The style string below uses standard CSS hacks to prevent the browser autofill from turning the input background white and text black
+                className="w-full bg-transparent border-b border-white/30 py-3 pr-10 text-sm text-white placeholder-white/60 focus:border-white focus:outline-none focus:ring-0 transition-colors [&:-webkit-autofill]:[-webkit-text-fill-color:white] [&:-webkit-autofill]:[transition:background-color_5000s_ease-in-out_0s]"
+                disabled={status === "submitting"}
               />
-            </span>
-            <div>
-              <p className="text-base font-semibold leading-tight sm:text-lg">Shwaastika Wellness</p>
-              <p className="text-xs italic text-[#c7bda8] sm:text-sm">By Preeti Semwal</p>
+              <button
+                type="submit"
+                aria-label="Subscribe"
+                disabled={status === "submitting"}
+                className="absolute right-0 top-1/2 -translate-y-1/2 text-white/60 hover:text-white transition-colors disabled:opacity-50"
+              >
+                {status === "submitting" ? (
+                  <span className="text-[10px] uppercase tracking-widest text-white/80 pr-2">Wait</span>
+                ) : (
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
+                  </svg>
+                )}
+              </button>
+            </form>
+            {status === "success" && (
+              <p className="mt-3 text-[13px] text-[#a7d3a6] font-medium tracking-wide">{message}</p>
+            )}
+            {status === "error" && (
+              <p className="mt-3 text-[13px] text-[#f4a298] font-medium tracking-wide">{message}</p>
+            )}
+          </div>
+
+          {/* Right Columns: Links */}
+          <div className="grid grid-cols-2 gap-8 sm:grid-cols-3 sm:gap-12 lg:gap-16 lg:pt-2">
+            {/* SUPPORT */}
+            <div className="flex flex-col gap-4">
+              <p className="text-[10px] font-bold uppercase tracking-[0.15em] text-white/50">
+                Support
+              </p>
+              <ul className="flex flex-col gap-3 text-[13px] font-medium tracking-wide text-white/85">
+                <li><Link href="/about" className="transition hover:text-white">About Preeti</Link></li>
+                <li><Link href="/testimonials" className="transition hover:text-white">Client Stories</Link></li>
+                <li><Link href="/book-a-session" className="transition hover:text-white">Book a Session</Link></li>
+                <li>
+                  <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="transition hover:text-white">
+                    Contact Us
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            {/* SERVICES */}
+            <div className="flex flex-col gap-4">
+              <p className="text-[10px] font-bold uppercase tracking-[0.15em] text-white/50">
+                Services
+              </p>
+              <ul className="flex flex-col gap-3 text-[13px] font-medium tracking-wide text-white/85">
+                <li><Link href="/inner-clarity-session" className="transition hover:text-white">Inner Clarity</Link></li>
+                <li><Link href="/intuitive-healing" className="transition hover:text-white">Intuitive Healing</Link></li>
+                <li><Link href="/womb-healing" className="transition hover:text-white">Womb Healing</Link></li>
+                <li><Link href="/corporate-workshop" className="transition hover:text-white">Corporate</Link></li>
+              </ul>
+            </div>
+
+            {/* CONNECT */}
+            <div className="flex flex-col gap-4 col-span-2 sm:col-span-1">
+              <p className="text-[10px] font-bold uppercase tracking-[0.15em] text-white/50">
+                Connect
+              </p>
+              <ul className="flex flex-col gap-3 text-[13px] font-medium tracking-wide text-white/85">
+                <li>
+                  <a href="https://www.instagram.com/preeti_semwal_bembi/" target="_blank" rel="noopener noreferrer" className="transition hover:text-white">
+                    Instagram
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.linkedin.com/in/preetisemwalbembi/" target="_blank" rel="noopener noreferrer" className="transition hover:text-white">
+                    LinkedIn
+                  </a>
+                </li>
+                <li>
+                  <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="transition hover:text-white">
+                    WhatsApp
+                  </a>
+                </li>
+              </ul>
             </div>
           </div>
-          <p className="mt-3 max-w-sm text-sm italic leading-7 text-[#fff7ec] sm:mt-4 sm:text-base sm:leading-8">
-            Transformative energy work for <span className="font-semibold text-white">mind, body, and spirit</span>.
-          </p>
         </div>
 
-        <div>
-          <h2 className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#d8c7ad] sm:text-xs sm:tracking-[0.2em]">Quick Links</h2>
-          <ul className="mt-3 grid grid-cols-2 gap-x-5 gap-y-1.5 text-[13px] text-[#f0e5d6] sm:mt-4 sm:gap-x-6 sm:gap-y-2 sm:text-sm">
-            {quickLinks.map((link) => (
-              <li key={link.href}>
-                <Link href={link.href} className="transition hover:text-white">
-                  {link.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        <div>
-          <h2 className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#d8c7ad] sm:text-xs sm:tracking-[0.2em]">Contact</h2>
-          <div className="mt-3 space-y-1 text-[13px] leading-6 text-[#f0e5d6] sm:mt-4 sm:space-y-2 sm:text-sm sm:leading-7">
-            <p>
-              <span className="font-semibold text-white">Phone No.</span>{" "}
-              +91-9310685448
-            </p>
-            <p>Yapral, Secunderabad-87 (Hyderabad)</p>
-            <p>India</p>
+        {/* Bottom Bar */}
+        <div className="mt-14 flex flex-col items-center justify-between gap-6 sm:flex-row">
+          
+          {/* Left: Copyright and Address */}
+          <div className="flex flex-col items-center gap-2 sm:flex-row sm:gap-6 text-[11px] text-white/60">
+            <span className="font-medium tracking-wide">© 2026 Shwaastika Wellness</span>
+            <span className="font-medium tracking-wide">Yapral, Secunderabad, Telangana</span>
           </div>
+
+          {/* Right: Social Icons (Moved to right to fill empty space, with padding so whatsapp doesn't overlap) */}
+          <div className="flex items-center gap-5 sm:pr-20">
+            <a href="https://www.instagram.com/preeti_semwal_bembi/" target="_blank" rel="noopener noreferrer" className="text-white/60 transition hover:text-white" aria-label="Instagram">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+              </svg>
+            </a>
+            <a href="https://www.linkedin.com/in/preetisemwalbembi/" target="_blank" rel="noopener noreferrer" className="text-white/60 transition hover:text-white" aria-label="LinkedIn">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="none">
+                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+              </svg>
+            </a>
+          </div>
+
         </div>
-      </div>
-      <div className="mx-auto mt-6 max-w-7xl border-t border-white/10 pt-4 text-[11px] text-[#c7bda8] sm:mt-8 sm:pt-5 sm:text-xs">
-        <p>Copyright 2026 Shwaastika Wellness. All rights reserved.</p>
       </div>
     </footer>
   );

@@ -61,53 +61,11 @@ export default function Header() {
     };
   }, [isMoreOpen]);
 
-  if (isBookingPage) {
-    return (
-      <header className="border-b border-[#eadfce]/70 bg-[#fffdf8]/90">
-        <nav
-          aria-label="Booking navigation"
-          className="mx-auto flex max-w-[86rem] items-center justify-between gap-4 px-5 py-4 sm:px-6 lg:px-10"
-        >
-          <Link
-            href="/"
-            className="flex shrink-0 items-center gap-3"
-            aria-label="Shwaastika Wellness home"
-          >
-            <span
-              aria-hidden="true"
-              className="flex h-11 w-11 items-center justify-center overflow-hidden rounded-full border border-[#eadfce] bg-white shadow-sm sm:h-12 sm:w-12"
-            >
-              <Image
-                src="/images/logo.png"
-                alt=""
-                width={52}
-                height={52}
-                className="h-full w-full object-contain"
-              />
-            </span>
-            <div className="leading-tight">
-              <p className="text-base font-semibold tracking-[0.04em] text-[#241d18] sm:text-lg">
-                Shwaastika Wellness
-              </p>
-              <p className="text-xs italic text-[#8a7764] sm:text-[13px]">
-                By Preeti Semwal
-              </p>
-            </div>
-          </Link>
-
-          <Link
-            href="/"
-            className="rounded-full border border-[#d8c7ad] bg-white/80 px-4 py-2 text-sm font-semibold text-[#3f352d] shadow-sm transition hover:bg-white"
-          >
-            Back to Home
-          </Link>
-        </nav>
-      </header>
-    );
-  }
+  // The booking page previously had a separate header layout, which caused inconsistency.
+  // We now use the main header layout across all pages.
 
   return (
-    <header className="sticky top-0 z-50 border-b border-[#eadfce]/70 bg-[#fffdf8]/90 backdrop-blur-xl">
+    <header className="sticky top-0 z-50 border-b border-[#d8cab5]/60 bg-[#f4ebe1]/95 backdrop-blur-xl">
       <nav
         aria-label="Primary navigation"
         className="mx-auto flex max-w-[86rem] items-center justify-between gap-6 px-5 py-4 sm:px-6 lg:px-10"
@@ -115,7 +73,7 @@ export default function Header() {
         <Link
           href="/"
           className="flex shrink-0 items-center gap-3"
-          aria-label="Shwaastika Wellness home"
+          aria-label="Preeti Semwal home"
         >
           <span
             aria-hidden="true"
@@ -132,10 +90,10 @@ export default function Header() {
 
           <div className="leading-tight">
             <p className="text-base font-semibold tracking-[0.04em] text-[#241d18] sm:text-lg">
-              Shwaastika Wellness
+              Preeti Semwal
             </p>
             <p className="text-xs italic text-[#8a7764] sm:text-[13px]">
-              By Preeti Semwal
+              Shwaastika Wellness
             </p>
           </div>
         </Link>
@@ -170,7 +128,7 @@ export default function Header() {
 
             <div
               role="menu"
-              className={`absolute left-1/2 top-11 w-56 -translate-x-1/2 rounded-2xl border border-[#eadfce]/80 bg-[#fffdf8] p-2 shadow-xl shadow-[#6b513b]/10 transition ${
+              className={`absolute left-1/2 top-11 w-56 -translate-x-1/2 rounded-2xl border border-[#d8cab5]/80 bg-[#f4ebe1] p-2 shadow-xl shadow-[#6b513b]/10 transition ${
                 isMoreOpen ? "visible opacity-100" : "invisible opacity-0"
               }`}
             >
@@ -179,9 +137,9 @@ export default function Header() {
                   key={link.href}
                   href={link.href}
                   scroll
-                  role="menuitem"
                   onClick={() => setIsMoreOpen(false)}
-                  className={`block rounded-xl px-4 py-3 text-sm font-medium transition ${
+                  role="menuitem"
+                  className={`block rounded-xl px-4 py-2.5 text-[13px] font-medium transition ${
                     pathname === link.href
                       ? "bg-white text-[#241d18] shadow-sm"
                       : "text-[#5f5349] hover:bg-[#eef3e8] hover:text-[#26382a]"
@@ -194,82 +152,90 @@ export default function Header() {
           </li>
         </ul>
 
-        {!isHomePage ? (
-          <div className="hidden shrink-0 items-center xl:flex">
+        <div className="flex items-center gap-4">
+          <div className="hidden shrink-0 xl:block">
             <Link
               href="/book-a-session"
               scroll
-              className="rounded-full bg-[#5f4a38] px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-[#2b211a]/12 transition hover:-translate-y-0.5 hover:bg-[#2b211a]"
+              className="rounded-full bg-[#5d686f] px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-[#5d686f]/20 transition hover:-translate-y-0.5 hover:bg-[#7b878f]"
             >
               Book a Consultation
             </Link>
           </div>
-        ) : null}
 
-        <button
-          type="button"
-          className="flex h-10 w-10 items-center justify-center rounded-full border border-[#eadfce] bg-white text-[#241d18] shadow-sm xl:hidden"
-          aria-label="Toggle mobile menu"
-          aria-expanded={isOpen}
-          onClick={() => setIsOpen((value) => !value)}
-        >
-          <span className="relative h-4 w-5">
-            <span
-              className={`absolute left-0 top-0 h-0.5 w-5 bg-current transition ${
-                isOpen ? "translate-y-2 rotate-45" : ""
-              }`}
-            />
-            <span
-              className={`absolute left-0 top-2 h-0.5 w-5 bg-current transition ${
-                isOpen ? "opacity-0" : ""
-              }`}
-            />
-            <span
-              className={`absolute left-0 top-4 h-0.5 w-5 bg-current transition ${
-                isOpen ? "-translate-y-2 -rotate-45" : ""
-              }`}
-            />
-          </span>
-        </button>
+          <button
+            type="button"
+            aria-expanded={isOpen}
+            onClick={() => setIsOpen((value) => !value)}
+            className="rounded-full bg-white p-2.5 text-[#5f5349] shadow-sm transition hover:bg-[#eef3e8] hover:text-[#26382a] xl:hidden"
+            aria-label="Toggle navigation"
+          >
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              aria-hidden="true"
+            >
+              {isOpen ? (
+                <>
+                  <line x1="18" y1="6" x2="6" y2="18" />
+                  <line x1="6" y1="6" x2="18" y2="18" />
+                </>
+              ) : (
+                <>
+                  <line x1="3" y1="12" x2="21" y2="12" />
+                  <line x1="3" y1="6" x2="21" y2="6" />
+                  <line x1="3" y1="18" x2="21" y2="18" />
+                </>
+              )}
+            </svg>
+          </button>
+        </div>
       </nav>
 
       <div
-        className={`overflow-hidden border-t border-[#eadfce]/70 bg-[#fffdf8] transition-[max-height,opacity] duration-300 xl:hidden ${
-          isOpen ? "max-h-[32rem] opacity-100" : "max-h-0 opacity-0"
+        className={`overflow-hidden border-t border-[#d8cab5]/30 transition-all duration-300 xl:hidden ${
+          isOpen ? "max-h-screen border-t" : "max-h-0 border-transparent"
         }`}
       >
         {isOpen ? (
-            <div className="mx-auto max-w-7xl px-5 py-4 sm:px-8">
-              <ul className="flex flex-col gap-1.5">
-                {allLinks.map((link) => (
-                  <li key={link.href}>
-                    <Link
-                      href={link.href}
-                      scroll
-                      onClick={() => setIsOpen(false)}
-                      className={`block rounded-full px-4 py-3 text-sm font-semibold ${
-                        pathname === link.href
-                          ? "bg-white text-[#241d18] shadow-sm"
-                          : "text-[#5f5349] hover:bg-[#eef3e8] hover:text-[#26382a]"
-                      }`}
-                    >
-                      {link.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
+          <div className="mx-auto max-w-7xl px-5 py-4 sm:px-8">
+            <ul className="flex flex-col gap-1.5">
+              {allLinks.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    scroll
+                    onClick={() => setIsOpen(false)}
+                    className={`block rounded-full px-4 py-3 text-sm font-semibold ${
+                      pathname === link.href
+                        ? "bg-white text-[#241d18] shadow-sm"
+                        : "text-[#5f5349] hover:bg-[#eef3e8] hover:text-[#26382a]"
+                    }`}
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
 
-              {!isHomePage ? (
+            {!isHomePage && !isBookingPage ? (
+              <div className="mt-8 border-t border-[#d8cab5]/30 pt-6">
                 <Link
                   href="/book-a-session"
-                  scroll
                   onClick={() => setIsOpen(false)}
-                  className="mt-3 block rounded-full bg-[#5f4a38] px-5 py-3 text-center text-sm font-semibold text-white transition hover:bg-[#2b211a]"
+                  className="block rounded-full bg-[#5d686f] px-5 py-3 text-center text-sm font-semibold text-white transition hover:bg-[#7b878f]"
                 >
                   Book a Consultation
                 </Link>
-              ) : null}
-            </div>
+              </div>
+            ) : null}
+          </div>
         ) : null}
       </div>
     </header>

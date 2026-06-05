@@ -3,6 +3,7 @@ import ImageCarousel, { type CarouselImage } from "@/components/ImageCarousel";
 import ReviewsSection from "@/components/ReviewsSection";
 import VideoTestimonials from "@/components/VideoTestimonials";
 import YouTubeTestimonial from "@/components/YouTubeTestimonial";
+import WorkshopTestimonial from "@/components/WorkshopTestimonial";
 import Reveal from "@/components/Reveal";
 import { createPageMetadata } from "../seo";
 
@@ -76,6 +77,7 @@ export default function TestimonialsPage() {
         </Reveal>
       </section>
       <VideoTestimonials />
+      <WorkshopTestimonial />
       <YouTubeTestimonial />
 
       <ImageCarousel

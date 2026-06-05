@@ -25,10 +25,6 @@ export default function YouTubeTestimonial() {
           <h2 className="mt-2 text-2xl font-bold leading-tight text-[#17120f] sm:text-3xl">
             A Deeper Reflection in Their Own Voice
           </h2>
-          <p className="mt-4 text-sm leading-7 text-[#4f463e] sm:text-base">
-            A personal video testimonial shared by a client, presented here as a fuller
-            reflection alongside the written screenshot experiences.
-          </p>
           <a
             href={youtubeWatchUrl}
             target="_blank"

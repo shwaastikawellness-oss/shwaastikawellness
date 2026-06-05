@@ -280,7 +280,7 @@ export default function SessionExperience() {
                 Ways We Can Work Together
               </p>
               <h1 className="mt-4 text-4xl font-semibold leading-[1.08] text-[#241d18] sm:text-5xl lg:text-6xl">
-                Explore Sessions
+                Book a Session
               </h1>
               <p className="mt-5 mx-auto max-w-2xl text-lg leading-8 text-[#4f463e] sm:text-xl">
                 Choose the experience that supports <span className="editorial-highlight italic font-medium">this season of your life</span>.

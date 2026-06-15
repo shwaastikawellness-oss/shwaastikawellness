@@ -6,7 +6,7 @@ import React from "react";
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 
 const whatsappUrl =
-  "https://api.whatsapp.com/send/?phone=919310685448&text=Hello%0AWelcome+to+SHWAASTIKA+WELLNESS.%0A%0AThank+you+for+reaching+out+through+our+website.%0APlease+tell+us+how+we+can+help+you+today.%0A%0AYou+can+share%3A%0A-+Your+concern+or+goal%0A-+Preferred+service%0A-+Suitable+time+for+a+call%2Fsession%0A%0AOur+team+will+respond+shortly&type=phone_number&app_absent=0";
+  "https://api.whatsapp.com/send/?phone=919310685448&text=Hello%0AWelcome+to+Shwaastika+Wellness.%0A%0AThank+you+for+reaching+out+through+our+website.%0APlease+tell+us+how+we+can+help+you+today.%0A%0AYou+can+share%3A%0A-+Your+concern+or+goal%0A-+Preferred+service%0A-+Suitable+time+for+a+call%2Fsession%0A%0AOur+team+will+respond+shortly&type=phone_number&app_absent=0";
 
 export default function Hero() {
   const x = useMotionValue(0);
@@ -83,18 +83,18 @@ export default function Hero() {
               Intuitive Energy Healer & Wellness Guide
             </p>
 
-            <div className="mt-8 flex flex-row gap-3 sm:gap-4">
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
               <a
                 href={whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-1 rounded-full bg-[#5d686f] px-4 py-3.5 text-center text-sm font-bold text-white shadow-lg shadow-[#5d686f]/20 transition hover:-translate-y-0.5 hover:bg-[#7b878f]"
+                className="inline-flex w-full items-center justify-center rounded-full bg-[#5d686f] px-6 py-3 text-sm font-bold text-white shadow-lg shadow-[#5d686f]/20 transition hover:-translate-y-0.5 hover:bg-[#7b878f] sm:w-auto sm:whitespace-nowrap"
               >
                 Book a Consultation
               </a>
               <Link
                 href="/#choose-healing-session"
-                className="flex-1 rounded-full bg-[#5d686f] px-4 py-3.5 text-center text-sm font-bold text-white shadow-lg shadow-[#5d686f]/20 transition hover:-translate-y-0.5 hover:bg-[#7b878f]"
+                className="inline-flex w-full items-center justify-center rounded-full bg-[#5d686f] px-6 py-3 text-sm font-bold text-white shadow-lg shadow-[#5d686f]/20 transition hover:-translate-y-0.5 hover:bg-[#7b878f] sm:w-auto sm:whitespace-nowrap"
               >
                 Explore Sessions
               </Link>
@@ -104,10 +104,10 @@ export default function Hero() {
               href="https://docs.google.com/forms/d/e/1FAIpQLSfO7gDBYyXmGLCCzgZUlWptEyUIo4VbTuBsrQD9ardaQi5e6w/viewform"
               target="_blank"
               rel="noopener noreferrer"
-              className="group mt-4 block cursor-pointer rounded-[1.15rem] border border-[#2b211a]/10 bg-[#5d686f] px-5 py-4 text-center text-sm font-bold leading-6 text-white shadow-xl shadow-[#5d686f]/20 transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#7b878f] hover:shadow-2xl hover:shadow-[#5d686f]/18 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#9a6f55]/50 focus-visible:ring-offset-2 focus-visible:ring-offset-[#fffdf8] sm:rounded-full"
+              className="group mt-4 block w-full cursor-pointer rounded-[1.15rem] border border-[#2b211a]/10 bg-[#5d686f] px-5 py-4 text-center text-sm font-bold leading-6 text-white shadow-xl shadow-[#5d686f]/20 transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#7b878f] hover:shadow-2xl hover:shadow-[#5d686f]/18 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#9a6f55]/50 focus-visible:ring-offset-2 focus-visible:ring-offset-[#fffdf8] sm:rounded-full"
             >
-              <span className="block text-base font-semibold sm:text-sm">
-                Free | Weekly Inner Alignment Session | Movement, meditation & awareness for inner balance - Click to Join
+              <span className="block text-sm font-semibold">
+                Free | Weekly Inner Alignment Session | Movement, meditation &amp; awareness for inner balance - Click to Join
               </span>
             </a>
           </div>

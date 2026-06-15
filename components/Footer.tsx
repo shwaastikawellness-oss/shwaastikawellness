@@ -6,7 +6,7 @@ import { FormEvent, useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 
 const whatsappUrl =
-  "https://api.whatsapp.com/send/?phone=919310685448&text=Hello%0AWelcome+to+SHWAASTIKA+WELLNESS.%0A%0AThank+you+for+reaching+out+through+our+website.%0APlease+tell+us+how+we+can+help+you+today.&type=phone_number&app_absent=0";
+  "https://api.whatsapp.com/send/?phone=919310685448&text=Hello%0AWelcome+to+Shwaastika+Wellness.%0A%0AThank+you+for+reaching+out+through+our+website.%0APlease+tell+us+how+we+can+help+you+today.&type=phone_number&app_absent=0";
 
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -186,7 +186,7 @@ export default function Footer() {
                 </li>
                 <li>
                   <a
-                    href="mailto:shwaastikawellness@gmail.com?subject=Inquiry%20from%20Swastika%20Wellness%20Website&body=Name%3A%0A%0APhone%3A%0A%0AQuery%3A"
+                    href="mailto:shwaastikawellness@gmail.com?subject=Inquiry%20from%20Shwaastika%20Wellness%20Website&body=Name%3A%0A%0APhone%3A%0A%0AQuery%3A"
                     className="transition hover:text-white"
                   >
                     Email

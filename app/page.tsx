@@ -9,7 +9,7 @@ import { createPageMetadata } from "./seo";
 export const metadata: Metadata = createPageMetadata({
   title: "Preeti Semwal | Intuitive Healer – Shwaastika Wellness",
   description:
-    "Explore intuitive healing, inner clarity sessions, womb healing, prenatal support, and corporate wellness guidance by Preeti Semwal.",
+    "Preeti Semwal offers intuitive healing, inner clarity guidance, womb healing, prenatal support & corporate wellness sessions at Shwaastika Wellness.",
   path: "/",
 });
 

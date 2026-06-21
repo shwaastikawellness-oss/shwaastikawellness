@@ -45,6 +45,16 @@ const routes = [
   },
   {
     path: "/blog",
+    changeFrequency: "weekly",
+    priority: 0.7,
+  },
+  {
+    path: "/blog/rethinking-safety",
+    changeFrequency: "monthly",
+    priority: 0.6,
+  },
+  {
+    path: "/blog/yog-the-ultimate-guide",
     changeFrequency: "monthly",
     priority: 0.6,
   },

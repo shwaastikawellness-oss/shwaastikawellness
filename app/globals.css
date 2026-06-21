@@ -305,14 +305,14 @@ button {
   padding: 0.2rem 0.2rem 0.45rem;
 }
 
-/* ─────────────────────────────────────────────────────────────
-   BLOG — Premium Editorial Publication Styles
+/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+   BLOG â€” Premium Editorial Publication Styles
    Reading experience > aesthetics > effects.
-   Palette: beige/cream (#fffdf8 · #fffaf2 · #f5ede0 · #eadfce)
-   Text:    #1e1a17 (headings) · #3a322b (body) · #7a6857 (meta)
-───────────────────────────────────────────────────────────── */
+   Palette: beige/cream (#fffdf8 Â· #fffaf2 Â· #f5ede0 Â· #eadfce)
+   Text:    #1e1a17 (headings) Â· #3a322b (body) Â· #7a6857 (meta)
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 
-/* ── Layout ── */
+/* â”€â”€ Layout â”€â”€ */
 .blog-layout {
   display: grid;
   grid-template-columns: 1fr;
@@ -332,7 +332,7 @@ button {
   }
 }
 
-/* ── Article body ── */
+/* â”€â”€ Article body â”€â”€ */
 .blog-article {
   max-width: 45rem;
   width: 100%;
@@ -350,7 +350,7 @@ button {
   }
 }
 
-/* ── Article prose ── */
+/* â”€â”€ Article prose â”€â”€ */
 .blog-article > p,
 .blog-section-block > p {
   font-family: Georgia, "Times New Roman", Times, serif;
@@ -384,7 +384,7 @@ button {
   }
 }
 
-/* ── Opening lede with drop cap ── */
+/* â”€â”€ Opening lede with drop cap â”€â”€ */
 .blog-lede {
   font-family: Georgia, "Times New Roman", Times, serif !important;
   font-size: 1.075rem !important;
@@ -419,7 +419,7 @@ button {
   }
 }
 
-/* ── Section blocks ── */
+/* â”€â”€ Section blocks â”€â”€ */
 .blog-section-block {
   margin-top: 2rem;
   padding: 1.5rem 1.25rem 1.5rem;
@@ -472,7 +472,7 @@ button {
   margin: 0 0 2rem !important;
 }
 
-/* ── Layers (numbered items) ── */
+/* â”€â”€ Layers (numbered items) â”€â”€ */
 .blog-layers {
   display: flex;
   flex-direction: column;
@@ -516,7 +516,7 @@ button {
   font-weight: 600;
 }
 
-/* ── Practices 2-column grid / Mobile Swipe ── */
+/* â”€â”€ Practices 2-column grid / Mobile Swipe â”€â”€ */
 .blog-practices-scroll {
   display: flex;
   overflow-x: auto;
@@ -602,7 +602,7 @@ button {
   margin: 0.6rem 0 0 !important;
 }
 
-/* ── Block label ── */
+/* â”€â”€ Block label â”€â”€ */
 .blog-block-label {
   display: block;
   font-family: Inter, ui-sans-serif, system-ui, sans-serif;
@@ -614,7 +614,7 @@ button {
   margin-bottom: 0.75rem;
 }
 
-/* ── Pull Quote ── */
+/* â”€â”€ Pull Quote â”€â”€ */
 .blog-pull-quote {
   margin: 2.75rem -1.25rem;
   padding: 2rem 1.75rem;
@@ -646,7 +646,7 @@ button {
   }
 }
 
-/* ── Reflection Block ── */
+/* â”€â”€ Reflection Block â”€â”€ */
 .blog-reflection {
   margin: 2rem 0;
   padding: 1.5rem 1.5rem 1.5rem 1.25rem;
@@ -674,7 +674,7 @@ button {
   margin-top: 0 !important;
 }
 
-/* ── Key Insight ── */
+/* â”€â”€ Key Insight â”€â”€ */
 .blog-key-insight {
   margin: 2rem 0;
   padding: 1.5rem 1.75rem;
@@ -691,7 +691,7 @@ button {
   margin: 0 !important;
 }
 
-/* ── Journal Prompt ── */
+/* â”€â”€ Journal Prompt â”€â”€ */
 .blog-journal-prompt {
   margin: 2rem 0;
   padding: 1.25rem 1.5rem;
@@ -708,7 +708,7 @@ button {
   margin: 0 !important;
 }
 
-/* ── TOC sidebar ── */
+/* â”€â”€ TOC sidebar â”€â”€ */
 .blog-toc-sidebar {
   display: none;
 }
@@ -723,7 +723,7 @@ button {
   }
 }
 
-/* ── TOC mobile ── */
+/* â”€â”€ TOC mobile â”€â”€ */
 .blog-toc-mobile {
   display: block;
   margin-bottom: 2rem;
@@ -737,7 +737,7 @@ button {
   }
 }
 
-/* ── TOC shared ── */
+/* â”€â”€ TOC shared â”€â”€ */
 .blog-toc-label {
   font-family: Inter, ui-sans-serif, system-ui, sans-serif;
   font-size: 0.625rem;
@@ -781,7 +781,7 @@ button {
   flex-shrink: 0;
 }
 
-/* ── Article Header ── */
+/* â”€â”€ Article Header â”€â”€ */
 .blog-header {
   padding: 5rem 1.25rem 0;
   border-bottom: 1px solid #eadfce;
@@ -891,7 +891,7 @@ button {
   color: #2a231e;
 }
 
-/* ── Continue Reading ── */
+/* â”€â”€ Continue Reading â”€â”€ */
 .blog-continue {
   background: #fdf8f2;
   border-top: 1px solid #eadfce;
@@ -1042,7 +1042,7 @@ button {
   }
 }
 
-/* ── Layout ── */
+/* â”€â”€ Layout â”€â”€ */
 .blog-layout {
   display: grid;
   grid-template-columns: 1fr;
@@ -1061,7 +1061,7 @@ button {
   }
 }
 
-/* ── Article body ── */
+/* â”€â”€ Article body â”€â”€ */
 .blog-article {
   max-width: 45rem; /* ~720px */
   width: 100%;
@@ -1076,7 +1076,7 @@ button {
   }
 }
 
-/* ── Article prose ── */
+/* â”€â”€ Article prose â”€â”€ */
 .blog-article p {
   font-family: Georgia, "Times New Roman", Times, serif;
   font-size: 1.075rem;
@@ -1132,7 +1132,7 @@ button {
   }
 }
 
-/* ── Opening lede ── */
+/* â”€â”€ Opening lede â”€â”€ */
 .blog-lede {
   font-size: 1.18rem !important;
   line-height: 1.85 !important;
@@ -1146,7 +1146,7 @@ button {
   }
 }
 
-/* ── Numbered list ── */
+/* â”€â”€ Numbered list â”€â”€ */
 .blog-numbered-list {
   margin-top: 1.8rem;
   padding: 0;
@@ -1179,7 +1179,7 @@ button {
   text-align: right;
 }
 
-/* ── Section divider ── */
+/* â”€â”€ Section divider â”€â”€ */
 .blog-divider {
   display: flex;
   align-items: center;
@@ -1191,7 +1191,7 @@ button {
   user-select: none;
 }
 
-/* ── Shared block label ── */
+/* â”€â”€ Shared block label â”€â”€ */
 .blog-block-label {
   display: block;
   font-family: Inter, ui-sans-serif, system-ui, sans-serif;
@@ -1203,7 +1203,7 @@ button {
   margin-bottom: 0.85rem;
 }
 
-/* ── Pull Quote ── */
+/* â”€â”€ Pull Quote â”€â”€ */
 .blog-pull-quote {
   margin: 2.5rem 0;
   padding: 1.75rem 0 1.75rem 1.75rem;
@@ -1229,7 +1229,7 @@ button {
   }
 }
 
-/* ── Reflection Block ── */
+/* â”€â”€ Reflection Block â”€â”€ */
 .blog-reflection {
   margin: 2.5rem 0;
   padding: 1.75rem 1.75rem 1.75rem 1.75rem;
@@ -1251,7 +1251,7 @@ button {
   margin-top: 0 !important;
 }
 
-/* ── Key Insight ── */
+/* â”€â”€ Key Insight â”€â”€ */
 .blog-key-insight {
   margin: 2.5rem 0;
   padding: 1.5rem 1.75rem;
@@ -1269,7 +1269,7 @@ button {
   letter-spacing: 0.005em;
 }
 
-/* ── Journal Prompt ── */
+/* â”€â”€ Journal Prompt â”€â”€ */
 .blog-journal-prompt {
   margin: 2.5rem 0;
   padding: 1.5rem 1.75rem;
@@ -1287,7 +1287,7 @@ button {
   margin: 0 !important;
 }
 
-/* ── Practice ── */
+/* â”€â”€ Practice â”€â”€ */
 .blog-practice {
   margin: 1.75rem 0;
   padding: 1.5rem 1.75rem;
@@ -1312,7 +1312,7 @@ button {
   margin: 0 !important;
 }
 
-/* ── TOC Sidebar (desktop) ── */
+/* â”€â”€ TOC Sidebar (desktop) â”€â”€ */
 .blog-toc-sidebar {
   display: none;
 }
@@ -1327,7 +1327,7 @@ button {
   }
 }
 
-/* ── TOC Mobile ── */
+/* â”€â”€ TOC Mobile â”€â”€ */
 .blog-toc-mobile {
   display: block;
   margin-bottom: 2.5rem;
@@ -1341,7 +1341,7 @@ button {
   }
 }
 
-/* ── TOC shared ── */
+/* â”€â”€ TOC shared â”€â”€ */
 .blog-toc-label {
   font-family: Inter, ui-sans-serif, system-ui, sans-serif;
   font-size: 0.6875rem;
@@ -1385,7 +1385,7 @@ button {
   padding-top: 0.08em;
 }
 
-/* ── Article Header ── */
+/* â”€â”€ Article Header â”€â”€ */
 .blog-header {
   padding: 5rem 1.25rem 0;
   background: linear-gradient(180deg, #fffdf8 0%, #fdf9f2 100%);
@@ -1484,7 +1484,7 @@ button {
   color: #2a231e;
 }
 
-/* ── Author Philosophy Section ── */
+/* â”€â”€ Author Philosophy Section â”€â”€ */
 .blog-author-section {
   background: #fdf8f2;
   border-top: 1px solid #eadfce;
@@ -1560,7 +1560,7 @@ button {
   margin: 0 !important;
 }
 
-/* ── Continue Reading Section ── */
+/* â”€â”€ Continue Reading Section â”€â”€ */
 .blog-continue {
   background: #fffdf8;
   border-top: 1px solid #eadfce;
@@ -1670,9 +1670,9 @@ button {
   }
 }
 
-/* ─────────────────────────────────────────────────────────────
-   BLOG — Mobile TOC collapsible toggle
-───────────────────────────────────────────────────────────── */
+/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+   BLOG â€” Mobile TOC collapsible toggle
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 
 .blog-toc-mobile-wrap {
   display: block;
@@ -1715,9 +1715,9 @@ button {
   border-top: 1px solid #eadfce;
 }
 
-/* ─────────────────────────────────────────────────────────────
-   BLOG — Horizontal practice swipe on mobile
-───────────────────────────────────────────────────────────── */
+/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+   BLOG â€” Horizontal practice swipe on mobile
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 
 .blog-practices-scroll {
   overflow-x: auto;
@@ -1742,9 +1742,9 @@ button {
   }
 }
 
-/* ─────────────────────────────────────────────────────────────
-   BOOK A SESSION — Premium upgrade
-───────────────────────────────────────────────────────────── */
+/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+   BOOK A SESSION â€” Premium upgrade
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 
 /* Trust badge strip */
 .bas-trust-strip {
@@ -1771,7 +1771,7 @@ button {
   flex-shrink: 0;
 }
 
-/* Sticky WhatsApp CTA — mobile */
+/* Sticky WhatsApp CTA â€” mobile */
 .bas-sticky-cta {
   position: fixed;
   bottom: 0;
@@ -1807,4 +1807,687 @@ button {
   color: white;
   text-decoration: none;
   box-shadow: 0 4px 16px rgba(86, 92, 67, 0.4);
+}
+
+/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+   JOURNAL â€” Premium Editorial Landing Page
+   Calm Â· Elegant Â· Editorial Â· Wellness-focused
+   Palette: beige/cream (#fffdf8 Â· #fdf8f2 Â· #f5ede0 Â· #eadfce)
+   Text:    #1e1a17 (headings) Â· #3a322b (body) Â· #7a6857 (meta)
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+
+/* â”€â”€ Breadcrumb Navigation (Article Pages) â”€â”€ */
+.blog-breadcrumb-bar {
+  padding: 5.5rem 1.25rem 0;
+  background: #fffdf8;
+}
+
+@media (min-width: 640px) {
+  .blog-breadcrumb-bar {
+    padding: 5.75rem 2rem 0;
+  }
+}
+
+@media (min-width: 1120px) {
+  .blog-breadcrumb-bar {
+    padding: 6rem 2.5rem 0;
+  }
+}
+
+.blog-breadcrumb-inner {
+  max-width: 72rem;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.75rem 0;
+}
+
+.blog-breadcrumb-link {
+  font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #9a7f68;
+  text-decoration: none;
+  transition: color 180ms ease;
+  padding: 0.25rem 0;
+}
+
+.blog-breadcrumb-link:hover {
+  color: #1e1a17;
+}
+
+.blog-breadcrumb-sep {
+  font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.7rem;
+  color: #c4ac93;
+  user-select: none;
+}
+
+.blog-breadcrumb-current {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 0.875rem;
+  font-weight: 400;
+  font-style: italic;
+  color: #6b5c4e;
+  letter-spacing: -0.005em;
+}
+
+/* â”€â”€ Hero Section â”€â”€ */
+.journal-hero {
+  position: relative;
+  isolation: isolate;
+  padding: 7rem 1.25rem 4.5rem;
+  background: linear-gradient(180deg, #fffdf8 0%, #fdf9f2 60%, #f8f1e8 100%);
+  border-bottom: 1px solid #eadfce;
+  text-align: center;
+  overflow: hidden;
+}
+
+@media (min-width: 640px) {
+  .journal-hero {
+    padding: 8rem 2rem 5.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .journal-hero {
+    padding: 9rem 2.5rem 6.5rem;
+  }
+}
+
+/* Decorative gradient orbs */
+.journal-hero-orb {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.journal-hero-orb--left {
+  width: clamp(16rem, 38vw, 28rem);
+  height: clamp(16rem, 38vw, 28rem);
+  top: -4rem;
+  left: -6%;
+  background: radial-gradient(circle, rgba(234, 219, 226, 0.55) 0%, transparent 70%);
+}
+
+.journal-hero-orb--right {
+  width: clamp(14rem, 32vw, 24rem);
+  height: clamp(14rem, 32vw, 24rem);
+  top: -2rem;
+  right: -4%;
+  background: radial-gradient(circle, rgba(223, 238, 247, 0.50) 0%, transparent 70%);
+}
+
+.journal-hero-inner {
+  position: relative;
+  max-width: 42rem;
+  margin: 0 auto;
+}
+
+.journal-label {
+  font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: #9a7f68;
+  margin: 0 0 2rem;
+}
+
+.journal-heading {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: clamp(2.25rem, 5.5vw, 3.75rem);
+  font-weight: 500;
+  line-height: 1.06;
+  letter-spacing: -0.025em;
+  color: #1e1a17;
+  margin: 0 0 2rem;
+  text-wrap: balance;
+}
+
+.journal-hero-rule {
+  width: 3rem;
+  height: 1.5px;
+  background: linear-gradient(90deg, transparent, #c4ac93, transparent);
+  margin: 0 auto 2rem;
+}
+
+.journal-intro {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 1.0625rem;
+  font-style: italic;
+  line-height: 1.75;
+  color: #6b5c4e;
+  margin: 0;
+  max-width: 30rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 640px) {
+  .journal-intro {
+    font-size: 1.15rem;
+    line-height: 1.85;
+  }
+}
+
+/* â”€â”€ Editorial Article Grid Section â”€â”€ */
+.journal-grid-section {
+  padding: 4.5rem 1.25rem 5rem;
+  background: #fffdf8;
+}
+
+@media (min-width: 640px) {
+  .journal-grid-section {
+    padding: 5rem 2rem 6rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .journal-grid-section {
+    padding: 5.5rem 2.5rem 7rem;
+  }
+}
+
+/* â”€â”€ Editorial Grid â”€â”€ */
+.journal-editorial-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.25rem;
+  max-width: 72rem;
+  margin: 0 auto;
+}
+
+@media (min-width: 640px) {
+  .journal-editorial-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .journal-editorial-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.25rem;
+  }
+}
+
+/* â”€â”€ Editorial Card (wrapper) â”€â”€ */
+.journal-editorial-card {
+  opacity: 0;
+  animation: journalEditorialCardIn 0.65s ease-out forwards;
+}
+
+@keyframes journalEditorialCardIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .journal-editorial-card {
+    opacity: 1;
+    animation: none;
+  }
+}
+
+/* â”€â”€ Clickable Card Link â”€â”€ */
+.journal-editorial-card-link {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  text-decoration: none;
+  color: inherit;
+  border-radius: 0.625rem;
+  border: 1px solid #e8ddd0;
+  background: linear-gradient(180deg, #fffdf8 0%, #fdf9f2 100%);
+  overflow: hidden;
+  transition:
+    border-color 320ms ease,
+    box-shadow 320ms ease,
+    transform 320ms ease;
+}
+
+.journal-editorial-card-link:hover {
+  border-color: #c4ac93;
+  box-shadow:
+    0 12px 44px rgba(154, 127, 104, 0.12),
+    0 4px 14px rgba(154, 127, 104, 0.06);
+  transform: translateY(-5px);
+}
+
+/* Accent border on hover â€” subtle left-side warm line */
+.journal-editorial-card-link::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 100%;
+  background: linear-gradient(180deg, #c4ac93 0%, #9a7f68 100%);
+  opacity: 0;
+  transition: opacity 320ms ease;
+  border-radius: 0.625rem 0 0 0.625rem;
+  z-index: 1;
+}
+
+.journal-editorial-card-link {
+  position: relative;
+}
+
+.journal-editorial-card-link:hover::before {
+  opacity: 1;
+}
+
+/* â”€â”€ Card Image â”€â”€ */
+.journal-editorial-card-image-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: #f5ede0;
+  flex-shrink: 0;
+}
+
+.journal-editorial-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 600ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  will-change: transform;
+}
+
+.journal-editorial-card-link:hover .journal-editorial-card-image {
+  transform: scale(1.04);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .journal-editorial-card-image {
+    transition: none;
+  }
+}
+
+/* â”€â”€ Card Body â”€â”€ */
+.journal-editorial-card-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 1.5rem 1.5rem 1.75rem;
+}
+
+@media (min-width: 640px) {
+  .journal-editorial-card-body {
+    padding: 1.5rem 1.75rem 1.85rem;
+  }
+}
+
+/* â”€â”€ Card Category â”€â”€ */
+.journal-editorial-card-category {
+  font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.5625rem;
+  font-weight: 700;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: #9a7f68;
+  margin: 0 0 0.85rem;
+  line-height: 1;
+}
+
+/* â”€â”€ Card Title â”€â”€ */
+.journal-editorial-card-title {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 1.25rem;
+  font-weight: 500;
+  line-height: 1.28;
+  letter-spacing: -0.01em;
+  color: #1e1a17;
+  margin: 0 0 0.85rem;
+  text-wrap: balance;
+  transition: color 240ms ease;
+}
+
+.journal-editorial-card-link:hover .journal-editorial-card-title {
+  color: #5f4a38;
+}
+
+@media (min-width: 1024px) {
+  .journal-editorial-card-title {
+    font-size: 1.3rem;
+  }
+}
+
+/* â”€â”€ Card Excerpt â”€â”€ */
+.journal-editorial-card-excerpt {
+  font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.8375rem;
+  line-height: 1.72;
+  color: #6b5c4e;
+  margin: 0;
+  flex: 1;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* â”€â”€ Card Meta (date + reading time) â”€â”€ */
+.journal-editorial-card-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1.25rem;
+  padding-top: 1rem;
+  border-top: 1px solid #eadfce;
+  font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.6875rem;
+  font-weight: 500;
+  color: #9a7f68;
+  letter-spacing: 0.02em;
+}
+
+.journal-editorial-card-meta time {
+  color: inherit;
+}
+
+.journal-editorial-card-meta-dot {
+  color: #c4ac93;
+  font-size: 0.75rem;
+  line-height: 1;
+}
+
+/* â”€â”€ Newsletter Bridge â”€â”€ */
+.journal-newsletter-bridge {
+  height: 4rem;
+  background: linear-gradient(180deg, #fffdf8, #ffffff);
+}
+
+@media (min-width: 640px) {
+  .journal-newsletter-bridge {
+    height: 5rem;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────
+   CONTINUE READING — Editorial article recommendation
+   Placed at the end of each blog article page.
+   Palette: consistent with journal editorial design
+───────────────────────────────────────────────────────────── */
+
+.blog-continue-reading {
+  background: #fdf8f2;
+  border-top: 1px solid #eadfce;
+  padding: 4rem 1.25rem 3.5rem;
+}
+
+@media (min-width: 640px) {
+  .blog-continue-reading {
+    padding: 5rem 2rem 4.5rem;
+  }
+}
+
+@media (min-width: 1120px) {
+  .blog-continue-reading {
+    padding: 5.5rem 2.5rem 5rem;
+  }
+}
+
+.blog-continue-reading-inner {
+  max-width: 52rem;
+  margin: 0 auto;
+}
+
+/* ── Section Header ── */
+.blog-continue-reading-header {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin-bottom: 2.5rem;
+}
+
+.blog-continue-reading-label {
+  font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: #9a7f68;
+  white-space: nowrap;
+  margin: 0;
+  flex-shrink: 0;
+}
+
+.blog-continue-reading-rule {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, #e2d5c3, transparent);
+}
+
+/* ── Recommendation Card ── */
+.blog-continue-reading-card {
+  overflow: hidden;
+}
+
+.blog-continue-reading-card-link {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+  border-radius: 0.625rem;
+  border: 1px solid #e8ddd0;
+  background: linear-gradient(180deg, #fffdf8 0%, #fdf9f2 100%);
+  overflow: hidden;
+  position: relative;
+  transition:
+    border-color 320ms ease,
+    box-shadow 320ms ease,
+    transform 320ms ease;
+}
+
+@media (min-width: 768px) {
+  .blog-continue-reading-card-link {
+    flex-direction: row;
+  }
+}
+
+.blog-continue-reading-card-link:hover {
+  border-color: #c4ac93;
+  box-shadow:
+    0 12px 44px rgba(154, 127, 104, 0.12),
+    0 4px 14px rgba(154, 127, 104, 0.06);
+  transform: translateY(-4px);
+}
+
+/* Accent border on hover */
+.blog-continue-reading-card-link::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 100%;
+  background: linear-gradient(180deg, #c4ac93 0%, #9a7f68 100%);
+  opacity: 0;
+  transition: opacity 320ms ease;
+  border-radius: 0.625rem 0 0 0.625rem;
+  z-index: 1;
+}
+
+.blog-continue-reading-card-link:hover::before {
+  opacity: 1;
+}
+
+/* ── Card Image ── */
+.blog-continue-reading-card-image-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: #f5ede0;
+  flex-shrink: 0;
+}
+
+@media (min-width: 768px) {
+  .blog-continue-reading-card-image-wrap {
+    width: 42%;
+    aspect-ratio: auto;
+    min-height: 16rem;
+  }
+}
+
+.blog-continue-reading-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 600ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  will-change: transform;
+}
+
+.blog-continue-reading-card-link:hover .blog-continue-reading-card-image {
+  transform: scale(1.04);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .blog-continue-reading-card-image {
+    transition: none;
+  }
+}
+
+/* ── Card Body ── */
+.blog-continue-reading-card-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 1.75rem 1.5rem 2rem;
+}
+
+@media (min-width: 768px) {
+  .blog-continue-reading-card-body {
+    padding: 2rem 2.25rem;
+    justify-content: center;
+  }
+}
+
+/* ── Card Category ── */
+.blog-continue-reading-card-category {
+  font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.5625rem;
+  font-weight: 700;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: #9a7f68;
+  margin: 0 0 0.85rem;
+  line-height: 1;
+}
+
+/* ── Card Title ── */
+.blog-continue-reading-card-title {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 1.35rem;
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  color: #1e1a17;
+  margin: 0 0 0.85rem;
+  text-wrap: balance;
+  transition: color 240ms ease;
+}
+
+.blog-continue-reading-card-link:hover .blog-continue-reading-card-title {
+  color: #5f4a38;
+}
+
+@media (min-width: 768px) {
+  .blog-continue-reading-card-title {
+    font-size: 1.45rem;
+  }
+}
+
+/* ── Card Excerpt ── */
+.blog-continue-reading-card-excerpt {
+  font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.875rem;
+  line-height: 1.72;
+  color: #6b5c4e;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* ── Card Footer (meta + CTA) ── */
+.blog-continue-reading-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid #eadfce;
+}
+
+.blog-continue-reading-card-meta {
+  font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.6875rem;
+  font-weight: 500;
+  color: #9a7f68;
+  letter-spacing: 0.02em;
+}
+
+.blog-continue-reading-card-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #7a6857;
+  transition: color 180ms ease, gap 280ms ease;
+}
+
+.blog-continue-reading-card-cta svg {
+  transition: transform 280ms ease;
+}
+
+.blog-continue-reading-card-link:hover .blog-continue-reading-card-cta {
+  color: #1e1a17;
+}
+
+.blog-continue-reading-card-link:hover .blog-continue-reading-card-cta svg {
+  transform: translateX(3px);
+}
+
+/* ── Back to Journal Link ── */
+.blog-continue-reading-back {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.blog-continue-reading-back-link {
+  font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: #9a7f68;
+  text-decoration: none;
+  transition: color 180ms ease;
+  padding: 0.5rem 0;
+  display: inline-block;
+}
+
+.blog-continue-reading-back-link:hover {
+  color: #1e1a17;
 }

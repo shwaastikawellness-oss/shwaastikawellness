@@ -1,5 +1,5 @@
 const whatsappUrl =
-  "https://api.whatsapp.com/send/?phone=919310685448&text=Hello%0AWelcome+to+Shwaastika+Wellness.%0A%0AThank+you+for+reaching+out+through+our+website.%0APlease+tell+us+how+we+can+help+you+today.%0A%0AYou+can+share%3A%0A-+Your+concern+or+goal%0A-+Preferred+service%0A-+Suitable+time+for+a+call%2Fsession%0A%0AOur+team+will+respond+shortly&type=phone_number&app_absent=0";
+  "https://api.whatsapp.com/send/?phone=919310685448&type=phone_number&app_absent=0";
 
 export default function WhatsAppFloat() {
   return (

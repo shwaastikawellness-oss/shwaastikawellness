@@ -86,6 +86,200 @@ li {
   text-underline-offset: 0.18em;
 }
 
+/* ── ICAS Hero Seal ───────────────────────────────────────────────────────── */
+/*
+   Editorial affiliation mark in the hero's right column.
+   Not a card. Not a badge. Part of the page identity.
+*/
+
+/* Container: stacks vertically, compact gap */
+.icas-hero-seal {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;   /* center on mobile */
+  gap: 0.75rem;
+  text-align: center;
+}
+
+@media (min-width: 1024px) {
+  .icas-hero-seal {
+    align-items: flex-end;
+    text-align: right;
+  }
+}
+
+/* ── Emblem ── */
+.icas-hero-emblem {
+  opacity: 0;
+  transform: translateY(10px);
+  transition:
+    opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.18s,
+    transform 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.18s;
+}
+
+.icas-hero-seal[data-visible="true"] .icas-hero-emblem {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Logo: no border, no shadow, no wrapper — raw emblem only */
+.icas-hero-img {
+  display: block;
+  width: 90px;
+  height: 90px;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+  opacity: 0.88;
+}
+
+@media (min-width: 640px) {
+  .icas-hero-img {
+    width: 96px;
+    height: 96px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .icas-hero-img {
+    width: 108px;
+    height: 108px;
+  }
+}
+
+/* ── Text block — follows emblem ~140ms later ── */
+.icas-hero-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;   /* center on mobile */
+  gap: 0;
+  opacity: 0;
+  transform: translateY(7px);
+  transition:
+    opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1) 0.32s,
+    transform 0.65s cubic-bezier(0.16, 1, 0.3, 1) 0.32s;
+}
+
+@media (min-width: 1024px) {
+  .icas-hero-text {
+    align-items: flex-end;
+  }
+}
+
+.icas-hero-seal[data-visible="true"] .icas-hero-text {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Eyebrow — identical styling to existing "INTRODUCTION", "HEALING PHILOSOPHY" labels */
+.icas-hero-eyebrow {
+  display: block;
+  font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #7d8b65;
+  margin-bottom: 0.45rem;
+}
+
+/* Primary credential — serif, strongest weight in the group */
+.icas-hero-membership {
+  display: block;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: #2f2822;
+  letter-spacing: -0.01em;
+  line-height: 1.15;
+  margin-bottom: 0.25rem;
+}
+
+@media (min-width: 640px) {
+  .icas-hero-membership {
+    font-size: 1.1875rem;
+  }
+}
+
+/* Organization name — quieter, secondary */
+.icas-hero-org {
+  display: block;
+  font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.78125rem;
+  color: #8a7e77;
+  line-height: 1.5;
+  letter-spacing: 0.01em;
+}
+
+/* Editorial rule — last to appear, acts as punctuation not border */
+.icas-hero-rule {
+  display: block;
+  width: 2.5rem;      /* 40px */
+  height: 1px;
+  background: #c8b89a;
+  margin-top: 0.75rem;
+  opacity: 0;
+  transform: scaleX(0.2);
+  transform-origin: center;
+  transition:
+    opacity 0.55s ease 0.5s,
+    transform 0.55s ease 0.5s;
+}
+
+@media (min-width: 1024px) {
+  .icas-hero-rule {
+    transform-origin: right center;
+  }
+}
+
+.icas-hero-seal[data-visible="true"] .icas-hero-rule {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .icas-hero-emblem,
+  .icas-hero-text,
+  .icas-hero-rule {
+    transition: none;
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ── About page — editorial pull quote ───────────────────────────────────── */
+/*
+   A wide-set italic serif line lifted from the biography,
+   used as visual breathing room between paragraphs.
+   Not a card. Not a box. Editorial punctuation.
+*/
+.about-pull-quote {
+  margin: 2.25rem 0 0;
+  padding: 1.75rem 0;
+  border-top: 1px solid #e8dece;
+  border-bottom: 1px solid #e8dece;
+  background: transparent;
+}
+
+.about-pull-quote p {
+  font-family: Georgia, "Times New Roman", Times, serif !important;
+  font-size: 1.05rem !important;
+  font-style: italic;
+  line-height: 1.75 !important;
+  color: #5a4e45 !important;
+  margin: 0 !important;
+}
+
+@media (min-width: 640px) {
+  .about-pull-quote {
+    margin-top: 2.5rem;
+    padding: 2rem 0;
+  }
+  .about-pull-quote p {
+    font-size: 1.125rem !important;
+  }
+}
+
 .newsletter-organic {
   position: relative;
   isolation: isolate;

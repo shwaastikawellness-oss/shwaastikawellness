@@ -6,7 +6,7 @@ import { FormEvent, useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 
 const whatsappUrl =
-  "https://api.whatsapp.com/send/?phone=919310685448&type=phone_number&app_absent=0";
+  "https://api.whatsapp.com/send/?phone=919310685448&text=Hi%20Preeti%2C%20I%20would%20like%20to%20enquire%20about%20a%20wellness%20session.&type=phone_number&app_absent=0";
 
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 

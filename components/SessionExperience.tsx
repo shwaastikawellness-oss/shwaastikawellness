@@ -6,7 +6,7 @@ import { useState } from "react";
 import Reveal from "@/components/Reveal";
 
 const whatsappUrl =
-  "https://api.whatsapp.com/send/?phone=919310685448&type=phone_number&app_absent=0";
+  "https://api.whatsapp.com/send/?phone=919310685448&text=Hi%20Preeti%2C%20I%20would%20like%20to%20enquire%20about%20a%20wellness%20session.&type=phone_number&app_absent=0";
 
 const services = [
   {
@@ -30,8 +30,8 @@ const services = [
       "Supportive practices based on what emerges",
     ],
     pricing: [
-      ["Single Session", "INR 3,000 · USD 60"],
-      ["3-Session Journey", "INR 8,100 · USD 162", "Includes a 10% courtesy reduction"],
+      ["Single Session", "INR 4,000 · USD 80"],
+      ["3 Sessions", "INR 11,500 · USD 230"],
     ],
   },
   {
@@ -54,7 +54,7 @@ const services = [
       "Practical guidance and self-reflection",
       "Emotional grounding and clarity",
     ],
-    pricing: [["Single Session", "INR 2,500 · USD 55"]],
+    pricing: [["Single Session", "INR 3,500 · USD 75"]],
   },
   {
     title: "Womb Healing & Prenatal Support",

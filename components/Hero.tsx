@@ -5,9 +5,6 @@ import Link from "next/link";
 import React from "react";
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 
-const consultationUrl =
-  "https://api.whatsapp.com/send/?phone=919310685448&type=phone_number&app_absent=0&text=Hello%2C%20I%20would%20like%20to%20book%20a%20consultation%20with%20Shwaastika%20Wellness.%20Could%20you%20please%20share%20the%20available%20timings%20and%20next%20steps%3F";
-
 export default function Hero() {
   const x = useMotionValue(0);
   const y = useMotionValue(0);
@@ -84,20 +81,11 @@ export default function Hero() {
             </p>
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-              <a
-                href={consultationUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Book a consultation with Shwaastika Wellness on WhatsApp"
+              <Link
+                href="/book-a-session"
                 className="inline-flex w-full items-center justify-center rounded-full bg-[#5d686f] px-6 py-3 text-sm font-bold text-white shadow-lg shadow-[#5d686f]/20 transition hover:-translate-y-0.5 hover:bg-[#7b878f] sm:w-auto sm:whitespace-nowrap"
               >
                 Book a Consultation
-              </a>
-              <Link
-                href="/book-a-session"
-                className="inline-flex w-full items-center justify-center rounded-full border border-[#8b989e] bg-white/70 px-6 py-3 text-sm font-bold text-[#3f4b50] shadow-sm transition hover:-translate-y-0.5 hover:border-[#5d686f] hover:bg-white sm:w-auto sm:whitespace-nowrap"
-              >
-                Explore Sessions
               </Link>
             </div>
 

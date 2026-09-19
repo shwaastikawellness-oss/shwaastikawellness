@@ -3,25 +3,16 @@
 import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
 import { useState } from "react";
-import type { ReactNode } from "react";
 import Reveal from "@/components/Reveal";
 
 const whatsappBaseUrl =
   "https://api.whatsapp.com/send/?phone=919310685448&type=phone_number&app_absent=0";
 
-const getServiceName = (serviceTitle: string) => {
-  if (serviceTitle === "Corporate Workshop") {
-    return "Corporate Workshops at Shwaastika Wellness";
-  }
-
-  return serviceTitle;
-};
-
 const getWhatsappUrl = (serviceTitle: string) =>
   `${whatsappBaseUrl}&text=${encodeURIComponent(
     serviceTitle === "Corporate Workshop"
       ? "Hello, I am interested in learning more about Corporate Workshops at Shwaastika Wellness. Please share the details and next steps."
-      : `Hello, I am interested in booking ${serviceTitle === "Womb Healing & Prenatal Support" ? "a" : "an"} ${getServiceName(serviceTitle)} session. Please share the available timings and booking details.`,
+      : `Hello, I am interested in booking ${serviceTitle === "Womb Healing & Prenatal Support" ? "a" : "an"} ${serviceTitle} session. Please share the available timings and booking details.`,
   )}`;
 
 const services = [
@@ -125,85 +116,6 @@ const services = [
 
 type Service = (typeof services)[number];
 
-function WhatsappLink({
-  service,
-  className,
-}: {
-  service: Service;
-  className?: string;
-}) {
-  return (
-    <a
-      href={getWhatsappUrl(service.title)}
-      target="_blank"
-      rel="noopener noreferrer"
-      aria-label={`Enquire about ${service.title} on WhatsApp`}
-      className={className}
-    >
-      Enquire on WhatsApp
-    </a>
-  );
-}
-
-function PricingSummary({ service }: { service: Service }) {
-  return (
-    <div className="mt-6">
-      <WhatsappLink
-        service={service}
-        className="inline-flex min-h-12 w-full items-center justify-center rounded-full bg-[#3f5f46] px-5 py-3 text-center text-sm font-semibold text-white shadow-sm transition hover:bg-[#263136] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#5d686f] focus-visible:ring-offset-2 sm:w-fit"
-      />
-    </div>
-  );
-}
-
-function AccordionSection({
-  label,
-  id,
-  isOpen,
-  onToggle,
-  children,
-}: {
-  label: string;
-  id: string;
-  isOpen: boolean;
-  onToggle: () => void;
-  children: ReactNode;
-}) {
-  return (
-    <div className="border-y border-[#d8cab5]/50">
-      <button
-        type="button"
-        onClick={onToggle}
-        aria-expanded={isOpen}
-        aria-controls={id}
-        className="flex min-h-12 w-full items-center justify-between gap-4 py-3 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-[#5d686f] focus-visible:ring-offset-2"
-      >
-        <span className="text-sm font-medium tracking-wide text-[#263136]">{label}</span>
-        <span
-          aria-hidden="true"
-          className={`h-2 w-2 shrink-0 rotate-45 border-b border-r border-[#717b80] transition-transform duration-300 ${
-            isOpen ? "rotate-[225deg]" : ""
-          }`}
-        />
-      </button>
-      <AnimatePresence initial={false}>
-        {isOpen && (
-          <motion.div
-            id={id}
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-            className="overflow-hidden"
-          >
-            <div className="pb-5 pt-1">{children}</div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </div>
-  );
-}
-
 function ServiceBlock({
   service,
   index,
@@ -212,7 +124,7 @@ function ServiceBlock({
   index: number;
 }) {
   const isEven = index % 2 === 0;
-  const [isDetailsOpen, setIsDetailsOpen] = useState(false);
+  const [isPricingOpen, setIsPricingOpen] = useState(false);
 
   return (
     <article className="w-full">
@@ -236,54 +148,45 @@ function ServiceBlock({
 
         {/* Content Section */}
         <div className="flex flex-col w-full md:w-[55%] py-4 md:py-8">
-          <p className="order-1 mb-4 text-[10px] font-bold uppercase tracking-[0.2em] text-[#717b80] md:order-none">
+          <p className="mb-4 text-[10px] font-bold uppercase tracking-[0.2em] text-[#717b80]">
             {service.duration}
           </p>
 
-          <h2 className="order-2 mb-4 font-serif text-[2rem] leading-[1.1] text-[#263136] sm:text-[2.5rem] md:order-none md:text-[2.75rem]">
+          <h2 className="mb-4 font-serif text-[2rem] leading-[1.1] text-[#263136] sm:text-[2.5rem] md:text-[2.75rem]">
             {service.title}
           </h2>
 
-          <p className="order-3 mb-6 max-w-md text-base leading-relaxed text-[#4a5559] md:order-none">
+          <p className="mb-6 max-w-md text-base leading-relaxed text-[#4a5559]">
             {service.intro}
           </p>
 
-          <div className="order-4 md:order-none">
-            <PricingSummary service={service} />
-          </div>
+          <p className="mb-6 max-w-xl text-[0.95rem] leading-7 text-[#4a5559]">
+            {service.description}
+          </p>
 
-          <div className="order-5 mt-6 md:order-none">
-            <AccordionSection
-              label="Explore Session Details"
-              id={`session-details-${index}`}
-              isOpen={isDetailsOpen}
-              onToggle={() => setIsDetailsOpen((current) => !current)}
-            >
-              <div className="flex flex-col gap-6">
-                <div>
-                  <p className="mb-2 text-[10px] font-semibold uppercase tracking-[0.2em] text-[#717b80]">
-                    What the session is
-                  </p>
-                  <p className="text-[0.95rem] leading-7 text-[#4a5559]">{service.description}</p>
-                </div>
+          <button
+            type="button"
+            onClick={() => setIsPricingOpen((current) => !current)}
+            aria-expanded={isPricingOpen}
+            aria-controls={`pricing-${index}`}
+            className="inline-flex w-fit border-b border-[#717b80]/40 pb-1 text-sm font-semibold tracking-wide text-[#263136] transition hover:border-[#263136]"
+          >
+            {isPricingOpen ? "Hide Pricing" : "View Pricing"}
+          </button>
 
-                <div>
+          <AnimatePresence initial={false}>
+            {isPricingOpen && (
+              <motion.div
+                id={`pricing-${index}`}
+                initial={{ opacity: 0, height: 0 }}
+                animate={{ opacity: 1, height: "auto" }}
+                exit={{ opacity: 0, height: 0 }}
+                transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+                className="overflow-hidden"
+              >
+                <div className="mt-6 border-t border-[#d8cab5]/50 pt-5">
                   <p className="mb-3 text-[10px] font-semibold uppercase tracking-[0.2em] text-[#717b80]">
-                    What&apos;s included
-                  </p>
-                  <ul className="flex flex-col gap-3">
-                    {service.included.map((item) => (
-                      <li key={item} className="flex items-start gap-3 text-[0.92rem] leading-snug text-[#4a5559]">
-                        <span className="mt-[0.4rem] h-[3px] w-[3px] shrink-0 rounded-full bg-[#717b80]" aria-hidden="true" />
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                <div>
-                  <p className="mb-3 text-[10px] font-semibold uppercase tracking-[0.2em] text-[#717b80]">
-                    Fee Details
+                    Investment
                   </p>
                   <div className="flex flex-col gap-4">
                     {service.pricing.map(([name, price, note]) => (
@@ -296,10 +199,19 @@ function ServiceBlock({
                       </div>
                     ))}
                   </div>
+                  <a
+                    href={getWhatsappUrl(service.title)}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`Book a ${service.title} session on WhatsApp`}
+                    className="mt-6 inline-flex min-h-12 items-center justify-center rounded-full bg-[#3f5f46] px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-[#263136] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#5d686f] focus-visible:ring-offset-2"
+                  >
+                    Book a Session
+                  </a>
                 </div>
-              </div>
-            </AccordionSection>
-          </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
         </div>
       </div>
     </article>

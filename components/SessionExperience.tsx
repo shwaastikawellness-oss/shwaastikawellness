@@ -5,8 +5,28 @@ import Image from "next/image";
 import { useState } from "react";
 import Reveal from "@/components/Reveal";
 
-const whatsappUrl =
-  "https://api.whatsapp.com/send/?phone=919310685448&text=Hi%20Preeti%2C%20I%20would%20like%20to%20enquire%20about%20a%20wellness%20session.&type=phone_number&app_absent=0";
+const whatsappBaseUrl =
+  "https://api.whatsapp.com/send/?phone=919310685448&type=phone_number&app_absent=0";
+
+const getServiceName = (serviceTitle: string) =>
+  serviceTitle.replace(" Guidance", "");
+
+const getPackagePhrase = (packageName: string) => {
+  if (packageName === "Single Session") {
+    return "single session";
+  }
+
+  if (packageName === "3 Sessions") {
+    return "3-session package";
+  }
+
+  return packageName.toLowerCase();
+};
+
+const getWhatsappUrl = (serviceTitle: string, packageName: string) =>
+  `${whatsappBaseUrl}&text=${encodeURIComponent(
+    `Hello, I am interested in booking ${getServiceName(serviceTitle)} ${getPackagePhrase(packageName)}. Please share the available timings and booking details.`,
+  )}`;
 
 const services = [
   {
@@ -17,7 +37,7 @@ const services = [
       <>
         A personalized session held with{" "}
         <span className="editorial-highlight">calm awareness</span>, intuitive energy work,
-        supportive conversation, and practices guided by the individual's current
+        supportive conversation, and practices guided by the individual&apos;s current
         physical, emotional, and mental state.
       </>
     ),
@@ -91,7 +111,7 @@ const services = [
     intro: "Customized wellness and awareness work for groups.",
     description: (
       <>
-        Mindfulness-based corporate wellness sessions shaped around the group's scope,
+        Mindfulness-based corporate wellness sessions shaped around the group&apos;s scope,
         needs, format, and <span className="editorial-highlight">desired outcomes</span>.
       </>
     ),
@@ -109,9 +129,42 @@ const services = [
 
 type Service = (typeof services)[number];
 
-function InvestmentDetails({ service }: { service: Service }) {
+function PricingSummary({ service }: { service: Service }) {
+  return (
+    <div className="mt-6 border-t border-[#d8cab5]/40 pt-5">
+      <p className="mb-3 text-[10px] font-semibold uppercase tracking-[0.2em] text-[#717b80] opacity-80">
+        Investment
+      </p>
+      <div className="flex flex-col gap-3">
+        {service.pricing.map(([name, price, note]) => (
+          <div key={name} className="flex flex-col gap-0.5">
+            <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
+              <span className="text-sm font-medium text-[#263136]">{name}</span>
+              <div className="flex items-center gap-3">
+                <span className="text-[13px] font-semibold text-[#57646b]">{price}</span>
+                <a
+                  href={getWhatsappUrl(service.title, name)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`Enquire about ${service.title}, ${name}, on WhatsApp`}
+                  className="text-xs font-semibold text-[#3f5f46] underline decoration-[#b9a27e] underline-offset-4 transition hover:text-[#263136] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#5d686f] focus-visible:ring-offset-2"
+                >
+                  Enquire
+                </a>
+              </div>
+            </div>
+            {note && <p className="text-[11px] text-[#717b80]">{note}</p>}
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function InvestmentDetails({ service, id }: { service: Service; id: string }) {
   return (
     <motion.div
+      id={id}
       initial={{ opacity: 0, height: 0 }}
       animate={{ opacity: 1, height: "auto" }}
       exit={{ opacity: 0, height: 0 }}
@@ -129,22 +182,6 @@ function InvestmentDetails({ service }: { service: Service }) {
               <p className="text-[0.95rem] leading-7 text-[#4a5559]">{service.description}</p>
             </div>
 
-            <div className="border-t border-[#d8cab5]/40 pt-5">
-              <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#717b80] mb-3 opacity-80">
-                Investment
-              </p>
-              <div className="flex flex-col gap-4">
-                {service.pricing.map(([name, price, note]) => (
-                  <div key={name} className="flex flex-col gap-0.5">
-                    <div className="flex flex-wrap items-baseline justify-between gap-x-4">
-                      <span className="text-sm font-medium text-[#263136]">{name}</span>
-                      <span className="text-[13px] font-semibold text-[#57646b]">{price}</span>
-                    </div>
-                    {note && <p className="text-[11px] text-[#717b80]">{note}</p>}
-                  </div>
-                ))}
-              </div>
-            </div>
           </div>
 
           {/* Right: inclusions + CTA */}
@@ -163,14 +200,6 @@ function InvestmentDetails({ service }: { service: Service }) {
               </ul>
             </div>
 
-            <a
-              href={whatsappUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex w-full items-center justify-center gap-2 rounded-none bg-[#263136] px-6 py-4 text-xs font-bold uppercase tracking-[0.15em] text-white transition hover:bg-[#4a5559]"
-            >
-              Connect to Book
-            </a>
           </div>
         </div>
       </div>
@@ -227,11 +256,14 @@ function ServiceBlock({
             {service.intro}
           </p>
 
+          <PricingSummary service={service} />
+
           <div>
             <button
               type="button"
               onClick={() => onSelect(true)}
               aria-expanded={isActive && isExpanded}
+              aria-controls={`session-details-${index}`}
               className="group inline-flex items-center pb-1 border-b border-[#717b80]/40 transition hover:border-[#263136]"
             >
               {isActive && isExpanded ? (
@@ -248,7 +280,7 @@ function ServiceBlock({
 
           <AnimatePresence initial={false}>
             {isActive && isExpanded && (
-              <InvestmentDetails service={service} />
+              <InvestmentDetails service={service} id={`session-details-${index}`} />
             )}
           </AnimatePresence>
         </div>
@@ -259,7 +291,7 @@ function ServiceBlock({
 
 export default function SessionExperience() {
   const [activeIndex, setActiveIndex] = useState(0);
-  const [isExpanded, setIsExpanded] = useState(false);
+  const [isExpanded, setIsExpanded] = useState(true);
 
   const selectService = (index: number, expand = false) => {
     const isCurrent = index === activeIndex;
@@ -294,7 +326,7 @@ export default function SessionExperience() {
       {/* ── Service Blocks Section (Stojo Zigzag Style with Bluish Slate Tint) ── */}
       <section className="bg-[#e9ecef] px-5 py-16 sm:px-8 sm:py-24 lg:px-10 lg:py-32">
         <div className="mx-auto w-full">
-           <div className="space-y-24 md:space-y-32">
+          <div className="space-y-24 md:space-y-32">
             {services.map((service, index) => {
               const isActive = activeIndex === index;
               return (

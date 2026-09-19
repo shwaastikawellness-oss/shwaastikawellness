@@ -90,7 +90,7 @@ const jsonLd = [
     logo: `${siteUrl}/images/logo.png`,
     description: siteDescription,
     telephone: "+91-9310685448",
-    priceRange: "INR 2500 - INR 18400",
+    priceRange: "INR 3500 - INR 18400",
     address: {
       "@type": "PostalAddress",
       addressLocality: "Secunderabad",

@@ -50,7 +50,7 @@ Google review galleries
 Interactive review sections
 📅 Booking Experience
 Animated session cards
-Hidden pricing reveal interactions
+Hidden session contribution reveal interactions
 Consultation CTA system
 Mobile-friendly booking UI
 🧘 UI & UX Enhancements

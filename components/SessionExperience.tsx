@@ -36,7 +36,7 @@ const services = [
       "Guided awareness and grounding",
       "Supportive practices based on what emerges",
     ],
-    pricing: [
+    contribution: [
       ["Single Session", "INR 4,000 · USD 80"],
       ["3 Sessions", "INR 11,500 · USD 230"],
     ],
@@ -61,7 +61,7 @@ const services = [
       "Practical guidance and self-reflection",
       "Emotional grounding and clarity",
     ],
-    pricing: [["Single Session", "INR 3,500 · USD 75"]],
+    contribution: [["Single Session", "INR 3,500 · USD 75"]],
   },
   {
     title: "Womb Healing & Prenatal Support",
@@ -82,7 +82,7 @@ const services = [
       "Emotional holding and grounding",
       "Gentle practices based on individual needs",
     ],
-    pricing: [
+    contribution: [
       ["Single Session", "INR 3,500 · USD 45"],
       ["3-Session Support Journey", "INR 9,500 · USD 120", "Includes a courtesy reduction"],
       [
@@ -110,7 +110,7 @@ const services = [
       "Mindfulness, breath and awareness practices",
       "Format adapted for the group",
     ],
-    pricing: [["Custom engagement", "Pricing shared upon discussion"]],
+    contribution: [["Custom engagement", "Contribution shared upon discussion"]],
   },
 ];
 
@@ -124,8 +124,7 @@ function ServiceBlock({
   index: number;
 }) {
   const isEven = index % 2 === 0;
-  const [isPricingOpen, setIsPricingOpen] = useState(false);
-
+  const [isContributionOpen, setIsContributionOpen] = useState(false);
   return (
     <article className="w-full">
       <div
@@ -166,30 +165,36 @@ function ServiceBlock({
 
           <button
             type="button"
-            onClick={() => setIsPricingOpen((current) => !current)}
-            aria-expanded={isPricingOpen}
-            aria-controls={`pricing-${index}`}
-            className="inline-flex w-fit border-b border-[#717b80]/40 pb-1 text-sm font-semibold tracking-wide text-[#263136] transition hover:border-[#263136]"
+            onClick={() => setIsContributionOpen((current) => !current)}
+            aria-expanded={isContributionOpen}
+            aria-controls={`contribution-${index}`}
+            aria-label={`${isContributionOpen ? "Hide" : "View"} session contribution for ${service.title}`}
+            className="mt-6 flex w-full max-w-xl items-center justify-between border-y border-[#d8cab5]/70 py-4 text-left transition-colors hover:border-[#263136]/60"
           >
-            {isPricingOpen ? "Hide Pricing" : "View Pricing"}
+            <span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#717b80]">
+              Session Contribution
+            </span>
+            <span className="inline-flex items-center gap-2 text-sm font-semibold text-[#263136]">
+              {isContributionOpen ? "Hide" : "View"}
+              <span aria-hidden="true" className="text-base font-normal leading-none">
+                {isContributionOpen ? "-" : "+"}
+              </span>
+            </span>
           </button>
 
           <AnimatePresence initial={false}>
-            {isPricingOpen && (
+            {isContributionOpen && (
               <motion.div
-                id={`pricing-${index}`}
+                id={`contribution-${index}`}
                 initial={{ opacity: 0, height: 0 }}
                 animate={{ opacity: 1, height: "auto" }}
                 exit={{ opacity: 0, height: 0 }}
                 transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
                 className="overflow-hidden"
               >
-                <div className="mt-6 border-t border-[#d8cab5]/50 pt-5">
-                  <p className="mb-3 text-[10px] font-semibold uppercase tracking-[0.2em] text-[#717b80]">
-                    Investment
-                  </p>
+                <div className="pt-5">
                   <div className="flex flex-col gap-4">
-                    {service.pricing.map(([name, price, note]) => (
+                    {service.contribution.map(([name, price, note]) => (
                       <div key={name} className="flex flex-col gap-1">
                         <div className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between sm:gap-4">
                           <span className="text-sm font-medium text-[#263136]">{name}</span>
